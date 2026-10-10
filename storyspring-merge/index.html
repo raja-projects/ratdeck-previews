@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Unified Nonprofit Homepage Concept | Preview for StorySpring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--teal:#0f766e;--sun:#f4a259;--bg:#f8f6f1;--mut:#55607a}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;padding:8px;z-index:9}
+.note{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 12px}
+header{background:#fff;border-bottom:1px solid #e5e2da;position:sticky;top:0;z-index:5}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;max-width:1120px;margin:0 auto;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none}.logo span{color:var(--teal)}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-weight:600;font-size:15px}nav a{text-decoration:none}
+.btns{display:flex;gap:10px}.btn{display:inline-block;padding:11px 18px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.p{background:var(--sun);border-color:var(--sun);color:var(--ink)}.btn:focus-visible,a:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.hero{padding:72px 0 56px;background:linear-gradient(135deg,#e6f2ef,#fdf1e4)}
+.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:0 0 16px;max-width:760px}.hero p{font-size:19px;color:var(--mut);max-width:620px}
+.tag{display:inline-block;font-size:13px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+section{padding:56px 0}h2{font-size:clamp(26px,3.5vw,36px);margin:0 0 12px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e2da}.card h3{margin:0 0 8px}
+.ph{background:repeating-linear-gradient(45deg,#e9e6df,#e9e6df 10px,#f2efe9 10px,#f2efe9 20px);border-radius:12px;height:150px;display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:13px;margin-bottom:16px;text-align:center;padding:8px}
+.two{display:grid;gap:20px;grid-template-columns:1fr 1fr}.two .card{border-top:6px solid var(--teal)}.two .card+.card{border-top-color:var(--sun)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;text-align:center}.stats b{display:block;font-size:34px}
+.member{background:var(--ink);color:#fff;border-radius:20px;padding:36px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.member .btn{border-color:#fff;color:#fff}
+.donate{text-align:center;background:#fff}
+footer{background:#0b1324;color:#cfd6e4;padding:32px 0;font-size:14px}
+@media(max-width:760px){nav ul{display:none}.two{grid-template-columns:1fr}.hero{padding:48px 0}.btns .btn{padding:9px 14px;font-size:14px}}
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="note">Homepage concept. Organisation names, figures and images are placeholders until the two source sites are shared.</div>
+<header><div class="nav"><a class="logo" href="#">[Unified<span>Org</span>]</a>
+<nav aria-label="Main"><ul><li><a href="#mission">Mission</a></li><li><a href="#programs">Programs</a></li><li><a href="#impact">Impact</a></li><li><a href="#donate">Get involved</a></li></ul></nav>
+<div class="btns"><a class="btn" href="#members">Members login</a><a class="btn p" href="#donate">Donate</a></div></div></header>
+<main id="main">
+<section class="hero"><div class="wrap"><span class="tag">Two organisations. One mission.</span>
+<h1>Stronger together for the communities we serve nationwide.</h1>
+<p>[Placeholder] One home for the public work of Organisation A and the member network of Organisation B: programs, resources and ways to help, all in one place.</p>
+<p><a class="btn p" href="#donate">Give today</a> &nbsp; <a class="btn" href="#programs">Explore programs</a></p></div></section>
+<section id="mission"><div class="wrap"><h2>Our combined mission</h2><p style="color:var(--mut);max-width:700px">Each legacy site keeps its identity inside one clear structure, so visitors find what they need from either organisation without switching websites.</p>
+<div class="two" style="margin-top:24px"><div class="card"><h3>[Organisation A]</h3><p>Public programs, stories and resources. Its pages are merged into the shared navigation and global styles.</p></div>
+<div class="card"><h3>[Organisation B]</h3><p>Its existing design is preserved and moved securely behind the members login, as the brief requires.</p></div></div></div></section>
+<section id="programs" style="background:#fff"><div class="wrap"><h2>Programs</h2><div class="grid">
+<div class="card"><div class="ph" role="img" aria-label="Image placeholder">Image placeholder: program photo</div><h3>[Program one]</h3><p>Short summary pulled from the source site.</p></div>
+<div class="card"><div class="ph" role="img" aria-label="Image placeholder">Image placeholder: program photo</div><h3>[Program two]</h3><p>Built as a reusable Elementor template.</p></div>
+<div class="card"><div class="ph" role="img" aria-label="Image placeholder">Image placeholder: program photo</div><h3>[Program three]</h3><p>Easy for staff to edit and add to.</p></div></div></div></section>
+<section id="impact"><div class="wrap"><h2>Impact</h2><div class="stats">
+<div class="card"><b>[00K]</b>people reached</div><div class="card"><b>[00]</b>states</div><div class="card"><b>[000]</b>member organisations</div></div></div></section>
+<section id="members"><div class="wrap"><div class="member"><div><h2>Members area</h2><p style="margin:0;color:#cfd6e4">Toolkits, trainings and the full member resource library. Login required.</p></div><a class="btn" href="#members">Members login &rarr;</a></div></div></section>
+<section id="donate" class="donate"><div class="wrap"><h2>Help us do more, together</h2><p style="color:var(--mut)">Every gift supports both missions.</p><a class="btn p" href="#donate">Donate now</a></div></section>
+</main>
+<footer><div class="wrap"><p><strong>Preview concept by RATdeck. Not affiliated until approved.</strong></p><p>Placeholders used throughout; no client content or images reproduced.</p></div></footer>
+</body></html>
