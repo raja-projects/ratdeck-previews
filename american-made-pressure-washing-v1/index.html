@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>American Made Pressure Washing | Preview Concept</title>
+  <meta name="description" content="Private homepage concept for American Made Pressure Washing in Northwest Indiana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="preview-ribbon">Private concept for Lorenzo</div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="American Made Pressure Washing home">
+      <img src="../assets/logo.webp" alt="American Made Pressure Washing">
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#areas">Service areas</a>
+    </nav>
+    <a class="header-call" href="tel:+12197429715"><span>Call for a free quote</span>(219) 742-9715</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="hero-image" src="../assets/hero.webp" alt="A professionally cleaned home exterior">
+      <div class="hero-shade"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> Locally owned in Northwest Indiana</div>
+        <h1>A cleaner home.<br><em>Made to last.</em></h1>
+        <p>Professional pressure washing and soft washing for homes and businesses across Crown Point, St. John, and Valparaiso.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="tel:+12197429715">Get a fast, free quote</a>
+          <a class="button secondary" href="#results">See the difference</a>
+        </div>
+        <div class="trust-row" aria-label="Business credentials">
+          <div><strong>5.0</strong><span>Google rating</span></div>
+          <div><strong>24</strong><span>Google reviews</span></div>
+          <div><strong>100%</strong><span>Satisfaction focus</span></div>
+        </div>
+      </div>
+      <aside class="quote-card">
+        <span class="card-kicker">Free exterior assessment</span>
+        <h2>Tell us what needs cleaning.</h2>
+        <p>Call Lorenzo directly for a clear quote and convenient scheduling.</p>
+        <a href="tel:+12197429715">(219) 742-9715 <span>→</span></a>
+        <small>Crown Point · St. John · Valparaiso</small>
+      </aside>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-intro">
+        <div><span class="section-number">01</span><span class="section-label">What we clean</span></div>
+        <h2>Built for every surface<br>around your property.</h2>
+        <p>Safe methods, professional equipment, and the right pressure for each material.</p>
+      </div>
+      <div class="service-grid">
+        <article><span>01</span><h3>House soft washing</h3><p>Lift algae, mildew, and grime without damaging siding or finishes.</p></article>
+        <article><span>02</span><h3>Roof & gutter care</h3><p>Clear buildup and restore drainage with a low-pressure approach.</p></article>
+        <article><span>03</span><h3>Concrete cleaning</h3><p>Refresh driveways, sidewalks, and high-traffic surfaces.</p></article>
+        <article><span>04</span><h3>Decks, patios & pavers</h3><p>Bring outdoor living spaces back to a cleaner, brighter finish.</p></article>
+      </div>
+    </section>
+
+    <section class="results" id="results">
+      <div class="result-copy">
+        <span class="section-number light">02</span>
+        <span class="section-label light">Real transformation</span>
+        <h2>See clean<br>take over.</h2>
+        <p>Drag the handle to compare a Crown Point house wash before and after professional cleaning.</p>
+        <blockquote>“The attention to detail was outstanding. Lorenzo is an extremely professional young man.”<cite>Verified Google review</cite></blockquote>
+      </div>
+      <div class="comparison" aria-label="Before and after house washing comparison">
+        <div class="comparison-image after"><img src="../assets/after.jpg" alt="House after professional soft washing"></div>
+        <div class="comparison-image before" id="beforeLayer"><img src="../assets/before.jpg" alt="House before professional soft washing"></div>
+        <div class="comparison-line" id="compareLine"><span>↔</span></div>
+        <input id="compareRange" type="range" min="0" max="100" value="50" aria-label="Reveal before and after">
+        <div class="comparison-label label-before">Before</div>
+        <div class="comparison-label label-after">After</div>
+      </div>
+    </section>
+
+    <section class="local" id="areas">
+      <div class="local-image"><img src="../assets/service.webp" alt="American Made Pressure Washing service work"></div>
+      <div class="local-copy">
+        <span class="section-number">03</span><span class="section-label">Made here. Working here.</span>
+        <h2>Northwest Indiana<br>is home.</h2>
+        <p>Local exterior cleaning for homeowners, businesses, and property managers throughout Crown Point, St. John, Valparaiso, and nearby communities.</p>
+        <ul><li>Crown Point</li><li>St. John</li><li>Valparaiso</li><li>Nearby communities</li></ul>
+        <a class="button dark" href="tel:+12197429715">Check your address</a>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div><span>Ready when your property is.</span><h2>Let’s make it look new again.</h2></div>
+      <a href="tel:+12197429715">Call Lorenzo<br><strong>(219) 742-9715</strong></a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Preview concept by RATdeck — not affiliated until approved.</p>
+    <p>Built from publicly available American Made Pressure Washing assets and verified service information.</p>
+  </footer>
+
+  <script>
+    const range = document.getElementById('compareRange');
+    const layer = document.getElementById('beforeLayer');
+    const line = document.getElementById('compareLine');
+    const updateComparison = value => {
+      layer.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+      line.style.left = `${value}%`;
+    };
+    range.addEventListener('input', event => updateComparison(event.target.value));
+    updateComparison(range.value);
+  </script>
+</body>
+</html>
