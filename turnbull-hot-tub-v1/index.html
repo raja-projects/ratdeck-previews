@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Turnbull Hot Tub &amp; Pool Repair | Denver, Colorado Springs &amp; Pueblo (preview)</title>
-<meta name="description" content="Hot tub and pool repair, underground leak detection and winterization across Denver, Colorado Springs, Pueblo and surrounding areas. 4.8 stars from Google reviews. Call Colorado Springs (719) 500-9170 or Centennial (303) 879-7665.">
+<meta name="description" content="Hot tub and pool repair, underground leak detection and winterization across Denver, Colorado Springs, Pueblo and surrounding areas. 4.8 stars on Google. Call Colorado Springs (719) 500-9170 or Centennial (303) 879-7665.">
 <meta name="theme-color" content="#071776">
 <link rel="icon" href="img/favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="img/pool.webp">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Turnbull Hot Tub & Pool Repair","telephone":["+1-719-500-9170","+1-303-879-7665"],"email":"office@turnbullhottubrepair.com","url":"https://www.turnbullhottubrepair.com/","address":[{"@type":"PostalAddress","streetAddress":"3540 Austin Bluffs Pkwy Ste 8","addressLocality":"Colorado Springs","addressRegion":"CO","postalCode":"80918","addressCountry":"US"},{"@type":"PostalAddress","streetAddress":"7955 E Arapahoe Ct #2325","addressLocality":"Centennial","addressRegion":"CO","postalCode":"80112","addressCountry":"US"}],"areaServed":["Denver","Colorado Springs","Pueblo","Centennial"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"126"}}</script>
+<link rel="preload" as="image" href="img/gbp-hot-tub.webp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Turnbull Hot Tub & Pool Repair","telephone":["+1-719-500-9170","+1-303-879-7665"],"email":"office@turnbullhottubrepair.com","url":"https://www.turnbullhottubrepair.com/","address":[{"@type":"PostalAddress","streetAddress":"3540 Austin Bluffs Pkwy Ste 8","addressLocality":"Colorado Springs","addressRegion":"CO","postalCode":"80918","addressCountry":"US"},{"@type":"PostalAddress","streetAddress":"7955 E Arapahoe Ct #2325","addressLocality":"Centennial","addressRegion":"CO","postalCode":"80112","addressCountry":"US"}],"areaServed":["Denver","Colorado Springs","Pueblo","Centennial"]}</script>
 <style>
 :root{
   --blue:#01489B;--blue2:#0151a2;--navy:#071776;--ink:#231F20;--red:#b72015;--red2:#961910;
@@ -19,7 +19,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-html,body{overflow-x:hidden}body{font-family:Inter,system-ui,sans-serif;font-weight:400;color:var(--ink);background:#fff;font-size:17px;line-height:1.6;padding-bottom:76px}
+html,body{overflow-x:hidden}body{font-family:Inter,system-ui,sans-serif;font-weight:400;color:var(--ink);background:#fff;font-size:17px;line-height:1.6;padding-bottom:0}
 @media(min-width:880px){body{padding-bottom:0}}
 img{display:block;max-width:100%}a{color:inherit}
 .wrap{width:min(1220px,100% - 40px);margin-inline:auto}
@@ -104,7 +104,7 @@ section{padding:88px 0}
 .sc{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);display:grid;grid-template-columns:.95fr 1.05fr;min-height:280px;transition:transform .3s,box-shadow .3s}
 .sc:hover{transform:translateY(-4px);box-shadow:0 28px 56px -36px rgba(7,23,118,.45)}
 .sc .ph{position:relative;overflow:hidden;background:var(--sand2);min-height:220px}
-.sc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.sc .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
 .sc:hover .ph img{transform:scale(1.05)}
 .sc .ph .tg{position:absolute;left:12px;top:12px;background:rgba(7,23,118,.88);color:#fff;font-family:"Space Mono",ui-monospace,monospace;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
 .sc .bd{padding:22px 24px;display:flex;flex-direction:column}
@@ -123,7 +123,7 @@ section{padding:88px 0}
 .why .sh h2{color:#fff}
 .wgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
 .wphoto{border-radius:10px;overflow:hidden;aspect-ratio:4/3.2;position:relative}
-.wphoto img{width:100%;height:100%;object-fit:cover}
+.wphoto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .wphoto .cap{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(7,23,118,.9);border-radius:8px;padding:12px 14px;font-size:14px;color:#c9d4ef}
 .wphoto .cap b{color:#fff}
 .steps{display:grid;gap:12px;counter-reset:s}
@@ -189,11 +189,13 @@ section{padding:88px 0}
 
 /* sticky mobile bar */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -12px 30px -20px rgba(0,0,0,.35)}
-.mbar a{flex:1;min-width:0;text-align:center;text-decoration:none;border-radius:8px;padding:12px 6px;font-weight:700;font-size:13px;line-height:1.2}
+.mbar a{flex:1;min-width:0;text-align:center;text-decoration:none;border-radius:8px;padding:14px 6px;font-weight:700;font-size:15px;line-height:1.2;white-space:nowrap}
 .mbar .c1{background:var(--navy);color:#fff}
 .mbar .c2{background:var(--blue);color:#fff}
 .mbar .c3{background:var(--red);color:#fff}
 .mbar small{display:block;font-family:"Space Mono",ui-monospace,monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;font-weight:700;margin-bottom:2px}
+.alt{margin-top:14px;font-size:14.5px;color:var(--mut)}.alt a{color:var(--navy);font-weight:700}
+@media(max-width:879px){body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}}
 @media(min-width:880px){.mbar{display:none}}
 
 @media(max-width:980px){
@@ -208,16 +210,28 @@ section{padding:88px 0}
   .trust .t:nth-child(2){border-right:0}
   .hero-vis .badge{left:12px;bottom:12px}
   .hcall small{display:none}
+  .hcall b{white-space:nowrap}
 }
 @media(max-width:640px){
   .wrap{width:min(1220px,100% - 28px)}
   .hq{display:none}
-  .hm{display:inline-flex}
+  .hcall{display:none}
+  .hm{display:inline-flex;white-space:nowrap;padding:11px 16px}
   .trust .wrap{grid-template-columns:1fr}
   .trust .t{border-right:0;border-bottom:1px solid var(--line)}
   .hero{padding:36px 0 48px}
   section{padding:64px 0}
   .gcard{grid-template-columns:1fr}
+  .hacts{margin-left:auto}
+  .hero{padding:20px 0 44px}
+  .hero .wrap{gap:22px}
+  .hero-vis{order:-1}
+  .hero-vis .frame{aspect-ratio:16/10}
+  .hero h1{font-size:32px;margin:12px 0}
+  .lede{font-size:16.5px}
+  .ctas{display:flex;flex-wrap:nowrap;gap:10px}
+  .ctas .btn{flex:1;padding:14px 10px;font-size:15.5px;white-space:nowrap}
+  .ctas .cl{display:none}
 }
 </style>
 </head>
@@ -228,7 +242,7 @@ section{padding:88px 0}
     <ul>
       <li>Denver · Colorado Springs · Pueblo</li>
       <li>Hot tub &amp; pool repair</li>
-      <li>Family-owned</li>
+      <li>Colorado Springs &amp; Centennial offices</li>
     </ul>
     <div>
       <a href="tel:+17195009170">(719) 500-9170</a>
@@ -255,7 +269,7 @@ section{padding:88px 0}
         <span><small>Colorado Springs</small><b>(719) 500-9170</b></span>
       </a>
       <a class="btn btn-c hq" href="#quote">Get a quote</a>
-      <a class="btn btn-c hm" href="tel:+17195009170">Call</a>
+      <a class="btn btn-c hm" href="tel:+17195009170" aria-label="Call (719) 500-9170"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
     </div>
   </div>
 </header>
@@ -265,22 +279,22 @@ section{padding:88px 0}
     <div class="wrap">
       <div>
         <p class="eb mono">Hot tub &amp; pool repair · Colorado</p>
-        <h1 class="d">Hot tub and pool service that actually answers the phone.</h1>
-        <p class="lede">Turnbull Hot Tub &amp; Pool Repair serves <b>Denver, Colorado Springs, Pueblo and surrounding areas</b> — repairs, equipment service, underground leak detection and winterization, with neighborly techs who show up on time.</p>
+        <h1 class="d">Hot tub and pool repair across Denver, Colorado Springs and Pueblo.</h1>
+        <p class="lede">Turnbull Hot Tub &amp; Pool Repair serves <b>Denver, Colorado Springs, Pueblo and surrounding areas</b>: hot tub and spa repair, pool equipment service, underground leak detection and winterization.</p>
         <div class="ctas">
           <a class="btn btn-c" href="#quote">Get a quote</a>
           <a class="btn btn-b" href="tel:+17195009170">
             <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call (719) 500-9170
+            Call<span class="cl">&nbsp;(719) 500-9170</span>
           </a>
-          <a class="btn btn-o" href="tel:+13038797665">Centennial (303) 879-7665</a>
         </div>
+        <p class="alt">Centennial office: <a href="tel:+13038797665">(303) 879-7665</a></p>
         <div class="gcard">
           <div class="g">4.8</div>
           <div class="r">
             <span class="st" aria-label="4.8 out of 5 stars">★★★★★</span>
             <b>Google rating</b>
-            <small>126+ reviews across their Colorado listings</small>
+            <small>Colorado Springs Google profile</small>
           </div>
           <div class="q">
             <b>“Shane went above and beyond to make sure our hot tub was taken care of quickly.”</b>
@@ -290,12 +304,7 @@ section{padding:88px 0}
       </div>
       <div class="hero-vis">
         <div class="frame">
-          <img src="img/pool.webp" alt="In-ground pool with clear water and surrounding landscaping" width="1500" height="900">
-        </div>
-        <div class="badge">
-          <div class="mono">Owner-led</div>
-          <b>Shane Turnbull</b>
-          <span>Named in Google reviews for prompt, knowledgeable hot tub and spa work.</span>
+          <img src="img/gbp-hot-tub.webp" alt="Hot tub with wood cabinet on a customer's patio, from Turnbull's Google Business Profile" width="560" height="420">
         </div>
       </div>
     </div>
@@ -303,7 +312,7 @@ section{padding:88px 0}
 
   <div class="trust">
     <div class="wrap">
-      <div class="t"><span class="n">4.8★</span><span><b>Google reviews</b>126+ across listings</span></div>
+      <div class="t"><span class="n">4.8★</span><span><b>Google rating</b>Colorado Springs profile</span></div>
       <div class="t"><span class="n">2</span><span><b>Locations</b>Colorado Springs &amp; Centennial</span></div>
       <div class="t"><span class="n">4</span><span><b>Core services</b>Repair · pools · leaks · winter</span></div>
       <div class="t"><span class="n">CO</span><span><b>Front Range</b>Denver to Pueblo</span></div>
@@ -329,7 +338,7 @@ section{padding:88px 0}
       <div class="svc">
         <article class="sc" id="hottub">
           <div class="ph">
-            <img src="img/hot-tub.webp" alt="Hot tub on a patio beside a pool" width="1500" height="900" loading="lazy">
+            <img src="img/gbp-control-board.webp" alt="Hot tub control board and wiring during a repair" width="560" height="420">
             <span class="tg">01</span>
           </div>
           <div class="bd">
@@ -345,7 +354,7 @@ section{padding:88px 0}
         </article>
         <article class="sc" id="pool">
           <div class="ph">
-            <img src="img/pool.webp" alt="Clear swimming pool with green hedges" width="1500" height="900" loading="lazy">
+            <img src="img/gbp-indoor-pool.webp" alt="Indoor pool serviced by Turnbull" width="640" height="480">
             <span class="tg">02</span>
           </div>
           <div class="bd">
@@ -361,7 +370,7 @@ section{padding:88px 0}
         </article>
         <article class="sc" id="leak">
           <div class="ph">
-            <img src="img/leak-detection.webp" alt="View from a pool ladder looking down into the water" width="1500" height="900" loading="lazy">
+            <img src="img/gbp-pool-timer.webp" alt="Pool equipment timer box with wiring" width="560" height="746">
             <span class="tg">03</span>
           </div>
           <div class="bd">
@@ -377,7 +386,7 @@ section{padding:88px 0}
         </article>
         <article class="sc" id="winterization">
           <div class="ph">
-            <img src="img/winterization.webp" alt="Empty swimming pool prepared for the off-season" width="1500" height="900" loading="lazy">
+            <img src="img/gbp-hot-tub-cover.webp" alt="Hot tub with cover lifted on a backyard deck" width="560" height="1244">
             <span class="tg">04</span>
           </div>
           <div class="bd">
@@ -401,19 +410,19 @@ section{padding:88px 0}
         <div>
           <div class="sh" style="margin-bottom:28px;grid-template-columns:1fr">
             <div>
-              <p class="eb mono">Why homeowners call back</p>
-              <h2 class="d">Neighborly techs. Real Google proof. Two numbers that work.</h2>
+              <p class="eb mono">Why Turnbull</p>
+              <h2 class="d">Named techs, real Google reviews, two local offices.</h2>
             </div>
           </div>
           <div class="steps">
-            <div class="step"><div><b>Owner-named in reviews</b><span>Google reviewers repeatedly name Shane Turnbull for diagnosis, timing and fair work — not a faceless dispatch line.</span></div></div>
-            <div class="step"><div><b>Two Front Range phones</b><span>Colorado Springs (719) 500-9170 and Centennial (303) 879-7665 — both tap-to-call on this page, including the sticky mobile bar.</span></div></div>
-            <div class="step"><div><b>Quote form that isn’t a dead end</b><span>Their live site’s Get Quote / Book Now buttons are href="#". Here the form shows a clear confirmation so ad traffic has somewhere to go.</span></div></div>
+            <div class="step"><div><b>Techs named in reviews</b><span>Google reviewers mention Shane, Nico and Tim by name, and Alyssa in the office.</span></div></div>
+            <div class="step"><div><b>Two Front Range offices</b><span>Colorado Springs (719) 500-9170 and Centennial (303) 879-7665 — both tap-to-call on this page, including the sticky mobile bar.</span></div></div>
+            <div class="step"><div><b>Quote request in a minute</b><span>Name, phone, area and what needs fixing. The office gets back to you.</span></div></div>
           </div>
         </div>
         <div class="wphoto">
-          <img src="img/hot-tub.webp" alt="Residential hot tub ready for service" width="1500" height="900" loading="lazy">
-          <div class="cap"><b>From their own photography.</b> Hot tub, pool, leak and winterization shots are the same images on turnbullhottubrepair.com — no stock fillers.</div>
+          <img src="img/gbp-spa-panel.webp" alt="Balboa spa topside control panel on a hot tub" width="560" height="746">
+          <div class="cap"><b>Real jobs.</b> Every photo on this page is from Turnbull’s Google Business Profile.</div>
         </div>
       </div>
     </div>
@@ -426,7 +435,7 @@ section{padding:88px 0}
           <p class="eb mono">Google reviews</p>
           <h2 class="d">4.8 stars — and the quotes name real people.</h2>
         </div>
-        <p>Pulled from Turnbull’s own homepage and public Google review aggregators. Nothing invented.</p>
+        <p>Real Google reviews from Turnbull customers, quoted as written.</p>
       </div>
       <div class="rgrid">
         <article class="rc feat">
@@ -570,15 +579,14 @@ section{padding:88px 0}
     </div>
     <div class="copy">
       <span>© Turnbull Hot Tub &amp; Pool Repair · Preview by RATdeck (not live)</span>
-      <em>Content and photos from turnbullhottubrepair.com and public Google reviews</em>
+      <em>Content from turnbullhottubrepair.com · photos from their Google Business Profile</em>
     </div>
   </div>
 </footer>
 
 <nav class="mbar" aria-label="Quick call">
-  <a class="c1" href="tel:+17195009170"><small>Springs</small>(719) 500-9170</a>
-  <a class="c2" href="tel:+13038797665"><small>Centennial</small>(303) 879-7665</a>
-  <a class="c3" href="#quote"><small>Quote</small>Get quote</a>
+  <a class="c1" href="tel:+17195009170">Call (719) 500-9170</a>
+  <a class="c3" href="#quote">Get a quote</a>
 </nav>
 
 <script>
