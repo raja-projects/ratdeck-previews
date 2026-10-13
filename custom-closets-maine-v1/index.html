@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Custom Closets of Maine | Custom closets, garage &amp; pantry storage, South Portland ME (preview)</title>
+<meta name="description" content="Custom closets, garage storage, pantries, wall beds and home offices designed in your home with 3D software. Family owned in South Portland, Maine. Call 207-650-4659 for a free estimate.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Brand: logo black + the blue family from their site theme and printed warranty card */
+  --black:#0d0d0d;      /* logo */
+  --navy:#1B4060;       /* site theme */
+  --deep:#0D2030;       /* site theme, darkest blue */
+  --blue:#286090;       /* site theme */
+  --steel:#7497B5;      /* site icons / card band */
+  --sky:#A6C2DA;        /* site icons */
+  --mist:#E8E6E6;       /* site theme grey */
+  --paper:#F4F3F3;
+  --ink:#16191c;
+  --mut:#555c63;
+  --line:#dfe2e5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;font-weight:400;color:var(--ink);background:#fff;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:"Inter Tight",Inter,sans-serif;font-weight:600;letter-spacing:-0.045em;line-height:1.05}
+.label{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:16px;text-decoration:none;padding:15px 24px;border-radius:3px;border:2px solid transparent;transition:.15s;cursor:pointer;font-family:Inter,sans-serif;line-height:1.2}
+.btn-b{background:var(--blue);color:#fff}
+.btn-b:hover{background:var(--navy)}
+.btn-sky{background:var(--sky);color:var(--black)}
+.btn-sky:hover{background:#c1d7e8}
+.btn-line{border-color:rgba(255,255,255,.65);color:#fff}
+.btn-line:hover{background:#fff;color:var(--black)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* strip + header */
+.strip{background:var(--deep);color:#c9d6e2}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;gap:16px}
+.strip a{color:#fff;text-decoration:none}
+header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:82px;gap:24px}
+header .logo img{height:56px;width:auto}
+nav{display:flex;gap:28px}
+nav a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink)}
+nav a:hover{color:var(--blue)}
+.hcta{display:flex;gap:14px;align-items:center}
+.hphone{text-decoration:none;font-weight:600;font-size:16px;white-space:nowrap}
+.hphone span{display:block;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.14em;color:var(--mut);font-weight:400;text-transform:uppercase}
+
+/* hero */
+.hero{position:relative;min-height:700px;display:flex;align-items:center;color:#fff;background:var(--deep) url(img/hero.webp) 70% 45%/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,32,48,.95) 0%,rgba(13,32,48,.82) 40%,rgba(13,32,48,.2) 72%,rgba(13,32,48,0) 100%)}
+.hero .wrap{position:relative;width:100%;padding-top:88px;padding-bottom:80px}
+.hero .label{color:var(--sky)}
+.hero h1{font-size:clamp(42px,5.6vw,78px);max-width:760px;margin:20px 0 22px}
+.hero p.lead{font-size:19px;max-width:560px;color:#dfe7ee}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.facts{display:flex;margin-top:60px;border-top:1px solid rgba(255,255,255,.22);max-width:840px}
+.facts div{padding:20px 32px 0 0;margin-right:32px;border-right:1px solid rgba(255,255,255,.16)}
+.facts div:last-child{border-right:0;margin-right:0}
+.facts b{display:block;font-family:"Inter Tight",sans-serif;font-weight:600;letter-spacing:-0.045em;font-size:30px;line-height:1.1}
+.facts b i{font-style:normal;color:var(--sky)}
+.facts span{font-size:14px;color:#c9d6e2}
+
+/* sections */
+section{padding:104px 0}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
+.sec-head .label{color:var(--blue);display:block;margin-bottom:16px}
+.sec-head h2{font-size:clamp(34px,4.2vw,56px)}
+.sec-head p{color:var(--mut);max-width:520px}
+
+/* intro */
+.intro{background:var(--paper)}
+.intro .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
+.intro .photos{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.intro .photos img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.intro .photos .tall{grid-row:span 2;aspect-ratio:3/4.2}
+.intro .photos .sq{aspect-ratio:1/1}
+.intro .label{color:var(--blue)}
+.intro h2{font-size:clamp(34px,4vw,52px);margin:16px 0 22px}
+.intro p{color:var(--mut);margin-bottom:16px}
+.intro blockquote{font-family:"Inter Tight",sans-serif;font-weight:600;letter-spacing:-0.03em;font-size:22px;color:var(--navy);border-left:3px solid var(--steel);padding-left:18px;margin:26px 0 0}
+.badges{display:flex;align-items:center;gap:22px;margin-top:30px;padding-top:26px;border-top:1px solid var(--line)}
+.badges img{height:64px;width:auto}
+.badges span{font-size:14px;color:var(--mut);max-width:260px}
+
+/* solutions */
+.sol{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:3px;overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%;height:auto}
+.card .in{padding:24px 26px 28px}
+.card .label{color:var(--blue)}
+.card h3{font-size:26px;margin:10px 0 10px}
+.card p{color:var(--mut);font-size:16px}
+.biz{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:24px;background:var(--paper);border-radius:3px;padding:26px 30px}
+.biz p{color:var(--mut)}
+.biz b{color:var(--ink);font-weight:600}
+.biz a{color:var(--blue);font-weight:600;white-space:nowrap}
+
+/* promises */
+.why{background:var(--navy);color:#fff}
+.why .sec-head .label{color:var(--sky)}
+.why .sec-head p{color:#c9d6e2}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.18)}
+.why-grid div{padding:34px 28px 38px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.why-grid div+div{padding-left:28px;border-left:1px solid rgba(255,255,255,.18)}
+.why-grid .label{color:var(--sky)}
+.why-grid h3{font-size:26px;margin:12px 0 10px}
+.why-grid p{color:#c9d6e2;font-size:16px}
+.why-grid small{display:block;color:#9fb3c6;font-size:13px;margin-top:10px}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:250px;gap:12px}
+.gal img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.gal .w2{grid-column:span 2}
+.gal .h2{grid-row:span 2}
+
+/* steps */
+.steps{background:var(--paper)}
+.step-row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step-row div{border-top:3px solid var(--blue);padding-top:20px}
+.step-row .label{color:var(--blue)}
+.step-row h3{font-size:26px;margin:10px 0 8px}
+.step-row p{color:var(--mut);font-size:16px}
+
+/* reviews */
+.rev-top{display:flex;align-items:center;gap:18px;margin-bottom:30px;flex-wrap:wrap}
+.stars{display:flex;gap:3px}
+.stars svg{width:22px;height:22px;fill:var(--blue)}
+.rev-top b{font-family:"Inter Tight",sans-serif;font-weight:600;letter-spacing:-0.045em;font-size:34px;line-height:1}
+.rev-top span{color:var(--mut);font-size:15px}
+.rev-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:22px}
+.rev{border:1px solid var(--line);border-radius:3px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;background:#fff}
+.rev.big{background:var(--deep);border-color:var(--deep);color:#fff;grid-row:span 2}
+.rev.big q{font-family:"Inter Tight",sans-serif;font-weight:600;letter-spacing:-0.03em;font-size:26px;line-height:1.28}
+.rev q{quotes:none;font-size:16px}
+.rev .who{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.rev.big .who{color:var(--sky)}
+.rev-more{margin-top:26px;font-size:15px;color:var(--mut)}
+.rev-more a{color:var(--blue);font-weight:600}
+
+/* area */
+.area{background:var(--deep);color:#fff}
+.area .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:center}
+.area .label{color:var(--sky)}
+.area h2{font-size:clamp(34px,4vw,54px);margin:16px 0 20px}
+.area p{color:#c9d6e2}
+.towns{display:flex;flex-wrap:wrap;gap:8px}
+.towns span{border:1px solid rgba(166,194,218,.35);padding:7px 12px;border-radius:3px;font-size:14px;color:#e6edf3}
+.towns span.hq{background:var(--sky);border-color:var(--sky);color:var(--black);font-weight:600}
+.towns span.nh{border-style:dashed}
+.legend{margin-top:16px;font-size:13px;color:#9fb3c6}
+
+/* estimate */
+.est .grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.est .label{color:var(--blue)}
+.est h2{font-size:clamp(34px,4vw,54px);margin:16px 0 18px}
+.est p.sub{color:var(--mut);margin-bottom:28px}
+.contact-card{display:flex;gap:18px;align-items:center;border:1px solid var(--line);border-radius:3px;padding:20px 22px;text-decoration:none;margin-bottom:12px;transition:.15s}
+a.contact-card:hover{border-color:var(--blue)}
+.contact-card .ic{width:46px;height:46px;border-radius:3px;background:var(--navy);display:grid;place-items:center;flex:none}
+.contact-card .ic svg{width:21px;height:21px}
+.contact-card b{display:block;font-size:19px;font-weight:600;word-break:break-word}
+.contact-card small{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.hours{font-size:15px;color:var(--mut);margin-top:16px;line-height:1.8}
+.hours b{color:var(--ink);font-weight:600}
+form{background:var(--paper);border-radius:3px;padding:36px}
+form h3{font-size:28px;margin-bottom:6px}
+form .note{font-size:14px;color:var(--mut);margin-bottom:22px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label.f{display:block;margin-bottom:14px;font-size:14px;font-weight:500}
+label.f input,label.f textarea{display:block;width:100%;margin-top:6px;font:inherit;font-size:16px;padding:13px 14px;border:1px solid #cdd3d9;border-radius:3px;background:#fff;color:var(--ink)}
+label.f textarea{min-height:110px;resize:vertical}
+fieldset{border:0;margin:4px 0 18px}
+fieldset legend{font-size:14px;font-weight:500;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #cdd3d9;border-radius:3px;padding:8px 12px;font-size:14px;cursor:pointer}
+.chips input{accent-color:var(--blue)}
+form .btn{width:100%;justify-content:center;font-size:17px}
+.ok{display:none;margin-top:14px;font-size:15px;color:var(--navy);font-weight:500}
+
+/* footer */
+footer{background:var(--black);color:#b9c0c7;padding:64px 0 40px;font-size:15px}
+footer .grid{display:grid;grid-template-columns:1.3fr 1.4fr .9fr .9fr;gap:40px}
+footer .flogo{height:62px;width:auto;margin-bottom:18px}
+footer h4{font-family:"Space Mono",monospace;font-weight:400;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:14px}
+footer a{color:#fff;text-decoration:none;display:block;margin-bottom:8px;overflow-wrap:anywhere}
+footer .grid>div{min-width:0}
+footer a:hover{color:var(--sky)}
+.legal{border-top:1px solid #262a2e;margin-top:48px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;font-size:13px;flex-wrap:wrap}
+
+.mbar{display:none}
+
+@media (max-width:1080px){
+  nav{display:none}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-grid div:nth-child(3){padding-left:0;border-left:0}
+}
+@media (max-width:860px){
+  body{font-size:16px}
+  section{padding:72px 0}
+  .wrap{padding:0 20px}
+  .strip .wrap{justify-content:center}
+  .strip .hide-m{display:none}
+  header .wrap{height:68px}
+  header .logo img{height:44px}
+  .hphone{display:none}
+  .hcta .btn{padding:11px 16px;font-size:15px}
+  .hero{min-height:0;align-items:flex-end;background-size:100% auto;background-position:center top;background-color:var(--deep)}
+  .hero:before{background:linear-gradient(0deg,rgba(13,32,48,1) 0%,rgba(13,32,48,1) 52%,rgba(13,32,48,.55) 72%,rgba(13,32,48,.05) 100%)}
+  .hero .wrap{padding-top:236px;padding-bottom:44px}
+  .hero .label{font-size:11px}
+  .hero h1{font-size:42px}
+  .hero p.lead{font-size:17px}
+  .hero .ctas .btn{flex:1 1 100%;justify-content:center}
+  .facts{flex-direction:column;margin-top:36px}
+  .facts div{border-right:0;margin:0;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);display:flex;align-items:baseline;gap:12px}
+  .facts div:last-child{border-bottom:0}
+  .facts b{font-size:24px;white-space:nowrap}
+  .sec-head,.intro .grid,.area .grid,.est .grid{grid-template-columns:1fr;gap:28px}
+  .sec-head{margin-bottom:36px}
+  .sol{grid-template-columns:1fr}
+  .biz{flex-direction:column;align-items:flex-start;padding:22px}
+  .why-grid{grid-template-columns:1fr}
+  .why-grid div,.why-grid div+div{padding:26px 0;border-left:0}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:8px}
+  .gal .h2{grid-row:span 1}
+  .step-row{grid-template-columns:1fr 1fr;row-gap:30px}
+  .rev-grid{grid-template-columns:1fr}
+  .rev.big{grid-row:auto}
+  .rev.big q{font-size:22px}
+  .row{grid-template-columns:1fr}
+  form{padding:24px 20px}
+  footer{padding-bottom:110px}
+  footer .grid{grid-template-columns:1fr 1fr}
+  footer .grid > div:first-child{grid-column:1/-1}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--deep);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -4px 18px rgba(0,0,0,.25)}
+  .mbar .btn{justify-content:center;padding:13px 10px}
+}
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="wrap">
+  <span class="label hide-m">Family owned · 111 Ocean Street, South Portland, Maine</span>
+  <span class="label">Call <a href="tel:+12076504659">207-650-4659</a></span>
+</div></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#top" aria-label="Custom Closets of Maine home"><img src="img/logo.png" alt="Custom Closets of Maine" width="410" height="180"></a>
+  <nav aria-label="Main">
+    <a href="#solutions">Solutions</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#process">How it works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#area">Service area</a>
+  </nav>
+  <div class="hcta">
+    <a class="hphone" href="tel:+12076504659"><span>Free in-home design</span>207-650-4659</a>
+    <a class="btn btn-b" href="#estimate">Free estimate</a>
+  </div>
+</div></header>
+
+<main id="top">
+
+<section class="hero" aria-label="Introduction">
+  <div class="wrap">
+    <span class="label">Closets · Garages · Pantries · Wall beds · Home offices</span>
+    <h1>Expertly designed custom closets and storage solutions</h1>
+    <p class="lead">Your guide to home organization. We design your space in your home with 3D software, then build and install it. Family owned in Southern Maine.</p>
+    <div class="ctas">
+      <a class="btn btn-sky" href="#estimate">Get your free estimate</a>
+      <a class="btn btn-line" href="tel:+12076504659"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Call 207-650-4659</a>
+    </div>
+    <div class="facts">
+      <div><b>5.0<i>★</i></b><span>From 64 Google reviews</span></div>
+      <div><b>22 years</b><span>Proudly serving Maine</span></div>
+      <div><b>Free</b><span>In-home 3D design consultation</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap grid">
+    <div class="photos">
+      <img class="tall" src="img/closet-marble.webp" alt="White walk-in closet with marble-topped island" loading="lazy" width="1400" height="2100">
+      <img class="sq" src="img/pantry.webp" alt="Custom pantry with drawers and open shelving" loading="lazy" width="1400" height="1598">
+      <img class="sq" src="img/closet-tahoe.webp" alt="Wood-tone reach-in closet with shelves and drawers" loading="lazy" width="1400" height="1960">
+    </div>
+    <div>
+      <span class="label">Owner &amp; designer</span>
+      <h2>Randy Campbell designs every space around the way you live</h2>
+      <p>Randy spent many years traveling New England and the Northeast as a territory manager. He missed building new houses, so he put his construction skills to work in home organization.</p>
+      <p>His focus is spaces that look good and work hard. He is always up for a challenge in the space you have, and his favorite part is seeing clients excited about their newly organized rooms. Tailoring your space adds value to your home and improves the way you live.</p>
+      <blockquote>“Your satisfaction is our commitment.”</blockquote>
+      <div class="badges">
+        <img src="img/cia.png" alt="Closet Institute of America, Proud Member" width="240" height="237" loading="lazy">
+        <img src="img/homeadvisor.png" alt="HomeAdvisor Elite Service" width="162" height="160" loading="lazy">
+        <span>Proud member of the Closet Institute of America. HomeAdvisor Elite Service.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="solutions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Home solutions</span><h2>One local team for every room that needs storage</h2></div>
+      <p>Large or small, square or odd shaped, our designers work with you to create the right space for your needs, style and budget.</p>
+    </div>
+    <div class="sol">
+      <article class="card">
+        <img src="img/closet-walkin.webp" alt="Grey walk-in closet with glass doors and drawers" loading="lazy" width="1400" height="933">
+        <div class="in"><span class="label">Closets</span><h3>Walk-in and reach-in closets</h3><p>Shelving, drawers, valet rods and accessories, planned to create more storage and ease in your daily routine.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/garage.webp" alt="Garage with dark wall-mounted cabinets and white workbench" loading="lazy" width="1400" height="889">
+        <div class="in"><span class="label">Garage</span><h3>Garage cabinets and workbenches</h3><p>Wall-mounted cabinets that keep stored items dry and make cleaning simple, plus custom work centers.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/pantry-corner.webp" alt="Corner pantry with adjustable shelves" loading="lazy" width="1400" height="1752">
+        <div class="in"><span class="label">Pantry</span><h3>Kitchen pantries</h3><p>Shelving, dividers, baskets and drawers that make everything visible and easy to reach.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/wallbed.webp" alt="Wall bed with side storage" loading="lazy" width="1400" height="1207">
+        <div class="in"><span class="label">Wall beds</span><h3>Murphy beds</h3><p>Turn any room into a guest room. Full and queen sizes, with a desk, entertainment center or wardrobe built in.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/office.webp" alt="Home office wall unit with desk and shelving" loading="lazy" width="1400" height="906">
+        <div class="in"><span class="label">Home office</span><h3>Home office cabinetry</h3><p>A separate room, one wall or a corner, made into a space that is functional, comfortable and your own.</p></div>
+      </article>
+      <article class="card">
+        <img src="img/mudroom.webp" alt="Mudroom with bench, hooks and tall cabinet" loading="lazy" width="1400" height="933">
+        <div class="in"><span class="label">Mudroom &amp; laundry</span><h3>Mudrooms, laundry and linen</h3><p>Entryways, laundry rooms, linen and utility closets, the most troublesome areas of the house, sorted.</p></div>
+      </article>
+    </div>
+    <div class="biz">
+      <p><b>Storage for businesses too.</b> We also provide office solutions for businesses and organizations, and commercial partnerships.</p>
+      <a href="https://www.customclosetsme.com/business-storage-solutions">Business solutions →</a>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Why Maine homeowners choose us</span><h2>Honest, reliable organization that lasts for years</h2></div>
+      <p>Our mission is to provide honest, reliable home organization solutions that simplify your life, completed on time and to your satisfaction.</p>
+    </div>
+    <div class="why-grid">
+      <div><span class="label">01</span><h3>Designed in your home</h3><p>An in-home design consultation that includes a 3D computer-generated design of your space, at no charge.</p></div>
+      <div><span class="label">02</span><h3>Lifetime warranty</h3><p>Our cabinetry carries a lifetime warranty from Organizers Direct. If a product fails in normal use, it is replaced free of charge.</p></div>
+      <div><span class="label">03</span><h3>Price guarantee</h3><p>Your search for the best deal ends here. We will beat any competitor’s bid by 10%.</p><small>*Bid must be for an identical design and comparable materials.</small></div>
+      <div><span class="label">04</span><h3>Family owned</h3><p>A family owned and operated Southern Maine business, serving homeowners for 22 years.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Gallery</span><h2>Closets, garages and pantries we design and install</h2></div>
+      <p>Finishes from bright white to concrete grey and dark wood grains. Ask about the full product palette at your consultation.</p>
+    </div>
+    <div class="gal">
+      <img class="w2 h2" src="img/closet-lagoon.webp" alt="White closet with blue accent shelving" loading="lazy">
+      <img src="img/closet-ash.webp" alt="Dark wood walk-in closet with chandelier" loading="lazy">
+      <img src="img/laundry.webp" alt="White laundry room cabinets" loading="lazy">
+      <img src="img/garage-workbench.webp" alt="Garage workbench with concrete top" loading="lazy">
+      <img src="img/office-dark.webp" alt="Dark grey home office with island" loading="lazy">
+      <img class="w2" src="img/closet-concrete.webp" alt="Concrete finish closet with pant rack" loading="lazy">
+      <img class="w2" src="img/wall-unit.webp" alt="White wall unit with fireplace" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">Take the next steps</span><h2>From first visit to finished install</h2></div>
+      <p>We start by learning how you are going to use your space, then design it, build it and install it.</p>
+    </div>
+    <div class="step-row">
+      <div><span class="label">Step 01</span><h3>Consult</h3><p>We visit, measure and talk through how you use the space.</p></div>
+      <div><span class="label">Step 02</span><h3>Price</h3><p>A free estimate for your project, backed by our price guarantee.</p></div>
+      <div><span class="label">Step 03</span><h3>Design</h3><p>Your space laid out with 3D design software, with room to make changes.</p></div>
+      <div><span class="label">Step 04</span><h3>Installation</h3><p>Built and installed with knowledge, experience and care.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="label">What our clients are saying</span><h2>Rated 5.0 by Maine homeowners on Google</h2></div>
+      <p>Recent reviews from our Google Business Profile. Customers mention Randy’s designs, Dee’s scheduling and Joe’s install crew by name.</p>
+    </div>
+    <div class="rev-top">
+      <div class="stars" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
+      <b>5.0</b><span>64 Google reviews</span>
+    </div>
+    <div class="rev-grid">
+      <div class="rev big"><q>Randy took care of every detail and designed a beautiful closet. Dee made sure that the install was well coordinated. The installers were quick, thorough and did the work with care. I would highly recommend working with Custom Closets of Maine.</q><div class="who">Google review · Oct 2025</div></div>
+      <div class="rev"><q>Randy Campbell designed both our master bedroom closet &amp; laundry room. We are very pleased with the quality, craftsmanship &amp; installation process. Joe &amp; Shane did a great job installing.</q><div class="who">Google review · Jan 2026</div></div>
+      <div class="rev"><q>Randy arrived on time, did the estimate and then Dee scheduled everything. Joe and his crew arrived to install the closets on time, and were professional, positive and did a fantastic job! I am thrilled with my 3 new organized closets!</q><div class="who">Google review · Sep 2025</div></div>
+      <div class="rev"><q>They showed up on time, worked hard while they were here and cleaned up when done. The closets look great and are so much more functional than what we had before.</q><div class="who">Google review · Sep 2025</div></div>
+      <div class="rev"><q>We’ve been here for two weeks now and not a day goes by that we don’t comment on how great our new installations. We are delighted with how everything worked out!</q><div class="who">Carolyn &amp; Matt</div></div>
+    </div>
+    <p class="rev-more">Worked with us? <a href="https://g.page/r/CXpQ2uJMFb1GEBM/review">Leave a Google review</a>.</p>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap grid">
+    <div>
+      <span class="label">Our service areas</span>
+      <h2>Serving 15 of Maine’s 16 counties, plus New Hampshire</h2>
+      <p>From our home base in South Portland we cover most of Maine, the Lakes Region and the greater Portsmouth area in New Hampshire.</p>
+    </div>
+    <div>
+      <div class="towns">
+        <span>Portland</span><span class="hq">South Portland</span><span>Scarborough</span><span>Cape Elizabeth</span><span>Falmouth</span><span>Cumberland</span><span>Yarmouth</span><span>North Yarmouth</span><span>Freeport</span><span>Brunswick</span><span>Harpswell</span><span>Bath</span><span>Westbrook</span><span>Gorham</span><span>Windham</span><span>Gray</span><span>Raymond</span><span>Naples</span><span>Bridgton</span><span>Norway</span><span>Auburn</span><span>Lewiston</span><span>Saco</span><span>Biddeford</span><span>Old Orchard Beach</span><span>Kennebunk</span><span>Kennebunkport</span><span>Wells</span><span>York</span><span>Sanford</span>
+        <span class="nh">Portsmouth, NH</span><span class="nh">North Hampton, NH</span><span class="nh">Laconia, NH</span><span class="nh">Wolfeboro, NH</span><span class="nh">Tuftonboro, NH</span><span class="nh">Ossipee, NH</span>
+      </div>
+      <p class="legend">Dashed: New Hampshire. Don’t see your town? Give us a call.</p>
+    </div>
+  </div>
+</section>
+
+<section class="est" id="estimate">
+  <div class="wrap grid">
+    <div>
+      <span class="label">Free estimate</span>
+      <h2>Looking to take your closet to the next level?</h2>
+      <p class="sub">We’d love to help. Call, email or send the short form, and we’ll set up your free in-home design consultation.</p>
+      <a class="contact-card" href="tel:+12076504659">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <span><small>Call</small><b>207-650-4659</b></span>
+      </a>
+      <a class="contact-card" href="mailto:Customclosetsofmaine@gmail.com?subject=Free%20estimate%20request">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+        <span><small>Email</small><b>Customclosetsofmaine@gmail.com</b></span>
+      </a>
+      <a class="contact-card" href="https://www.google.com/maps/search/?api=1&amp;query=Custom+Closets+of+Maine+111+Ocean+St+South+Portland+ME+04106">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <span><small>Visit</small><b>111 Ocean Street, South Portland, ME 04106</b></span>
+      </a>
+      <p class="hours"><b>Hours</b> (Google listing): Mon–Tue 9–5 · Wed–Fri 9–6 · Sat 10–3 · Sun closed</p>
+    </div>
+    <form id="estform" novalidate>
+      <h3>Request your free estimate</h3>
+      <p class="note">Sending opens your email app with the details filled in, addressed to Customclosetsofmaine@gmail.com.</p>
+      <div class="row">
+        <label class="f">Name<input name="name" autocomplete="name" required></label>
+        <label class="f">Phone<input name="phone" type="tel" autocomplete="tel"></label>
+      </div>
+      <div class="row">
+        <label class="f">Email<input name="email" type="email" autocomplete="email"></label>
+        <label class="f">Town<input name="town" autocomplete="address-level2" placeholder="e.g. Scarborough"></label>
+      </div>
+      <fieldset>
+        <legend>I’m interested in</legend>
+        <div class="chips">
+          <label><input type="checkbox" name="svc" value="Closet">Closet</label>
+          <label><input type="checkbox" name="svc" value="Garage">Garage</label>
+          <label><input type="checkbox" name="svc" value="Pantry">Pantry</label>
+          <label><input type="checkbox" name="svc" value="Wall bed">Wall bed</label>
+          <label><input type="checkbox" name="svc" value="Home office">Home office</label>
+          <label><input type="checkbox" name="svc" value="Mudroom / laundry">Mudroom / laundry</label>
+          <label><input type="checkbox" name="svc" value="Business storage">Business storage</label>
+        </div>
+      </fieldset>
+      <label class="f">How can we help?<textarea name="msg" placeholder="Which rooms, rough sizes, and a good time for us to visit"></textarea></label>
+      <button class="btn btn-b" type="submit">Send my estimate request</button>
+      <p class="ok" id="ok">Opening your email app…</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div><img class="flogo" src="img/logo-white.png" alt="Custom Closets of Maine" width="410" height="180"><p>Custom closets, cabinets and storage solutions in Maine. Family owned and operated in South Portland.</p></div>
+      <div><h4>Contact</h4><a href="tel:+12076504659">207-650-4659</a><a href="mailto:Customclosetsofmaine@gmail.com">Customclosetsofmaine@gmail.com</a><a href="https://www.google.com/maps/search/?api=1&amp;query=Custom+Closets+of+Maine+111+Ocean+St+South+Portland+ME+04106">111 Ocean Street<br>South Portland, ME 04106</a></div>
+      <div><h4>Solutions</h4><a href="#solutions">Closets</a><a href="#solutions">Garages</a><a href="#solutions">Pantries</a><a href="#solutions">Wall beds</a><a href="#solutions">Home offices</a></div>
+      <div><h4>More</h4><a href="#estimate">Free estimate</a><a href="#reviews">Reviews</a><a href="#area">Service area</a><a href="https://www.customclosetsme.com/blog">Blog</a></div>
+    </div>
+    <div class="legal"><span>© Custom Closets of Maine. All rights reserved.</span><span>Homepage preview prepared by RATdeck</span></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-sky" href="tel:+12076504659">Call now</a>
+  <a class="btn btn-line" href="#estimate">Free estimate</a>
+</div>
+
+<script>
+document.getElementById('estform').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=this, s=[].map.call(f.querySelectorAll('input[name=svc]:checked'),function(c){return c.value}).join(', ');
+  var body='Name: '+f.name.value+'\nPhone: '+f.phone.value+'\nEmail: '+f.email.value+'\nTown: '+f.town.value+'\nInterested in: '+s+'\n\n'+f.msg.value;
+  document.getElementById('ok').style.display='block';
+  window.location.href='mailto:Customclosetsofmaine@gmail.com?subject='+encodeURIComponent('Free estimate request'+(f.name.value?' from '+f.name.value:''))+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
