@@ -148,3 +148,6 @@
 .proof img{display:block;width:100%;height:auto}
 .proof figcaption{font-size:13px;padding:10px 14px;opacity:.75}
 .icard.soon{opacity:.62}.more.soon{display:inline-block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.8;margin-top:8px}
+
+/* b2c: show full 2:1 photos on mobile */
+@media (max-width:700px){.hvis img,.pimg img{aspect-ratio:2/1!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:cover}.hvis{min-height:0;height:auto}}
