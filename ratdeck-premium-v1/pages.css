@@ -139,3 +139,12 @@
   .crumbs a{min-height:40px;min-width:40px}
   .glance .gl-l a{display:inline-flex;align-items:center;min-height:40px}
 }
+
+/* b2: image placeholders, proof figure, coming-soon */
+.phimg{aspect-ratio:2/1;width:100%;border-radius:22px;background:radial-gradient(120% 140% at 15% 10%,#f3d9c4 0%,transparent 55%),linear-gradient(135deg,#1d2433 0%,#3a4458 55%,#c96f4a 140%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff;box-shadow:0 20px 50px -25px rgba(0,0,0,.45)}
+.phimg .ic{width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+.phimg span:last-child{font-size:14px;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+.proof{margin:28px 0 0;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.08);background:#fff}
+.proof img{display:block;width:100%;height:auto}
+.proof figcaption{font-size:13px;padding:10px 14px;opacity:.75}
+.icard.soon{opacity:.62}.more.soon{display:inline-block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.8;margin-top:8px}
