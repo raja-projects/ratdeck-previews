@@ -57,3 +57,23 @@ addEventListener('scroll',function(){if(scrollBlur)return;scrollBlur=true;reques
 (()=>{const h=document.getElementById('hh');if(h){const wrap=n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.append(' ');return}const ws=document.createElement('span');ws.className='w';[...w].forEach(c=>{const l=document.createElement('span');l.className='l';l.textContent=c;ws.append(l)});f.append(ws)});n.replaceWith(f)}else[...n.childNodes].forEach(wrap)};[...h.childNodes].forEach(wrap);
 const ls=[...h.querySelectorAll('.l')];ls.forEach((l,i)=>l.addEventListener('mouseenter',()=>{ls.forEach(x=>x.classList.remove('fade','dots'));l.classList.add('fade');ls[i+1]&&ls[i+1].classList.add('dots');clearTimeout(l._t);l._t=setTimeout(()=>{l.classList.remove('fade');ls[i+1]&&ls[i+1].classList.remove('dots')},600)}))}
 const r=document.getElementById('cring');if(r&&matchMedia('(hover:hover)').matches){let x=-100,y=-100,cx=x,cy=y;addEventListener('mousemove',e=>{x=e.clientX-13;y=e.clientY-13});document.querySelectorAll('a,button,#hh').forEach(el=>{el.addEventListener('mouseenter',()=>r.classList.add('big'));el.addEventListener('mouseleave',()=>r.classList.remove('big'))});(function t(){cx+=(x-cx)*.2;cy+=(y-cy)*.2;r.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(t)})()}})();
+
+/* fix6: hamburger + pill never over headings */
+(function(){var d=document,n=d.querySelector('header.nav'),b=n&&n.querySelector('.navt');
+if(b){function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+b.addEventListener('click',function(){set(!n.classList.contains('open'))});
+d.addEventListener('keydown',function(e){if(e.key==='Escape'&&n.classList.contains('open')){set(false);b.focus()}});
+d.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target))set(false)});
+n.querySelectorAll('.links a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
+matchMedia('(min-width:901px)').addEventListener('change',function(m){if(m.matches)set(false)})}
+var p=d.getElementById('pill');if(!p)return;
+var heroVis=false,t=0;
+function chk(){t=0;var r=p.getBoundingClientRect(),hit=heroVis||(n&&n.classList.contains('open'));
+ if(!hit){var els=d.querySelectorAll('main h1,main h2,main h3,main .btn,main button,main input,main select,main textarea,main summary,main .more,.contact .btn');
+ for(var i=0;i<els.length&&!hit;i++){var q=els[i].getBoundingClientRect();if(q.width&&q.bottom>r.top-12&&q.top<r.bottom+12&&q.right>r.left&&q.left<r.right)hit=true}}
+ p.classList.toggle('hide2',hit)}
+function qq(){if(!t)t=requestAnimationFrame(chk)}
+var hero=d.querySelector('main .hero, main h1');
+if(hero&&window.IntersectionObserver){new IntersectionObserver(function(es){heroVis=es[0].isIntersecting;qq()},{threshold:0}).observe(hero.closest('section')||hero)}
+addEventListener('scroll',qq,{passive:true});addEventListener('resize',qq);if(n&&n.querySelector('.navt'))n.querySelector('.navt').addEventListener('click',function(){setTimeout(qq,0)});setTimeout(chk,60);
+})();
