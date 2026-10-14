@@ -163,3 +163,7 @@ h1,h2,h3,.h2{text-wrap:balance}.lead,.qa p{text-wrap:pretty}
 
 /* fix5b */
 @media (max-width:900px){.foot .fgrid>div:not(:first-child){display:grid;grid-template-columns:1fr 1fr;column-gap:16px}.foot .fgrid>div:not(:first-child) h4{grid-column:1/-1}}
+
+/* fix5c */
+.ftrap{left:0!important;top:0;clip:rect(0 0 0 0);clip-path:inset(50%)}
+.icard h3 a,.card h3 a,h3>a[href*="/guides/"]{display:inline-block;padding:10px 0}
