@@ -271,3 +271,7 @@ html,body{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .tgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.ti{min-width:0;position:relative;z-index:1}.ti *{pointer-events:none}
 .band-cap>span{min-width:0;overflow-wrap:anywhere}.big{overflow-wrap:break-word;max-width:min(14ch,100%)}
 @media (max-width:700px){.tgrid{grid-template-columns:minmax(0,1fr)}.ti,.ti:hover{padding:16px 0;gap:6px}.ti+.ti,.ti:hover+.ti,.ti+.ti:hover{border-left:0;border-top:1px solid #dcd7cb}.tl,.tl.gl{font-size:30px}.pj{font-size:34px}.tt{font-size:14px}.tt i{display:inline}.band-cap{gap:10px 24px;letter-spacing:.08em}}
+
+.fcta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:18px}.foot .fcta .btn{width:auto}.fcta .fmail{font-size:14px;color:inherit}
+.fsoc{display:flex;gap:10px;margin-top:18px}.fsoc a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(0,0,0,.18);color:var(--ink);transition:background .3s,color .3s,transform .3s}.fsoc a:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+.foot .fcta .btn{padding:11px 22px;white-space:nowrap}
