@@ -313,3 +313,23 @@ html,body{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
  .plan .btn{width:100%;justify-content:center;text-align:center;margin-top:auto}
  .fgrid{gap:28px}.fgrid>div{text-align:left;padding:0;margin:0}
 }
+
+/* ===== b1v3 mobile QA: tap targets ≥40px, text ≥13px ===== */
+@media (max-width:700px){
+  .logo{min-height:40px;display:inline-flex;align-items:center;padding:6px 0;box-sizing:border-box}
+  .crumbs{gap:10px;flex-wrap:wrap}.crumbs a{display:inline-flex;align-items:center;min-height:40px;min-width:40px;padding:8px 6px 8px 0;box-sizing:border-box}
+  .icard .more,.four a,.col .cb a,.cb a,.who a{min-height:40px;display:inline-flex;align-items:center;padding:8px 0}
+  .cinfo a{min-height:44px;display:inline-flex;align-items:center}
+  .fcta .fmail{min-height:40px;display:inline-flex;align-items:center;padding:4px 0}
+  .qcard a,.qcard figcaption a{min-height:40px;display:inline-flex;align-items:center}
+  .foot .fgrid a{display:inline-flex;align-items:center;min-height:40px;padding:6px 0}
+  .fbot a{display:inline-flex;align-items:center;min-height:40px;min-width:40px;padding:8px 4px}
+  .fsoc a{width:40px;height:40px;min-width:40px;min-height:40px;display:inline-flex;align-items:center;justify-content:center}
+  .ti{min-height:40px}
+  .glance .gl-l a{display:inline-flex;align-items:center;min-height:40px}
+  .steps a,.four li a,.pnotes a,.pni a{min-height:40px;display:inline-flex;align-items:center;padding:8px 0}
+  .hproof{font-size:13px}.hproof span{font-size:13px;white-space:normal}
+  .tt{font-size:13px}.st{font-size:13px}
+  .eyebrow,.tag,.hc-t,.hcard .hc-t,.qa-k,.yg,.rtag,.rsub,.fgrid h4,.mini span,.bc .k,.hours .hc-t,.opt .opt-l,.audit .tag,.aud .yg,.rform .hc-t{font-size:13px;letter-spacing:.12em}
+}
+

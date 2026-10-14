@@ -14,10 +14,38 @@ cols.forEach(function(c){
 var img=d.getElementById('px');
 if(!rm&&img){var t=false;function px(){var r=img.parentNode.getBoundingClientRect(),h=innerHeight;if(r.bottom>0&&r.top<h){var p=(h-r.top)/(h+r.height);img.style.transform='translate3d(0,'+(-p*15)+'%,0)'}t=false}
  addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(px)}},{passive:true});px()}
-// pill hide over contact/footer
-var pill=d.getElementById('pill'),vis={};if(pill){
-var po=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target.dataset.k||e.target.className]=e.isIntersecting});pill.classList.toggle('hide',Object.keys(vis).some(function(k){return vis[k]}))},{threshold:0});
-var hc=d.querySelector('.hero .ctas');if(hc){hc.dataset.k='hero';po.observe(hc)}if(matchMedia('(max-width:600px)').matches){var bz=new IntersectionObserver(function(es){es.forEach(function(e){vis['b'+e.target.dataset.bi]=e.isIntersecting});pill.classList.toggle('hide',Object.keys(vis).some(function(k){return vis[k]}))},{rootMargin:-(innerHeight-120)+'px 0px 0px 0px'});[].forEach.call(d.querySelectorAll('main .btn,section .btn,.midcta a'),function(b,i){if(b.closest('.hero'))return;b.dataset.bi=i;bz.observe(b)})}[d.querySelector('.contact'),d.querySelector('.foot')].forEach(function(x){if(x)po.observe(x)});pill&&pill.classList.remove('hide');}
+// pill: hide over contact/footer/hero CTAs, forms, focused fields, keyboard
+var pill=d.getElementById('pill');if(pill){
+var vis={},fieldFocus=false,kbOpen=false;
+function pillHide(){var block=fieldFocus||kbOpen||Object.keys(vis).some(function(k){return vis[k]});pill.classList.toggle('hide',!!block)}
+function setVis(k,v){vis[k]=v;pillHide()}
+var po=new IntersectionObserver(function(es){es.forEach(function(e){setVis(e.target.dataset.k||e.target.className,e.isIntersecting)})},{threshold:0});
+var hc=d.querySelector('.hero .ctas');if(hc){hc.dataset.k='hero';po.observe(hc)}
+[d.querySelector('.contact'),d.querySelector('.foot')].forEach(function(x){if(x)po.observe(x)});
+// any form in viewport
+[].forEach.call(d.querySelectorAll('form'),function(f,i){f.dataset.k='form'+i;po.observe(f)});
+// bottom-zone CTAs on small screens
+if(matchMedia('(max-width:600px)').matches){
+ var bz=new IntersectionObserver(function(es){es.forEach(function(e){setVis('b'+e.target.dataset.bi,e.isIntersecting)})},{rootMargin:-(innerHeight-120)+'px 0px 0px 0px'});
+ [].forEach.call(d.querySelectorAll('main .btn,section .btn,.midcta a'),function(b,i){if(b.closest('.hero')||b.closest('form'))return;b.dataset.bi=i;bz.observe(b)});
+}
+// focus on inputs/textareas/selects
+d.addEventListener('focusin',function(e){var t=e.target;if(t&&(t.matches('input,textarea,select')||t.closest('input,textarea,select'))){fieldFocus=true;pillHide()}});
+d.addEventListener('focusout',function(e){var t=e.target;if(t&&t.matches('input,textarea,select')){setTimeout(function(){var a=d.activeElement;fieldFocus=!!(a&&a.matches&&a.matches('input,textarea,select'));pillHide()},0)}});
+// keyboard via visualViewport shrink
+function checkKb(){var vv=window.visualViewport;if(!vv){kbOpen=false;pillHide();return}kbOpen=vv.height<innerHeight*0.75;pillHide()}
+if(window.visualViewport){visualViewport.addEventListener('resize',checkKb);visualViewport.addEventListener('scroll',checkKb)}
+addEventListener('resize',checkKb);checkKb();
+pill.classList.remove('hide');pillHide();
+}
+// dismiss iOS keyboard: tap outside fields, or scroll field out of view
+function isField(el){return el&&el.matches&&el.matches('input,textarea,select')}
+function blurField(){var a=d.activeElement;if(isField(a))a.blur()}
+function outsideField(e){var t=e.target;if(isField(t)||(t&&t.closest&&t.closest('label,input,textarea,select,button,[contenteditable]')))return;blurField()}
+d.addEventListener('touchstart',outsideField,{passive:true,capture:true});
+d.addEventListener('pointerdown',outsideField,{passive:true,capture:true});
+var scrollBlur=false;
+addEventListener('scroll',function(){if(scrollBlur)return;scrollBlur=true;requestAnimationFrame(function(){scrollBlur=false;var a=d.activeElement;if(!isField(a))return;var r=a.getBoundingClientRect(),h=innerHeight;if(r.bottom<0||r.top>h)blurField()})},{passive:true});
 })();
 
 /* v5 merge: letter hover + cursor ring */

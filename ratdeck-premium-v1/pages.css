@@ -133,4 +133,9 @@
   .ctas{flex-wrap:wrap}
   .pg .ctas .btn{max-width:100%}
   .hvis .chip{right:12px;left:12px;max-width:none}
+  /* labels ≥13px (beat earlier 12px rules) */
+  .pg .eyebrow,.tag,.audit .tag,.cmpc .tag,.qa-k,.rform .hc-t,.hours .hc-t,.cbx .hc-t,.glance .hc-t,.hc-t,.mini span,.bc .k,.fgrid h4,.yg,.rtag,.rsub,.aud .yg,.opt .opt-l{font-size:13px;letter-spacing:.12em}
+  .icard .more{min-height:40px;display:inline-flex;align-items:center;padding:8px 0}
+  .crumbs a{min-height:40px;min-width:40px}
+  .glance .gl-l a{display:inline-flex;align-items:center;min-height:40px}
 }
