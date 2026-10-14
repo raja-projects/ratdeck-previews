@@ -149,5 +149,8 @@
 .proof figcaption{font-size:13px;padding:10px 14px;opacity:.75}
 .icard.soon{opacity:.62}.more.soon{display:inline-block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;opacity:.8;margin-top:8px}
 
-/* b2c: show full 2:1 photos on mobile */
-@media (max-width:700px){.hvis img,.pimg img{aspect-ratio:2/1!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:cover}.hvis{min-height:0;height:auto}}
+/* b2c: show full 2:1 photos at all widths (no crop) */
+.hvis img,.pimg img{aspect-ratio:2/1!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:cover}
+.hvis{min-height:0;height:auto}
+@media (min-width:901px){.hero.ph .hsplit:has(.hr picture){grid-template-columns:46fr 54fr;align-items:center}}
+.pimg .hvis{max-width:980px;margin-inline:auto}
