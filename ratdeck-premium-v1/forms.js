@@ -37,7 +37,7 @@ document.querySelectorAll('form[data-wpf]').forEach(function(f){
   tp.then(function(t){if(!t||!t.tt)throw 0;var left=MIN-(Date.now()-t.at);return left>0?wait(left).then(function(){return t}):t}).then(function(t){
    var fd=new FormData();
    f.querySelectorAll('[data-wf]').forEach(function(el){
-    var v=el.value.trim(),n=el.getAttribute('data-wf');
+    var v=el.value.trim(),n=el.getAttribute('data-wf');if(!v&&el.getAttribute('data-nosite'))v=el.getAttribute('data-nosite');
     if(c.id===19500&&n==='5'){var s=q(f,'[data-svc]');if(s)v='Service: '+s.value+'\n\n'+v}
     if(c.id===24698&&n==='7'){var i=q(f,'[data-ind]');if(i)v=v+' | Industry: '+i.value}
     fd.append('wpforms[fields]['+n+']',v)});
