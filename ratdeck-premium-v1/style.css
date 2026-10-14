@@ -244,3 +244,16 @@ a.ti:hover .tt{color:var(--acc)}
 .aud .yg{margin-top:14px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--hd)}
 .aud .sec a{font-size:13.5px;color:var(--muted);margin-right:10px}
 .techl{margin-top:34px;font-size:14px;color:var(--muted)}.techl a{font-weight:600;color:var(--hd)}
+
+/* sample report */
+.rdoc{background:#fff;border:1px solid #d9d7cf;border-radius:22px;padding:clamp(22px,3vw,36px);box-shadow:0 18px 40px -28px rgba(21,20,15,.35);max-width:720px}
+.rdoc-h{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.rtag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--ink);color:#fff;padding:5px 10px;border-radius:999px}
+.rlab{font-size:13px;color:var(--muted)}
+.rsub{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px}
+.rq{list-style:none}.rq li{padding:12px 0;border-top:1px solid #e5e3dc;display:flex;flex-direction:column;gap:4px}
+.rq q{color:var(--hd);font-weight:500;font-size:16px}
+.rs{font-size:14px;padding-left:16px;position:relative}.rs::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%}
+.rs.bad::before{background:#d6452b}.rs.mid::before{background:#e6a23c}
+.rr{list-style:none;margin-bottom:24px}.rr li{padding:8px 0 8px 22px;border-top:1px solid #e5e3dc;font-size:15px;position:relative}.rr li::before{content:"→";position:absolute;left:0;color:var(--acc)}
+.pnote{margin-top:18px;font-size:14px;color:var(--muted)}
