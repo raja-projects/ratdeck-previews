@@ -19,6 +19,11 @@ var pill=d.getElementById('pill');if(pill){
 var vis={},fieldFocus=false,kbOpen=false;
 function pillHide(){var block=fieldFocus||kbOpen||Object.keys(vis).some(function(k){return vis[k]});pill.classList.toggle('hide',!!block)}
 function setVis(k,v){vis[k]=v;pillHide()}
+// never sit over a button/CTA: hide while any CTA intersects the bar's resting band
+var ovSel='main a.btn,main button,main .ctas a,main .more,main summary,main input,main select,main textarea,.foot a.btn',ovT=0;
+function ovCheck(){ovT=0;var h=pill.offsetHeight,w=pill.offsetWidth,bt=innerHeight-22-h-8,bb=innerHeight-14,bl=(innerWidth-w)/2-8,br=bl+w+16,hit=false,els=d.querySelectorAll(ovSel);for(var i=0;i<els.length&&!hit;i++){var r=els[i].getBoundingClientRect();if(r.width&&r.bottom>bt&&r.top<bb&&r.right>bl&&r.left<br)hit=true}setVis('ov',hit)}
+function ovQ(){if(!ovT)ovT=requestAnimationFrame(ovCheck)}
+addEventListener('scroll',ovQ,{passive:true});addEventListener('resize',ovQ);setTimeout(ovCheck,50);
 var po=new IntersectionObserver(function(es){es.forEach(function(e){setVis(e.target.dataset.k||e.target.className,e.isIntersecting)})},{threshold:0});
 var hc=d.querySelector('.hero .ctas');if(hc){hc.dataset.k='hero';po.observe(hc)}
 [d.querySelector('.contact'),d.querySelector('.foot')].forEach(function(x){if(x)po.observe(x)});
