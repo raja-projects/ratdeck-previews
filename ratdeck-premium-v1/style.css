@@ -257,3 +257,12 @@ a.ti:hover .tt{color:var(--acc)}
 .rs.bad::before{background:#d6452b}.rs.mid::before{background:#e6a23c}
 .rr{list-style:none;margin-bottom:24px}.rr li{padding:8px 0 8px 22px;border-top:1px solid #e5e3dc;font-size:15px;position:relative}.rr li::before{content:"→";position:absolute;left:0;color:var(--acc)}
 .pnote{margin-top:18px;font-size:14px;color:var(--muted)}
+.ptagline{font-size:14.5px;line-height:1.4;color:var(--muted);margin:-4px 0 4px;min-height:2.8em}
+.price{margin-top:4px}
+.pnotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.pni{border-top:1.5px solid var(--ink);padding-top:16px;font-size:14.5px;line-height:1.45;color:var(--hd)}
+.pni p{color:var(--hd);font-weight:500}
+.pni a{display:inline-block;margin-top:8px;font-weight:600;font-size:14px;color:var(--acc);text-decoration:none}
+.pni a:hover{text-decoration:underline}
+@media (max-width:900px){.pnotes{grid-template-columns:1fr}.ptagline{min-height:0}}
+@media (min-width:561px) and (max-width:900px){.pnotes{grid-template-columns:1fr 1fr}}
