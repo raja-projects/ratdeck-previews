@@ -161,7 +161,7 @@ details p{padding:0 0 26px;color:var(--muted);max-width:65ch}
 @media (max-width:820px){.hcard{flex:none;width:100%}.hcard .badge{width:84px}.contact .hero-grid{align-items:flex-start}}
 @media (max-width:420px){.hcard{flex-direction:column;align-items:flex-start}}
 .hero .hcard .badge{align-self:flex-start;margin:0}@media (max-width:420px){.hcard{flex-direction:row;align-items:flex-start;gap:14px;padding:18px}.hero .hcard .badge{width:72px}}
-.band-img img{object-position:60% 50%}
+.band-img img{object-position:center}
 /* v4 split pattern */
 .split{display:grid;grid-template-columns:38fr 62fr;gap:clamp(32px,5vw,80px);align-items:start}
 .sh{position:sticky;top:100px}
