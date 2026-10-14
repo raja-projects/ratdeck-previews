@@ -283,3 +283,33 @@ html,body{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .qcard .st{color:var(--acc);font-size:14px;letter-spacing:2px}.qcard blockquote{margin:0;font-size:16px;line-height:1.5;color:var(--hd);font-weight:500}
 .qcard figcaption{font-size:13px;color:var(--muted);margin-top:auto}.qcard figcaption b{color:var(--hd);font-weight:600}.qcard figcaption a{color:var(--muted)}
 @media (max-width:1100px){.qcards{grid-template-columns:minmax(0,1fr)}}
+/* v15 mobile alignment */
+.hproof span{white-space:nowrap}
+@media (max-width:600px){
+ body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+ .pill{left:16px;right:16px;width:auto!important;bottom:calc(12px + env(safe-area-inset-bottom));transform:none;height:56px;padding:6px!important;gap:6px!important;justify-content:space-between;align-items:center;border-radius:999px;box-sizing:border-box;overflow:hidden;background:var(--ink)}
+ .pill.hide{transform:translateY(24px)}
+ .pill .pa{height:44px;padding:0 16px!important;align-items:center;justify-content:center;line-height:1}
+ .pill .pm{flex:1;min-width:0;white-space:nowrap}
+ .pill .pi,.pill .pi+.pi{flex:none;width:44px;padding:0!important;border:0;border-radius:50%;background:rgba(255,255,255,.1)}
+ section:not(.hero):not(.band):not(.marquee):not(.trust){padding:52px 0}
+ .contact{padding-bottom:96px!important}
+ .trust{padding:36px 0}
+ .eyebrow{margin-bottom:20px}
+ .sc .steps li:first-child,.whyl li:first-child{padding-top:0}
+ .whyl li,.steps li{flex-direction:column;gap:6px;padding:22px 0}
+ .whyl b,.steps b{padding-top:0}
+ .services .cb{padding:0 0 20px}
+ .services .cb li a:hover{padding-left:0}
+ .hproof{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;font-size:12.5px}
+ .hproof i{display:none}
+ .hproof span{background:#ece8df;border-radius:999px;padding:5px 11px;line-height:1.3;color:var(--hd)}
+ .aud .sec{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px}.aud .sec a{margin-right:0}
+ .midcta{margin-top:24px}
+ .midcta a{display:flex;justify-content:center;text-align:center;text-decoration:none;background:var(--ink);color:#fff;border-color:var(--ink);padding:14px 20px;line-height:1.35}
+ .midcta a:hover{background:#2a2a2e;color:#fff}
+ .techl{margin-top:20px;line-height:1.6}
+ .plan{padding:24px}
+ .plan .btn{width:100%;justify-content:center;text-align:center;margin-top:auto}
+ .fgrid{gap:28px}.fgrid>div{text-align:left;padding:0;margin:0}
+}
