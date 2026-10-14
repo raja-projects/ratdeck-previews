@@ -154,3 +154,12 @@
 .hvis{min-height:0;height:auto}
 @media (min-width:901px){.hero.ph .hsplit:has(.hr picture){grid-template-columns:46fr 54fr;align-items:center}}
 .pimg .hvis{max-width:980px;margin-inline:auto}
+
+/* fix5 */
+h1,h2,h3,.h2{text-wrap:balance}.lead,.qa p{text-wrap:pretty}
+@media (max-width:900px){.foot .fgrid a{display:flex!important}}
+.fstat{font-size:14px;margin-top:10px;min-height:1em}.fstat a{text-decoration:underline}
+.ftrap{position:absolute!important;left:-10000px!important;width:1px;height:1px;overflow:hidden}
+
+/* fix5b */
+@media (max-width:900px){.foot .fgrid>div:not(:first-child){display:grid;grid-template-columns:1fr 1fr;column-gap:16px}.foot .fgrid>div:not(:first-child) h4{grid-column:1/-1}}

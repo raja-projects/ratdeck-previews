@@ -333,3 +333,10 @@ html,body{overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .eyebrow,.tag,.hc-t,.hcard .hc-t,.qa-k,.yg,.rtag,.rsub,.fgrid h4,.mini span,.bc .k,.hours .hc-t,.opt .opt-l,.audit .tag,.aud .yg,.rform .hc-t{font-size:13px;letter-spacing:.12em}
 }
 
+
+/* fix5 */
+h1,h2,h3{text-wrap:balance}
+@media (max-width:900px){.foot .fgrid a{display:flex!important}}
+
+/* fix5b */
+@media (max-width:900px){.foot .fgrid>div:not(:first-child){display:grid;grid-template-columns:1fr 1fr;column-gap:16px}.foot .fgrid>div:not(:first-child) h4{grid-column:1/-1}}
