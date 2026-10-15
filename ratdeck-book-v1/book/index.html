@@ -18,13 +18,17 @@
 <style>
 .bk{min-width:0}.bk .rform{border:1.5px solid var(--ink);gap:18px}.bk .rform>*{min-width:0}@media(min-width:900px){#booking .fsplit{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}.mt input{width:auto!important}.bk h3{margin-top:6px}
 .bk h3{font-size:clamp(20px,2vw,26px)}.bk .tz{font-size:14px;color:var(--muted)}
-.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
-.days button,.slots button,.mt label{font:inherit;cursor:pointer;border:1.5px solid #d8d5cc;background:#f6f4ef;color:var(--hd);border-radius:14px;padding:10px 14px;font-weight:600;white-space:nowrap;min-height:46px}
-.days button{display:grid;line-height:1.2;text-align:center;min-width:68px}.days button small{font-weight:500;color:var(--muted);font-size:12px}
+.days,.slots,.mt{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.slots{grid-template-columns:repeat(3,minmax(0,1fr))}.mt{grid-template-columns:repeat(3,minmax(0,1fr));border:0;padding:0;margin:0}.mt legend{grid-column:1/-1}
+.days button,.slots button,.mt span,.dnav button{font:inherit;cursor:pointer;border:1.5px solid #d8d5cc;background:#f6f4ef;color:var(--hd);border-radius:14px;font-weight:600;white-space:nowrap;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-width:0;width:100%;overflow:hidden;text-overflow:ellipsis}
+.days button{height:64px;line-height:1.15;font-size:15px}.days button small{font-weight:500;color:var(--muted);font-size:12px}
+.slots button{height:52px;font-size:15px}.mt span{height:52px;font-size:14px;padding:0 6px}
 .days button[aria-pressed=true],.slots button[aria-pressed=true],.mt input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink)}
 .days button[aria-pressed=true] small{color:#ddd}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}.slots .lb{grid-column:1/-1;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
-.mt{display:flex;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}.mt label{padding:0;border:0;background:none}.mt input{position:absolute;opacity:0}.mt span{display:block;border:1.5px solid #d8d5cc;background:#f6f4ef;border-radius:14px;padding:10px 16px}.mt input:focus-visible+span{outline:2px solid var(--acc)}
+.slots .lb{grid-column:1/-1;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:4px 0 0}
+.dnav{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:center}.dnav button{height:44px;font-size:18px}.dnav button:disabled{opacity:.35;cursor:default}.dnav span{text-align:center;font-size:14px;font-weight:600;color:var(--hd)}
+.mt label{padding:0;margin:0;display:block}.mt input{position:absolute;opacity:0;width:auto!important}.mt input:focus-visible+span{outline:2px solid var(--acc)}
+@media(min-width:1100px){.slots{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .pick{background:#ece8df;border-radius:14px;padding:12px 16px;font-weight:600;color:var(--hd)}
 .bsum{display:grid;gap:10px}.bsum li{list-style:none;display:flex;gap:10px}.bsum li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc);margin-top:10px;flex:none}
 .bk-ok{display:none}.bk.done form{display:none}.bk.done .bk-ok{display:block}
@@ -60,6 +64,7 @@
 <input type="hidden" name="wpforms[id]" value="19500"><input type="hidden" name="wpforms[post_id]" value="7686">
 <input type="hidden" data-svc="1" value="Book a call">
 <div><h3>1. Pick a day</h3><p class="tz" id="tzl">Times shown in your time zone.</p></div>
+<div class="dnav"><button type="button" id="dprev" aria-label="Earlier days">&lsaquo;</button><span id="drng"></span><button type="button" id="dnext" aria-label="Later days">&rsaquo;</button></div>
 <div class="days" id="days" role="group" aria-label="Days"></div>
 <div><h3>2. Pick a time</h3></div>
 <div class="slots" id="slots" role="group" aria-label="Times"></div>
@@ -68,15 +73,16 @@
 <div class="fr2"><label>Name *<input data-wf="1" type="text" required autocomplete="name" placeholder="Your name"></label><label>Email *<input data-wf="2" type="email" required autocomplete="email" placeholder="you@example.com"></label></div>
 <div class="fr2"><label>Phone<input data-wf="3" type="tel" autocomplete="tel" placeholder="+1 …"></label><label>Website<input data-wf="4" data-nosite="No website yet" type="text" autocomplete="url" placeholder="yourwebsite.com"></label></div>
 <fieldset class="mt"><legend class="hc-t" style="margin-bottom:8px">How should we meet?</legend>
-<label><input type="radio" name="mt" value="Google Meet" checked><span>Google Meet</span></label><label><input type="radio" name="mt" value="Zoom"><span>Zoom</span></label><label><input type="radio" name="mt" value="Microsoft Teams"><span>Microsoft Teams</span></label></fieldset>
+<label><input type="radio" name="mt" value="Google Meet" data-k="meet" checked><span>Google Meet</span></label><label><input type="radio" name="mt" value="Zoom" data-k="zoom"><span>Zoom</span></label><label><input type="radio" name="mt" value="Microsoft Teams" data-k="teams"><span>Teams</span></label></fieldset>
 <label>Your own booking link (optional)<input id="own" type="url" inputmode="url" placeholder="Your Calendly or other booking page"></label>
 <label>Anything we should know? (optional)<textarea id="note" rows="3" placeholder="Your business and what you'd like help with"></textarea></label>
 <textarea data-wf="5" id="msg" hidden></textarea>
 <div class="ftrap" aria-hidden="true"><label>Leave this field empty<input type="text" name="ratdeck_company_url" value="" tabindex="-1" autocomplete="off"></label></div>
 <p class="small fpriv" style="margin-top:0">We&rsquo;ll use these details to arrange your call. See our <a href="/privacy-policy/">Privacy Policy</a>.</p>
-<button class="btn btn-accent" type="submit">Request this time</button>
+<button class="btn btn-accent" type="submit" id="bbtn">Book this time</button>
 <p class="fstat" role="status" aria-live="polite"></p>
 </form>
+<div class="bk-ok rform" id="bok" role="status" aria-live="polite"><p class="hc-t">You're booked</p><h3 id="okw"></h3><p id="okt"></p></div>
 </div>
 </div><div><div class="hours rv"><span class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><p class="hc-t">What to expect</p><b>40 minutes with the RATdeck Team</b><ul class="gl-l bsum"><li>We look at how AI tools and Google describe your business today</li><li>You get the clearest next steps in plain English</li><li>No pressure. A written proposal only if you ask for one</li><li>Can't find a time? Email <a href="mailto:info@ratdeck.com">info@ratdeck.com</a></li></ul></div></div></div></section>
 
@@ -107,28 +113,47 @@
 <script src="../main.js?v=fc72fd30"></script>
 <script src="../forms.js?v=a9117ac6"></script>
 <script>(function(){
-var d=document,tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'America/New_York',OFF=330*60000,DAY=864e5,LEAD=4*36e5,N=21;
-var W=[{p:1,m:[1380,1430]},{p:0,m:[1320]}];/* studio wall-clock starts, 40 min + 10 min buffer */
+var d=document,API='https://oopsmango.com/api/book/',tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'America/New_York',OFF=330*60000,DAY=864e5,LEAD=4*36e5,PG=8;
+var live=false,days=[],page=0,sel=null,dEl=d.getElementById('days'),sEl=d.getElementById('slots'),pk=d.getElementById('pick'),F=d.getElementById('bform');
 function f(o,x){return new Intl.DateTimeFormat('en-US',Object.assign({timeZone:tz},o)).format(x)}
-var zn=f({timeZoneName:'long'},new Date()).split(', ').pop();
-d.getElementById('tzl').textContent='Times shown in your time zone: '+zn+'.';
-var now=Date.now(),base=Math.floor((now+OFF)/DAY)*DAY,days=[];
-for(var i=0;i<=N;i++){var dd=base+i*DAY,wd=new Date(dd).getUTCDay();if(wd===0)continue;var s=[];
- W.forEach(function(w){w.m.forEach(function(m){var t=dd+m*60000-OFF;if(t>now+LEAD)s.push({t:t,p:w.p})})});
- if(s.length)days.push(s)}
-var dEl=d.getElementById('days'),sEl=d.getElementById('slots'),pk=d.getElementById('pick'),sel=null;
+var LONG={weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'};
+function local(){var now=Date.now(),base=Math.floor((now+OFF)/DAY)*DAY,out=[];
+ for(var i=0;i<=21;i++){var dd=base+i*DAY;if(new Date(dd).getUTCDay()===0)continue;var p=[],m=[];
+  [[1380,p],[1430,p],[1320,m]].forEach(function(w){var t=dd+w[0]*60000-OFF;if(t>now+LEAD)w[1].push({start:new Date(t).toISOString(),label:f({hour:'numeric',minute:'2-digit'},new Date(t))})});
+  if(p.length||m.length)out.push({preferred:p,more:m,first:(p[0]||m[0]).start})}return out}
+function norm(api){return api.days.map(function(x){return{preferred:x.preferred||[],more:x.more||[],first:((x.preferred||[])[0]||(x.more||[])[0]||{}).start}}).filter(function(x){return x.first})}
 function upd(){var mt=(d.querySelector('[name=mt]:checked')||{}).value,own=d.getElementById('own').value.trim(),n=d.getElementById('note').value.trim();
- d.getElementById('msg').value=sel?['Booking request: '+f({weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'},new Date(sel))+' ('+new Date(sel).toISOString()+', 40 min)','Meeting: '+mt,own?'Client booking link: '+own:'',n?'Note: '+n:''].filter(Boolean).join('\n'):''}
-function showDay(k){[].forEach.call(dEl.children,function(b,j){b.setAttribute('aria-pressed',j===k)});sEl.innerHTML='';
- [[1,'Best times'],[0,'More times']].forEach(function(g){var l=days[k].filter(function(s){return s.p===g[0]}).sort(function(a,b){return a.t-b.t});if(!l.length)return;
+ d.getElementById('msg').value=sel?['Booking request: '+f(LONG,new Date(sel))+' ('+sel+', 40 min)','Meeting: '+mt,own?'Client booking link: '+own:'',n?'Note: '+n:''].filter(Boolean).join('\n'):''}
+function showDay(k){[].forEach.call(dEl.children,function(b){b.setAttribute('aria-pressed',b.dataset.k==k)});sEl.innerHTML='';
+ [['preferred','Best times'],['more','More times']].forEach(function(g){var l=days[k][g[0]];if(!l.length)return;
   var h=d.createElement('p');h.className='lb';h.textContent=g[1];sEl.appendChild(h);
-  l.forEach(function(s){var b=d.createElement('button');b.type='button';b.textContent=f({hour:'numeric',minute:'2-digit'},new Date(s.t));b.setAttribute('aria-pressed',s.t===sel);
-   b.onclick=function(){sel=s.t;[].forEach.call(sEl.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b)});pk.textContent='Your pick: '+f({weekday:'long',month:'long',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'},new Date(sel))+' (40 min)';upd()};sEl.appendChild(b)})})}
-days.forEach(function(s,k){var b=d.createElement('button');b.type='button';var x=new Date(s[0].t);b.innerHTML='<small>'+f({weekday:'short'},x)+'</small>'+f({month:'short',day:'numeric'},x);b.onclick=function(){showDay(k)};dEl.appendChild(b)});
-if(days.length)showDay(0);
-d.getElementById('bform').addEventListener('input',upd);d.getElementById('bform').addEventListener('change',upd);
-d.getElementById('bform').addEventListener('submit',function(e){upd();if(!sel){e.stopImmediatePropagation();e.preventDefault();pk.textContent='Please pick a time first.';pk.scrollIntoView({block:'center',behavior:'smooth'})}},true);
-/* close the phone keyboard when tapping outside a field */
+  l.forEach(function(s){var b=d.createElement('button');b.type='button';b.textContent=s.label;b.setAttribute('aria-pressed',s.start===sel);
+   b.onclick=function(){sel=s.start;[].forEach.call(sEl.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b)});pk.textContent='Your pick: '+f(LONG,new Date(sel))+' (40 min)';upd()};sEl.appendChild(b)})})}
+function drawDays(){dEl.innerHTML='';var a=page*PG,l=days.slice(a,a+PG);
+ l.forEach(function(s,j){var b=d.createElement('button');b.type='button';b.dataset.k=a+j;var x=new Date(s.first);b.innerHTML='<small>'+f({weekday:'short'},x)+'</small>'+f({month:'short',day:'numeric'},x);b.onclick=function(){showDay(a+j)};dEl.appendChild(b)});
+ d.getElementById('dprev').disabled=page===0;d.getElementById('dnext').disabled=a+PG>=days.length;
+ d.getElementById('drng').textContent=l.length?f({month:'short',day:'numeric'},new Date(l[0].first))+' – '+f({month:'short',day:'numeric'},new Date(l[l.length-1].first)):'No open days';
+ if(l.length)showDay(a);else sEl.innerHTML=''}
+d.getElementById('dprev').onclick=function(){page--;drawDays()};d.getElementById('dnext').onclick=function(){page++;drawDays()};
+function load(){return fetch(API+'slots/?tz='+encodeURIComponent(tz),{headers:{Accept:'application/json'}}).then(function(r){return r.json()}).then(function(j){
+  if(!j||!j.ok||j.mode!=='live')throw 0;live=true;days=norm(j);if(j.timeZoneLabel)d.getElementById('tzl').textContent='Times shown in your time zone: '+j.timeZoneLabel+'.'}).catch(function(){live=false;days=local()}).then(function(){page=0;drawDays()})}
+d.getElementById('tzl').textContent='Times shown in your time zone: '+f({timeZoneName:'long'},new Date()).split(', ').pop()+'.';
+load();
+F.addEventListener('input',upd);F.addEventListener('change',upd);
+F.addEventListener('submit',function(e){upd();var st=F.querySelector('.fstat'),btn=d.getElementById('bbtn');
+ if(!sel){e.stopImmediatePropagation();e.preventDefault();pk.textContent='Please pick a time first.';pk.scrollIntoView({block:'center',behavior:'smooth'});return}
+ if(!live)return;/* lead-form fallback: forms.js sends it */
+ e.stopImmediatePropagation();e.preventDefault();if(!F.checkValidity()){F.reportValidity();return}
+ var v=function(k){return(F.querySelector('[data-wf="'+k+'"]')||{}).value||''};
+ btn.disabled=true;st.textContent='Booking…';
+ fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({brand:'ratdeck',start:sel,timeZone:tz,name:v(1).trim(),email:v(2).trim(),business:'',website:v(4).trim(),meeting:d.querySelector('[name=mt]:checked').dataset.k,ownLink:d.getElementById('own').value.trim(),note:[v(3)?'Phone: '+v(3):'',d.getElementById('note').value.trim()].filter(Boolean).join('\n'),_honey:(F.querySelector('[name=ratdeck_company_url]')||{}).value||''})})
+ .then(function(r){return r.json().then(function(j){return{s:r.status,j:j}})}).then(function(x){btn.disabled=false;
+  if(x.j&&x.j.ok&&x.j.status==='booked'){d.getElementById('okw').textContent=x.j.whenLabel||'';d.getElementById('okt').textContent=x.j.meeting==='meet'?'A calendar invite with the Google Meet link is on its way to '+x.j.email+'.':'A calendar invite is on its way to '+x.j.email+'. We will email your '+x.j.meetingLabel+' link.';d.getElementById('bk').classList.add('done');window.__rdBooking=x.j;if(window.gtag)gtag('event','generate_lead',{form:'book'});d.getElementById('bk').scrollIntoView({block:'center'});return}
+  if(x.s===409){st.textContent='That time was just taken. Please pick another.';sel=null;pk.textContent='No time picked yet.';load();return}
+  if(x.s===400){st.textContent='Please check your name, email and links.';return}
+  throw 0})
+ .catch(function(){btn.disabled=false;live=false;st.textContent='';F.requestSubmit()});
+},true);
 d.addEventListener('pointerdown',function(e){var a=d.activeElement;if(a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)&&!e.target.closest('input,textarea,select,label'))a.blur()},{passive:true});
 })();</script>
 </body>
