@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dewcue · interactive demo</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/logo/favicon.ico">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="browser frame" id="browser">
+    <div class="browser-top">
+      <div class="browser-tabs">
+        <div class="traffic"><span></span><span></span><span></span></div>
+        <div class="btab is-active"><span class="fav" style="background:#93C5FD"></span>Q4 roadmap – Notes</div>
+        <div class="btab"><span class="fav" style="background:#FCA5A5"></span>Inbox (12) – Mail</div>
+        <div class="btab hide-sm"><span class="fav"></span>Design system docs</div>
+      </div>
+      <div class="browser-bar">
+        <span class="icon-btn sm"><svg class="i"><use href="assets/icons.svg#arrow-left"/></svg></span>
+        <span class="icon-btn sm" style="color:var(--ink-4)"><svg class="i"><use href="assets/icons.svg#arrow-right"/></svg></span>
+        <span class="icon-btn sm"><svg class="i"><use href="assets/icons.svg#rotate"/></svg></span>
+        <div class="omnibox"><svg class="i i-sm"><use href="assets/icons.svg#lock"/></svg>notes.example.com/q4-roadmap</div>
+        <button class="ext-icon ext-btn" id="extBtn" title="Dewcue" aria-label="Open Dewcue"><img src="assets/logo/symbol.svg" alt=""><span class="pip" id="pip" hidden>0</span><span class="ext-hint" id="extHint">Click to open Dewcue</span></button>
+        <span class="ext-icon puzzle"><svg class="i"><use href="assets/icons.svg#grid"/></svg></span>
+        <span class="avatar"></span>
+      </div>
+    </div>
+    <div class="viewport">
+      <div class="page" id="page">
+        <div class="site">
+          <div class="site-nav"><span class="skel" style="width:110px;height:18px;background:#DDE3EA"></span><span class="skel" style="width:60px;height:10px"></span><span class="skel" style="width:70px;height:10px"></span><span class="skel" style="width:54px;height:10px"></span><span class="spacer"></span><span class="skel" style="width:90px;height:30px;border-radius:999px"></span></div>
+          <div class="site-main">
+            <div>
+              <div class="skel" style="width:120px;height:12px;margin-bottom:22px"></div>
+              <div class="skel" style="width:80%;height:34px;margin-bottom:12px;background:#E3E8EE"></div>
+              <div class="skel" style="width:60%;height:34px;margin-bottom:34px;background:#E3E8EE"></div>
+              <div class="skel l" style="width:96%"></div><div class="skel l" style="width:92%"></div><div class="skel l" style="width:98%"></div><div class="skel l" style="width:74%"></div><div class="gap"></div><div class="skel l" style="width:94%"></div><div class="skel l" style="width:97%"></div><div class="skel l" style="width:88%"></div><div class="skel l" style="width:60%"></div><div class="gap"></div><div class="skel l" style="width:95%"></div><div class="skel l" style="width:82%"></div>
+              <div class="skel" style="width:100%;height:220px;margin-top:10px;border-radius:14px;background:#EEF2F7"></div>
+            </div>
+            <div class="side-col">
+              <div class="skel" style="width:60%;height:14px;margin-bottom:18px;background:#E3E8EE"></div>
+              <div class="skel l" style="width:80%"></div><div class="skel l" style="width:64%"></div><div class="skel l" style="width:72%"></div><div class="skel l" style="width:50%"></div><div class="skel l" style="width:76%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cards" id="cards" aria-live="polite"></div>
+      </div>
+      <aside class="sidepanel" id="sidepanel" aria-label="Dewcue side panel">
+        <div class="sp-chrome"><img src="assets/logo/symbol.svg" alt=""><span>Dewcue</span><span class="spacer"></span><button class="icon-btn sm" id="spClose" title="Close side panel"><svg class="i"><use href="assets/icons.svg#x"/></svg></button></div>
+        <div class="sp-host" id="spHost"></div>
+      </aside>
+    </div>
+    <div class="popup-host" id="popupHost"><div class="popup app" id="app"></div></div>
+  </div>
+
+  <div class="demo-panel" id="demoPanel">
+    <button class="dp-head" id="dpToggle"><svg class="i i-sm"><use href="assets/icons.svg#sparkle"/></svg>Demo controls<svg class="i i-sm chev"><use href="assets/icons.svg#chevron-down"/></svg></button>
+    <div class="dp-body">
+      <button class="dp-btn" data-demo="fire"><svg class="i i-sm"><use href="assets/icons.svg#cards"/></svg>Fire sample reminders</button>
+      <button class="dp-btn" data-demo="away"><svg class="i i-sm"><use href="assets/icons.svg#inbox"/></svg>Show “While you were away”</button>
+      <button class="dp-btn" data-demo="morning"><svg class="i i-sm"><use href="assets/icons.svg#sunrise"/></svg>Show “Good morning”</button>
+      <button class="dp-btn danger" data-demo="reset"><svg class="i i-sm"><use href="assets/icons.svg#rotate"/></svg>Reset demo</button>
+      <p class="dp-note">Prototype. Reminders are saved in this browser only.</p>
+    </div>
+  </div>
+  <div class="toast-global" id="gtoast" role="status"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
