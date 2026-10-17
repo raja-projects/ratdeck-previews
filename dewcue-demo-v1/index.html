@@ -67,8 +67,9 @@ Attached is the Q4 proposal we discussed. Happy to walk through it on a quick ca
 Thanks!</textarea>
             <div class="cw-foot"><button class="cw-send" id="cwSend">Send</button></div>
           </div>
-          <div class="sent-row" id="sentRow" hidden><div class="sent-bar">Message sent<button id="undoSend">Undo</button><button id="viewMsg">View message</button></div><div class="fu-chip" id="fuChip"></div></div>
+          <div class="sent-row" id="sentRow" hidden><div class="sent-bar">Message sent<button id="undoSend">Undo</button><button id="viewMsg">View message</button></div></div>
         </div>
+        <div class="fu-chip" id="fuChip" role="status" aria-label="Dewcue follow-up offer"></div>
         <div class="cards" id="cards" aria-live="polite"></div>
       </div>
       <aside class="sidepanel" id="sidepanel" aria-label="Dewcue side panel">
@@ -79,9 +80,10 @@ Thanks!</textarea>
     <div class="popup-host" id="popupHost"><div class="popup app" id="app"></div></div>
   </div>
 
-  <div class="demo-panel" id="demoPanel">
-    <button class="dp-head" id="dpToggle"><svg class="i i-sm"><use href="assets/icons.svg#sparkle"/></svg>Demo controls<svg class="i i-sm chev"><use href="assets/icons.svg#chevron-down"/></svg></button>
+  <div class="demo-panel is-collapsed" id="demoPanel">
+    <button class="dp-head" id="dpToggle"><svg class="i i-sm"><use href="assets/icons.svg#sparkle"/></svg><span class="dp-full">Demo controls</span><span class="dp-short">Demo</span><svg class="i i-sm chev"><use href="assets/icons.svg#chevron-down"/></svg></button>
     <div class="dp-body">
+      <p class="dp-top">Only in this demo — not part of Dewcue.</p>
       <button class="dp-btn" data-demo="fire"><svg class="i i-sm"><use href="assets/icons.svg#cards"/></svg>Fire sample reminders</button>
       <button class="dp-btn" data-demo="away"><svg class="i i-sm"><use href="assets/icons.svg#inbox"/></svg>Show “While you were away”</button>
       <button class="dp-btn" data-demo="morning"><svg class="i i-sm"><use href="assets/icons.svg#sunrise"/></svg>Show “Good morning”</button>

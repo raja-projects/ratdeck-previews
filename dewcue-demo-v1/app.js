@@ -637,6 +637,7 @@
   $('#demoPanel').addEventListener('click', function (e) {
     var b = e.target.closest('[data-demo]'); if (!b) return;
     var k = b.dataset.demo;
+    $('#demoPanel').classList.add('is-collapsed'); // auto-collapse after choosing an action
     if (k === 'fire') {
       if (S.muted) { S.muted = false; save(); if (ui.open || S.panel) render(); }
       var n = Date.now();
@@ -659,7 +660,7 @@
 
   /* ---------------- email follow-up (generic webmail mock) ---------------- */
   var fu = { days: '3', menu: false, timer: null, state: null };
-  var FU_OPTS = [['demo', '10 sec (demo)'], ['1', '1 day'], ['2', '2 days'], ['3', '3 days'], ['7', '7 days']];
+  var FU_OPTS = [['demo', 'In 10 sec'], ['1', '1 day'], ['2', '2 days'], ['3', '3 days'], ['7', '7 days']];
   function fuLabel(k) { return k === 'demo' ? '10 sec' : k + (k === '1' ? ' day' : ' days'); }
   function showSite(which) {
     document.querySelectorAll('.btab[data-site]').forEach(function (b) { b.classList.toggle('is-active', b.dataset.site === which); });
@@ -675,7 +676,7 @@
     if (fu.state === 'offer') {
       c.innerHTML = logo + 'Follow up in <button class="fu-days" data-fu="days" aria-haspopup="menu">' + fuLabel(fu.days) + ic('chevron-down') + '</button>?' +
         '<button class="fu-btn ok" data-fu="yes" title="Remind me to follow up">' + ic('check') + '</button><button class="fu-btn" data-fu="no" title="No thanks">' + ic('x') + '</button>' +
-        (fu.menu ? '<div class="menu" role="menu">' + FU_OPTS.map(function (o) { return '<button class="menu-item" style="width:100%" data-fudays="' + o[0] + '">' + ic('clock') + o[1] + (fu.days === o[0] ? '<span class="hint">' + ic('check') + '</span>' : '') + '</button>'; }).join('') + '</div>' : '');
+        (fu.menu ? '<div class="menu" role="menu">' + FU_OPTS.map(function (o) { return '<button class="menu-item" style="width:100%" data-fudays="' + o[0] + '">' + ic('clock') + o[1] + (o[0] === 'demo' ? ' <span class="muted-dot">·</span> <span class="demo-tag">demo</span>' : '') + (fu.days === o[0] ? '<span class="hint">' + ic('check') + '</span>' : '') + '</button>'; }).join('') + '</div>' : '');
     } else if (fu.state === 'saved') {
       c.classList.add('saved'); c.innerHTML = logo + ic('check') + 'Saved · follow up ' + fu.when;
     } else if (fu.state === 'ask') {
