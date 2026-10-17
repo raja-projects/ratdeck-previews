@@ -110,14 +110,14 @@ button.chip:active { transform: scale(.97); }
 .log .lt { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
 
 /* Timer */
-.timer-face { text-align: center; padding: 26px 0 8px; }
-.ring { width: 210px; height: 210px; margin: 0 auto; position: relative; }
+.timer-face { text-align: center; padding: 12px 0 8px; }
+.ring { width: 180px; height: 180px; margin: 0 auto; position: relative; }
 .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
 .ring circle { fill: none; stroke-width: 8; }
 .ring .trk { stroke: var(--surface-3); } .ring .bar { stroke: var(--c-timer); stroke-linecap: round; transition: stroke-dashoffset .3s linear; }
 .ring.is-break .bar { stroke: var(--c-break); }
 .ring .digits { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.ring .digits b { font-family: var(--font-brand); font-size: 44px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.ring .digits b { font-family: var(--font-brand); font-size: 40px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .ring .digits span { font-size: 12px; color: var(--ink-3); }
 .timer-ctrl { display: flex; gap: 8px; justify-content: center; margin-top: 18px; }
 .presets { display: flex; gap: 6px; justify-content: center; margin-top: 14px; }
@@ -175,7 +175,7 @@ button.chip:active { transform: scale(.97); }
 .dp-head { width: 100%; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; font-size: 12.5px; font-weight: 600; color: #fff; }
 .dp-head .chev { margin-left: auto; transition: transform .2s; }
 .demo-panel.is-collapsed .chev { transform: rotate(180deg); }
-.dp-body { padding: 0 8px 10px; display: flex; flex-direction: column; gap: 2px; max-height: 260px; transition: max-height .22s ease, padding .22s; }
+.dp-body { padding: 0 8px 10px; display: flex; flex-direction: column; gap: 2px; max-height: 300px; transition: max-height .22s ease, padding .22s; }
 .demo-panel.is-collapsed .dp-body { max-height: 0; padding-bottom: 0; overflow: hidden; }
 .dp-btn { display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 8px; border-radius: 9px; font-size: 12.5px; color: #E2E8F0; text-align: left; transition: background .15s; }
 .dp-btn:hover { background: rgba(255,255,255,.08); }
@@ -184,3 +184,10 @@ button.chip:active { transform: scale(.97); }
 .toast-global { position: fixed; left: 50%; top: 24px; transform: translate(-50%, -10px); background: var(--navy); color: #fff; font-size: 12.5px; font-weight: 500; padding: 9px 14px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity .18s, transform .2s; z-index: 60; box-shadow: var(--shadow-pop); }
 .toast-global.is-on { opacity: 1; transform: translate(-50%, 0); }
 @media (max-height: 700px) { .stage { padding: 8px; } }
+
+.ring::before { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: color-mix(in srgb, var(--c-timer) 6%, white); }
+.ring.is-break::before { background: color-mix(in srgb, var(--c-break) 8%, white); }
+.mrow .ichip { margin-right: 2px; } .mrow { height: 44px; }
+.cue.t-streak .actions { flex-wrap: wrap; }
+.popup-header { background: linear-gradient(#fff, #fff); }
+.tabs { height: 38px; }

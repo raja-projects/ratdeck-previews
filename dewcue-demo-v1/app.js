@@ -226,7 +226,7 @@
 
   var CHIPS = [['water', 'droplet', 'Water every hour', 'drink water every hour'], ['medicine', 'pill', 'Vitamin D 9am daily', 'take vitamin D every day at 9am'], ['bill', 'receipt', 'Rent on 5th monthly', 'pay rent on 5th every month'], ['email', 'mail', 'Reply to Sam tomorrow 4pm', 'reply to Sam tomorrow 4pm']];
   function todayScreen() {
-    return '<div class="popup-body screen"><div class="compose">' +
+    return '<div class="popup-body screen"><div class="band" id="band" style="margin-bottom:12px"></div><div class="compose">' +
       (ui.searchOn ? '<div class="smart-input">' + ic('search', 'lead') + '<input id="searchIn" placeholder="Search reminders" value="' + esc(ui.search) + '" autocomplete="off"></div>' : '') +
       '<div class="smart-input" id="si">' + ic('plus', 'lead') + '<input id="smart" placeholder="Remind me to… (e.g. pay rent on 5th every month)" autocomplete="off" spellcheck="false" aria-label="New reminder"><span class="kbd">Enter ↵</span></div>' +
       '<div class="preview" id="preview"></div>' +
@@ -236,7 +236,7 @@
   function updatePreview() {
     var p = $('#preview', app), tr = $('#try', app), si = $('#si', app); if (!p) return;
     var v = ui.input.trim(); si.classList.toggle('has-text', !!v);
-    if (!v) { tr.style.display = ''; p.innerHTML = CHIPS.map(function (c) { return '<button class="chip t-' + c[0] + '" data-fill="' + c[3] + '">' + ic(c[1]) + c[2] + '</button>'; }).join(''); return; }
+    if (!v) { tr.style.display = ''; p.innerHTML = CHIPS.slice(0, 3).map(function (c) { return '<button class="chip t-' + c[0] + '" data-fill="' + c[3] + '">' + ic(c[1]) + c[2] + '</button>'; }).join(''); return; }
     tr.style.display = 'none';
     var r = parse(v), T = TYPES[r.type];
     p.innerHTML = '<span class="chip is-type t-' + r.type + '"><span class="dot"></span>' + T.label + '</span>' +
@@ -253,10 +253,22 @@
       (r.repeat ? ' <span class="sep">·</span> ' + ic('repeat') + ' ' + esc(r.repeat.label) : '') + (r.snoozed && !r.done ? ' <span class="sep">·</span> Snoozed' : '') + '</div></div>' +
       '<span class="time' + (over ? ' is-overdue' : '') + '">' + time + '</span><button class="del" data-act="delete" title="Delete">' + ic('x') + '</button></div>';
   }
+  function greet() { var h = new Date().getHours(); return h < 5 ? ['Good night', 'good-night', 't-night'] : h < 12 ? ['Good morning', 'good-morning', 't-morning'] : h < 17 ? ['Good afternoon', 'good-morning', 't-morning'] : h < 21 ? ['Good evening', 'good-night', 't-night'] : ['Good night', 'good-night', 't-night']; }
+  function updateBand(L) {
+    var b = $('#band', app); if (!b) return;
+    var g = greet(), done = L.today.filter(function (r) { return r.done; }).length, total = L.today.length + L.overdue.length, left = total - done;
+    var frac = total ? done / total : 0, C = 125.7;
+    var sub = !total ? 'A clear day. Add something below.' : left ? left + ' to go · ' + done + ' done' + (L.overdue.length ? ' · ' + L.overdue.length + ' overdue' : '') : 'All done for today. Lovely.';
+    var html = '<span class="band-mascot"><img src="' + mascot(g[1]) + '" alt=""></span><div class="band-text"><div class="band-title">' + g[0] + '</div><div class="band-sub">' + sub + '</div></div>' +
+      '<div class="done-ring" title="' + done + ' of ' + total + ' done today"><svg viewBox="0 0 48 48"><circle class="trk" cx="24" cy="24" r="20"/><circle class="bar" cx="24" cy="24" r="20" stroke-dasharray="' + C + '" stroke-dashoffset="' + (C * (1 - frac)).toFixed(1) + '"/></svg><b>' + done + '/' + total + '</b></div>';
+    if (b.dataset.h !== html) { b.dataset.h = html; b.innerHTML = html; }
+    b.className = 'band ' + g[2];
+  }
   function updateList() {
     var L = lists(), tabs = $('#tabs', app), list = $('#list', app);
     updatePip();
     if (!tabs) return;
+    updateBand(L);
     var todayOpen = L.today.filter(function (r) { return !r.done; }).length;
     tabs.innerHTML = '<button class="tab' + (S.tab === 'today' ? ' is-active' : '') + '" data-tab="today">Today <span class="count">' + todayOpen + '</span></button>' +
       '<button class="tab' + (S.tab === 'upcoming' ? ' is-active' : '') + '" data-tab="upcoming">Upcoming <span class="count">' + L.upcoming.length + '</span></button>' +
@@ -294,16 +306,16 @@
     if (ui.bucket) {
       var b = S.buckets.filter(function (x) { return x.id === ui.bucket; })[0];
       return '<div class="screen"><div class="pad row gap-8" style="height:44px"><button class="icon-btn sm" data-act="bucket-back" title="Back">' + ic('arrow-left') + '</button>' +
-        '<span class="screen-title" style="font-size:15px">' + esc(b.name) + '</span><span class="spacer"></span><span class="badge-local">' + ic('laptop') + 'This computer</span></div>' +
+        '<span class="ichip" style="--c:' + b.color + '">' + ic('folder') + '</span><span class="screen-title" style="font-size:15px">' + esc(b.name) + '</span><span class="spacer"></span><span class="badge-local">' + ic('laptop') + 'This computer</span></div>' +
         '<div class="pad" style="padding-top:6px"><div class="segmented" style="height:36px"><span class="is-active">Updates</span><span>Tasks</span><span>Saved</span><span>Notes</span></div>' +
         '<div class="smart-input" style="margin-top:12px">' + ic('note', 'lead') + '<input id="logIn" placeholder="Add an update…" autocomplete="off"><span class="kbd">↵</span></div></div>' +
         '<div class="scroll"><ul class="log" style="--bc:' + b.color + '">' + b.log.slice().sort(function (a, c) { return c.t - a.t; }).map(function (l) { return '<li><div class="lw">' + dayLabel(l.t) + ' · ' + clock(l.t) + '</div><div class="lt">' + esc(l.text) + '</div></li>'; }).join('') + '</ul></div></div>';
     }
     return '<div class="screen"><div class="pad row" style="height:48px"><span class="screen-title">Buckets</span><span class="muted" style="font-size:12px;margin-left:8px">3 of 3 · Free</span><span class="spacer"></span><button class="btn btn-secondary btn-sm" data-act="new-bucket">' + ic('plus', 'i-sm') + 'New <span class="badge-premium">' + ic('star') + 'Premium</span></button></div>' +
-      '<div class="scroll">' + S.buckets.map(function (b) {
+      '<div class="scroll"><div class="band" style="margin-bottom:12px"><span class="band-mascot"><img src="' + mascot('saved-to-bucket') + '" alt=""></span><div class="band-text"><div class="band-title">Your buckets</div><div class="band-sub">Client, home and project updates in one calm log</div></div></div>' + S.buckets.map(function (b) {
         var last = Math.max.apply(null, b.log.map(function (l) { return l.t; }));
-        return '<div class="bucket" data-bucket="' + b.id + '"><span class="sw" style="background:' + b.color + '">' + b.name[0] + '</span><div><div class="bn">' + esc(b.name) + '</div><div class="bm">' + b.kind + ' · updated ' + ago(last) + ' · ' + b.log.length + ' updates</div></div>' + ic('chevron-right', 'chev') + '</div>';
-      }).join('') + '<p class="muted" style="font-size:12px;text-align:center;margin-top:14px">Buckets keep client, home and project updates in one calm log.</p></div></div>';
+        return '<div class="bucket" data-bucket="' + b.id + '"><span class="sw" style="background:color-mix(in srgb,' + b.color + ' 13%,white);color:' + b.color + '">' + b.name[0] + '</span><div><div class="bn">' + esc(b.name) + '</div><div class="bm">' + b.kind + ' · updated ' + ago(last) + ' · ' + b.log.length + ' updates</div></div>' + ic('chevron-right', 'chev') + '</div>';
+      }).join('') + '</div></div>';
   }
 
   /* ---------------- Timer ---------------- */
@@ -311,7 +323,7 @@
     var seg = [['stopwatch', 'Stopwatch'], ['countdown', 'Countdown'], ['pomo', 'Pomodoro']];
     var presets = timer.mode === 'countdown' ? '<div class="presets">' + [1, 5, 10, 25].map(function (m) { return '<button class="chip' + (timer.cdLen === m * MIN ? ' is-on' : '') + '" data-cd="' + m + '">' + m + ' min</button>'; }).join('') + '</div>'
       : timer.mode === 'pomo' ? '<div class="presets"><span class="chip">' + ic('timer') + '25 / 5 min</span><span class="chip is-ghost">Custom preset <span class="badge-premium">' + ic('star') + 'Premium</span></span></div>' : '<div class="presets"><span class="chip">' + ic('flag') + 'Tracks focus time</span></div>';
-    return '<div class="screen"><div class="pad row" style="height:48px"><span class="screen-title">Timer</span></div><div class="pad"><div class="segmented">' +
+    return '<div class="screen"><div class="pad row" style="height:48px"><span class="screen-title">Timer</span></div><div class="pad"><div class="band t-timer" style="--c:var(--c-timer);margin-bottom:12px"><span class="band-mascot"><img src="' + mascot('timer') + '" alt=""></span><div class="band-text"><div class="band-title">' + (timer.mode === 'pomo' ? 'Focus with Pomodoro' : timer.mode === 'countdown' ? 'Quick countdown' : 'Stopwatch') + '</div><div class="band-sub">' + (timer.mode === 'pomo' ? '25 min focus, 5 min break · Northwind Studio' : timer.mode === 'countdown' ? 'A calm card pops up when it ends' : 'Track how long something takes') + '</div></div></div><div class="segmented">' +
       seg.map(function (s) { return '<span data-tmode="' + s[0] + '" class="' + (timer.mode === s[0] ? 'is-active' : '') + '">' + s[1] + '</span>'; }).join('') + '</div></div>' +
       '<div class="timer-face"><div class="ring" id="ring"><svg viewBox="0 0 220 220"><circle class="trk" cx="110" cy="110" r="100"/><circle class="bar" id="ringBar" cx="110" cy="110" r="100" stroke-dasharray="628.3" stroke-dashoffset="0"/></svg><div class="digits"><b id="tDigits">25:00</b><span id="tSub"></span></div></div>' +
       '<div class="timer-ctrl"><button class="btn btn-primary" id="tMain" data-act="t-toggle" style="min-width:150px"></button><button class="btn btn-secondary" data-act="t-reset">' + ic('rotate', 'i-sm') + 'Reset</button></div>' + presets + '</div></div>';
@@ -341,18 +353,19 @@
 
   /* ---------------- More / Upgrade ---------------- */
   function moreScreen() {
-    var row = function (icon, t, v, prem) { return '<div class="mrow" data-more="' + t + '">' + ic(icon) + t + '<span class="v">' + (prem ? '<span class="badge-premium">' + ic('star') + 'Premium</span>' : '') + (v || '') + ic('chevron-right') + '</span></div>'; };
-    return '<div class="screen"><div class="pad row" style="height:48px"><span class="screen-title">More</span></div><div class="scroll">' +
+    var COL = { flag: 'milestone', flame: 'streak', chart: 'timer', timer: 'timer', history: 'away', droplet: 'water', cake: 'birthday', card: 'bill', globe: 'eyes', moon: 'night', bell: 'email', palette: 'posture', database: 'medicine', star: 'morning' };
+    var row = function (icon, t, v, prem, act) { return '<div class="mrow" ' + (act ? 'data-act="' + act + '"' : 'data-more="' + t + '"') + '><span class="ichip" style="--c:var(--c-' + (COL[icon] || 'task') + ')">' + ic(icon) + '</span>' + t + '<span class="v">' + (prem ? '<span class="badge-premium">' + ic('star') + 'Premium</span>' : '') + (v || '') + ic('chevron-right') + '</span></div>'; };
+    return '<div class="screen"><div class="pad row" style="height:48px"><span class="screen-title">More</span></div><div class="scroll"><div class="band t-streak" style="--c:var(--c-streak);margin-bottom:6px"><span class="band-mascot"><img src="' + mascot('streak') + '" alt=""></span><div class="band-text"><div class="band-title">7-day streak</div><div class="band-sub">You’ve closed every day this week. Keep it gentle.</div></div></div>' +
       '<div class="menu-group" style="margin-top:0"><div class="section-label">Plan &amp; progress</div>' + row('flag', 'Milestones', '1 of 1') + row('flame', 'Streaks', '7 days') + row('chart', 'Weekly review', '', true) + row('timer', 'Focus stats', '', true) + row('history', 'History', 'Last 30 days') + '</div>' +
       '<div class="menu-group"><div class="section-label">Reminders &amp; nudges</div>' + row('droplet', 'Nudges', '2 of 4 on') + row('cake', 'Birthdays', '3 of 5') + row('card', 'Subscriptions', '', true) + row('globe', 'Site reminders', '', true) + '</div>' +
-      '<div class="menu-group"><div class="section-label">Settings</div>' + row('moon', 'Quiet hours', '10 PM–7 AM') + row('bell', 'Notifications', { smart: 'Smart', system: 'System', both: 'Both' }[S.notif]) + row('palette', 'Themes', 'Light') + row('database', 'Data &amp; backup', 'This computer') + '</div>' +
+      '<div class="menu-group"><div class="section-label">Settings</div>' + row('moon', 'Quiet hours', '10 PM–7 AM') + row('bell', 'Notifications', { smart: 'Smart', system: 'System', both: 'Both' }[S.notif]) + row('palette', 'Themes', 'Light') + row('database', 'Data &amp; backup', 'This computer') + row('star', 'Rate Dewcue ⭐', '', false, 'rate') + '</div>' +
       '<div class="upsell"><img src="' + mascot('milestone') + '" alt="" width="44" height="44"><div style="flex:1"><b>Upgrade to Premium</b><p>14-day free trial · no card needed</p></div><button class="btn btn-primary btn-sm" data-act="upgrade">Upgrade</button></div></div></div>';
   }
   function upgradeScreen() {
     var plan = function (k, n, d, price, per, extra) { return '<div class="plan' + (ui.plan === k ? ' is-selected' : '') + '" data-plan="' + k + '"><span class="radio"></span><div><div class="pn">' + n + '</div><div class="pd">' + d + '</div>' + (extra || '') + '</div><div class="pp"><b>' + price + '</b><span>' + per + '</span></div></div>'; };
     var left = 37, cta = { year: 'Then $39/year.', month: 'Then $4.99/month.', life: 'Then a one-time $99.' }[ui.plan];
     return '<div class="screen"><div class="pad row gap-8" style="height:48px"><button class="icon-btn sm" data-nav="more" title="Back">' + ic('arrow-left') + '</button><span class="screen-title">Dewcue Premium</span></div><div class="scroll">' +
-      '<p class="muted" style="font-size:13px;margin:0 0 12px">Unlimited everything. Still calm.</p>' +
+      '<div class="band" style="margin-bottom:12px"><span class="band-mascot"><img src="' + mascot('milestone') + '" alt=""></span><div class="band-text"><div class="band-title">Unlimited everything.</div><div class="band-sub">Still calm. 14-day free trial, no card needed.</div></div></div>' +
       plan('year', 'Yearly <span class="badge-rec">Recommended</span>', '$3.25/month, billed yearly · Save 35%', '$39', 'per year') +
       plan('month', 'Monthly', 'Cancel any time', '$4.99', 'per month') +
       plan('life', 'Lifetime', 'Pay once. First 500 customers only.', '$99', 'one time', '<div class="pd" style="color:#9A7410;font-weight:600;margin-top:4px">' + left + ' of 500 left</div><div class="left-meter"><span style="width:' + (100 - left / 5) + '%"></span></div>') +
@@ -374,6 +387,7 @@
       var titles = { water: 'Time for a glass of water' };
       return { type: r.type, eyebrow: T.label, when: 'now', title: r.type === 'water' && /^drink( a glass of)? water$/i.test(r.title) ? titles.water : r.title, sub: sub, img: mascot(T.mascot), done: T.done, actions: true, r: r };
     }
+    if (q.kind === 'rate') return { rate: true };
     if (q.kind === 'timer') return { type: 'timer', eyebrow: 'Timer', when: 'now', title: q.title, sub: q.sub, img: mascot('timer'), simple: 'Got it' };
     if (q.kind === 'away') {
       var od = S.reminders.filter(isOverdue).slice(0, 3);
@@ -389,6 +403,7 @@
   function cardHtml(q, i, total, isTop) {
     if (q.kind === 'toast') return '<div class="cue toast t-done" data-key="' + q.key + '"><div class="mascot"><img src="' + mascot('task-done') + '" alt=""></div><div class="content"><div class="eyebrow">Task done</div><div class="title">' + esc(q.title) + '</div></div></div>';
     var c = cardData(q); if (!c) return '';
+    if (c.rate) return rateHtml(q, isTop, total);
     var menu = ui.menu === q.key ? snoozeMenu() : '';
     var resched = ui.resched === q.key ? reschedHtml(c.r) : '';
     var moreChip = isTop && !ui.expanded && total > 1 ? '<button class="more-chip" data-act="expand">' + ic('layers') + '+' + (total - 1) + ' more</button>' : '';
@@ -397,6 +412,32 @@
     return '<div class="cue t-' + c.type + (isTop && lastTop !== q.key ? '' : ' no-anim') + '" data-key="' + q.key + '" role="alert">' + moreChip + menu +
       '<div class="mascot"><img src="' + c.img + '" alt=""></div><div class="content"><div class="eyebrow">' + c.eyebrow + '<span class="when">' + (c.when === 'now' ? '· now' : c.when) + '</span></div><div class="title">' + c.title + '</div>' + (c.sub ? '<div class="sub">' + c.sub + '</div>' : '') + '</div>' +
       '<button class="more" data-act="c-dismiss" title="Dismiss">' + ic('x') + '</button>' + (c.extra ? '<div class="extra">' + c.extra + '</div>' : '') + (resched ? '<div class="extra">' + resched + '</div>' : '') + actions + '</div>';
+  }
+  var STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.5 2.9a.53.53 0 0 1 1 0l2.3 4.7a2 2 0 0 0 1.5 1.1l5.2.8a.53.53 0 0 1 .3.9l-3.8 3.7a2 2 0 0 0-.6 1.8l.9 5.2a.53.53 0 0 1-.8.6l-4.6-2.5a2 2 0 0 0-1.9 0l-4.6 2.5a.53.53 0 0 1-.8-.6l.9-5.2a2 2 0 0 0-.6-1.8L2.7 10.4a.53.53 0 0 1 .3-.9l5.2-.8a2 2 0 0 0 1.5-1.1z"/></svg>';
+  function rateHtml(q, isTop, total) {
+    var n = q.stars || 0, extra = '', actions;
+    if (q.sent) { extra = ''; actions = '<div class="actions"><button class="cue-btn is-primary" data-act="c-dismiss">' + ic('check') + 'Close</button></div>'; }
+    else if (n >= 4) actions = '<div class="actions"><button class="cue-btn is-primary" data-act="rate-store">' + ic('star') + 'Rate on Chrome Web Store</button><button class="cue-btn" data-act="c-dismiss">Not now</button></div>';
+    else if (n >= 1) { extra = '<div class="extra"><textarea class="feedback" id="fbIn" maxlength="280" placeholder="What’s one thing we should fix?"></textarea></div>'; actions = '<div class="actions"><button class="cue-btn is-primary" data-act="rate-send">' + ic('arrow-right') + 'Send feedback</button><button class="cue-btn" data-act="c-dismiss">Not now</button></div>'; }
+    else actions = '<div class="actions"><button class="cue-btn" data-act="c-dismiss">Not now</button></div>';
+    var title = q.sent ? (q.sent === 'store' ? 'Thank you! That means a lot.' : 'Thanks, we read every note.') : n >= 4 ? 'Yay! Would you share that on the Web Store?' : n >= 1 ? 'Sorry it’s not perfect yet.' : 'Enjoying Dewcue?';
+    var sub = q.sent ? 'Back to your calm day.' : n ? '' : (q.reason || 'All done for today. Nice work!') + ' How’s it going?';
+    var moreChip = isTop && !ui.expanded && total > 1 ? '<button class="more-chip" data-act="expand">' + ic('layers') + '+' + (total - 1) + ' more</button>' : '';
+    return '<div class="cue t-streak' + (isTop && lastTop !== q.key ? '' : ' no-anim') + '" data-key="' + q.key + '" role="dialog" aria-label="Rate Dewcue">' + moreChip +
+      '<div class="mascot"><img src="' + mascot(q.sent ? 'task-done' : 'streak') + '" alt=""></div><div class="content"><div class="eyebrow">Quick question<span class="when">· 5 sec</span></div><div class="title">' + title + '</div>' + (sub ? '<div class="sub">' + sub + '</div>' : '') +
+      (q.sent ? '' : '<div class="stars" style="margin-top:8px" role="radiogroup" aria-label="Rating">' + [1, 2, 3, 4, 5].map(function (i) { return '<button class="star-btn' + (i <= n ? ' is-on' : '') + '" data-star="' + i + '" aria-label="' + i + ' star' + (i > 1 ? 's' : '') + '">' + STAR + '</button>'; }).join('') + '</div>') + '</div>' +
+      '<button class="more" data-act="c-dismiss" title="Not now">' + ic('x') + '</button>' + extra + actions + '</div>';
+  }
+  function quietHours() { var h = new Date().getHours(); return h >= 22 || h < 7; }
+  function showRating(force, reason) {
+    S.rate = S.rate || {};
+    if (S.queue.some(function (x) { return x.kind === 'rate'; })) return false;
+    if (!force && (quietHours() || S.muted || (S.rate.last && Date.now() - S.rate.last < 30 * DAY))) return false;
+    S.rate.last = Date.now(); pushCard({ kind: 'rate', reason: reason }); return true;
+  }
+  function maybeHappyMoment() { // all of today's reminders done -> happy moment
+    var L = lists(); if (L.overdue.length || !L.today.length || L.today.some(function (r) { return !r.done; })) return;
+    setTimeout(function () { showRating(false, 'Everything for today is done. Lovely.'); }, 1800);
   }
   function snoozeTargets() {
     var n = Date.now(), t = sod(n), eve = at(t, 18); if (eve <= n + 30 * MIN) eve = at(t, 21) > n + 30 * MIN ? at(t, 21) : at(addDays(t, 1), 18);
@@ -451,7 +492,7 @@
       if (r) completeReminder(r);
       var tk = 'toast-' + uid(); S.queue = S.queue.filter(function (x) { return x.key !== key; }); S.queue.unshift({ kind: 'toast', key: tk, title: r ? r.title : 'Done' });
       ui.menu = ui.resched = null; save(); renderCards(); updateList();
-      setTimeout(function () { removeCard(tk); }, 1400);
+      setTimeout(function () { removeCard(tk); }, 1400); maybeHappyMoment();
     };
     if (el) { el.style.animation = ''; el.classList.add('out'); setTimeout(finish, 160); } else finish();
   }
@@ -546,7 +587,7 @@
       case 'mute': S.muted = !S.muted; save(); render(); renderCards(); gtoast(S.muted ? 'Cues muted. They’ll wait quietly in the list.' : 'Cues back on'); break;
       case 'panel': setPanel(!S.panel); break;
       case 'toggle': if (!r) break;
-        if (r.done) { r.done = false; r.doneAt = null; } else { completeReminder(r); renderCards(); }
+        if (r.done) { r.done = false; r.doneAt = null; } else { completeReminder(r); renderCards(); maybeHappyMoment(); }
         save(); updateList(); break;
       case 'delete': S.reminders = S.reminders.filter(function (x) { return x !== r; }); S.queue = S.queue.filter(function (x) { return x.id !== id; }); save(); updateList(); renderCards(); break;
       case 'bucket-back': ui.bucket = null; render(); break;
@@ -556,14 +597,18 @@
         updateTimer(); break;
       case 't-reset': timer.running = false; timer.acc = 0; updateTimer(); break;
       case 'upgrade': S.screen = 'upgrade'; render(); break;
+      case 'rate': showRating(true); closePopup(); break;
       case 'checkout': gtoast('Demo only · checkout (Lemon Squeezy) is not connected'); break;
     }
   });
 
   /* ---------------- events on cards ---------------- */
   cardsEl.addEventListener('click', function (e) {
-    var t = e.target.closest('[data-act],[data-snooze],[data-rq]'); if (!t) { return; }
+    var t = e.target.closest('[data-act],[data-snooze],[data-rq],[data-star]'); if (!t) { return; }
     var card = t.closest('.cue'), key = card && card.dataset.key, d = t.dataset;
+    if (d.star) { var rq = findQ(key); rq.stars = +d.star; save(); renderCards(); var fb = $('#fbIn'); if (fb) fb.focus(); return; }
+    if (d.act === 'rate-store') { var q1 = findQ(key); q1.sent = 'store'; S.rate.rated = q1.stars; save(); renderCards(); gtoast('Would open the Chrome Web Store review page (demo)'); setTimeout(function () { removeCard(key); }, 2200); return; }
+    if (d.act === 'rate-send') { var q2 = findQ(key); var v2 = ($('#fbIn') || {}).value || ''; q2.sent = 'fb'; S.rate.feedback = v2.slice(0, 280); save(); renderCards(); setTimeout(function () { removeCard(key); }, 2200); return; }
     if (d.snooze) { snooze(key, d.snooze); return; }
     if (d.rq) { var n = Date.now(), ts = d.rq === '30' ? n + 30 * MIN : d.rq === 'tonight' ? (at(sod(n), 20) > n ? at(sod(n), 20) : at(addDays(sod(n), 1), 20)) : at(addDays(sod(n), 1), 9); reschedule(key, ts); return; }
     switch (d.act) {
@@ -594,6 +639,7 @@
     }
     if (k === 'away') pushCard({ kind: 'away' });
     if (k === 'morning') pushCard({ kind: 'morning' });
+    if (k === 'rate') showRating(true, 'You’re on a 7-day streak.');
     if (k === 'reset') {
       pending.forEach(clearTimeout); try { localStorage.removeItem(KEY); } catch (er) { /* ignore */ }
       var wasPanel = S.panel; S = seed(); ui.input = ''; ui.search = ''; ui.searchOn = false; ui.bucket = null; ui.expanded = false; ui.menu = ui.resched = null; ui.selNotif = 'smart';
