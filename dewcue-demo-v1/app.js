@@ -534,10 +534,14 @@
   }
   function openPopup() {
     if (S.panel) { var sp = $('#sidepanel'); sp.animate([{ opacity: .6 }, { opacity: 1 }], { duration: 250 }); return; }
-    $('#extHint').hidden = true; ui.open = true; placePopup(); render(); host.classList.add('is-open'); ext.classList.add('is-open');
+    $('#extHint').hidden = true; ui.open = true; placePopup(); render(); host.classList.add('is-open'); ext.classList.add('is-open'); placeCards();
     setTimeout(function () { var i = $('#smart', app); if (i) i.focus(); }, 60);
   }
-  function closePopup() { ui.open = false; ui.menu = null; host.classList.remove('is-open'); ext.classList.remove('is-open'); }
+  function placeCards() { // never overlap the popup: while it is open, cards sit just left of it
+    if (ui.open) { var pr = $('#page').getBoundingClientRect(), hr = host.getBoundingClientRect(); cardsEl.style.setProperty('--beside', Math.round(pr.right - hr.left + 18) + 'px'); }
+    cardsEl.classList.toggle('beside-popup', ui.open);
+  }
+  function closePopup() { ui.open = false; ui.menu = null; host.classList.remove('is-open'); ext.classList.remove('is-open'); placeCards(); }
   function setPanel(on) {
     S.panel = on; save();
     var sp = $('#sidepanel');
@@ -650,7 +654,7 @@
 
   /* ---------------- boot ---------------- */
   ['#page', '.viewport', '#browser'].forEach(function (sel) { var el = $(sel); el.addEventListener('scroll', function () { if (el.scrollTop || el.scrollLeft) { el.scrollTop = 0; el.scrollLeft = 0; } }); });
-  window.addEventListener('resize', function () { if (ui.open) placePopup(); });
+  window.addEventListener('resize', function () { if (ui.open) { placePopup(); placeCards(); } });
   render(); renderCards(); updatePip();
   if (S.panel) { S.panel = false; setPanel(true); }
   if (S.onboarded) $('#extHint').hidden = true;
