@@ -15,15 +15,15 @@
     <div class="browser-top">
       <div class="browser-tabs">
         <div class="traffic"><span></span><span></span><span></span></div>
-        <div class="btab is-active"><span class="fav" style="background:#93C5FD"></span>Q4 roadmap – Notes</div>
-        <div class="btab"><span class="fav" style="background:#FCA5A5"></span>Inbox (12) – Mail</div>
+        <button class="btab is-active" data-site="notes"><span class="fav" style="background:#93C5FD"></span>Q4 roadmap – Notes</button>
+        <button class="btab" data-site="mail"><span class="fav" style="background:#FCA5A5"></span>Inbox – Mail</button>
         <div class="btab hide-sm"><span class="fav"></span>Design system docs</div>
       </div>
       <div class="browser-bar">
         <span class="icon-btn sm"><svg class="i"><use href="assets/icons.svg#arrow-left"/></svg></span>
         <span class="icon-btn sm" style="color:var(--ink-4)"><svg class="i"><use href="assets/icons.svg#arrow-right"/></svg></span>
         <span class="icon-btn sm"><svg class="i"><use href="assets/icons.svg#rotate"/></svg></span>
-        <div class="omnibox"><svg class="i i-sm"><use href="assets/icons.svg#lock"/></svg>notes.example.com/q4-roadmap</div>
+        <div class="omnibox"><svg class="i i-sm"><use href="assets/icons.svg#lock"/></svg><span id="omni">notes.example.com/q4-roadmap</span></div>
         <button class="ext-icon ext-btn" id="extBtn" title="Dewcue" aria-label="Open Dewcue"><img src="assets/logo/symbol.svg" alt=""><span class="pip" id="pip" hidden>0</span><span class="ext-hint" id="extHint">Click to open Dewcue</span></button>
         <span class="ext-icon puzzle"><svg class="i"><use href="assets/icons.svg#grid"/></svg></span>
         <span class="avatar"></span>
@@ -47,6 +47,28 @@
             </div>
           </div>
         </div>
+        <div class="mail" id="mail" hidden>
+          <div class="mail-side"><div class="mail-logo"><span></span>Mail</div><button class="mail-new">Compose</button><div class="mf is-on">Inbox <b>12</b></div><div class="mf">Starred</div><div class="mf">Sent</div><div class="mf">Drafts</div></div>
+          <div class="mail-list">
+            <div class="mrow-m"><b>Jen Park</b><span>Homepage drafts – a few notes before Friday</span><i>10:12</i></div>
+            <div class="mrow-m"><b>Billing</b><span>Your October invoice is ready</span><i>9:40</i></div>
+            <div class="mrow-m"><b>Sam Ortiz</b><span>Contract draft v2 attached</span><i>Yesterday</i></div>
+            <div class="mrow-m"><b>Lisbon Movers</b><span>Booking confirmed for the 28th</span><i>Thu</i></div>
+            <div class="mrow-m"><b>Maya Chen</b><span>Re: Kickoff notes</span><i>Wed</i></div>
+          </div>
+          <div class="compose-win" id="composeWin">
+            <div class="cw-head">New message<span class="spacer"></span><button class="cw-x" id="cwClose" aria-label="Close">×</button></div>
+            <div class="cw-f"><span>To</span><input id="cwTo" value="maya@northwind.example"></div>
+            <div class="cw-f"><span>Subject</span><input id="cwSub" value="Q4 proposal"></div>
+            <textarea id="cwBody">Hi Maya,
+
+Attached is the Q4 proposal we discussed. Happy to walk through it on a quick call this week.
+
+Thanks!</textarea>
+            <div class="cw-foot"><button class="cw-send" id="cwSend">Send</button></div>
+          </div>
+          <div class="sent-row" id="sentRow" hidden><div class="sent-bar">Message sent<button id="undoSend">Undo</button><button id="viewMsg">View message</button></div><div class="fu-chip" id="fuChip"></div></div>
+        </div>
         <div class="cards" id="cards" aria-live="polite"></div>
       </div>
       <aside class="sidepanel" id="sidepanel" aria-label="Dewcue side panel">
@@ -63,6 +85,8 @@
       <button class="dp-btn" data-demo="fire"><svg class="i i-sm"><use href="assets/icons.svg#cards"/></svg>Fire sample reminders</button>
       <button class="dp-btn" data-demo="away"><svg class="i i-sm"><use href="assets/icons.svg#inbox"/></svg>Show “While you were away”</button>
       <button class="dp-btn" data-demo="morning"><svg class="i i-sm"><use href="assets/icons.svg#sunrise"/></svg>Show “Good morning”</button>
+      <button class="dp-btn" data-demo="email"><svg class="i i-sm"><use href="assets/icons.svg#mail"/></svg>Try email follow-up</button>
+      <button class="dp-btn" data-demo="reply"><svg class="i i-sm"><use href="assets/icons.svg#check-circle"/></svg>Simulate reply received</button>
       <button class="dp-btn" data-demo="rate"><svg class="i i-sm"><use href="assets/icons.svg#star"/></svg>Show rating card</button>
       <button class="dp-btn danger" data-demo="reset"><svg class="i i-sm"><use href="assets/icons.svg#rotate"/></svg>Reset demo</button>
       <p class="dp-note">Prototype. Reminders are saved in this browser only.</p>

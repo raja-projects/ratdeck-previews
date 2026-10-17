@@ -358,7 +358,7 @@
     return '<div class="screen"><div class="pad row" style="height:48px"><span class="screen-title">More</span></div><div class="scroll"><div class="band t-streak" style="--c:var(--c-streak);margin-bottom:6px"><span class="band-mascot"><img src="' + mascot('streak') + '" alt=""></span><div class="band-text"><div class="band-title">7-day streak</div><div class="band-sub">You’ve closed every day this week. Keep it gentle.</div></div></div>' +
       '<div class="menu-group" style="margin-top:0"><div class="section-label">Plan &amp; progress</div>' + row('flag', 'Milestones', '1 of 1') + row('flame', 'Streaks', '7 days') + row('chart', 'Weekly review', '', true) + row('timer', 'Focus stats', '', true) + row('history', 'History', 'Last 30 days') + '</div>' +
       '<div class="menu-group"><div class="section-label">Reminders &amp; nudges</div>' + row('droplet', 'Nudges', '2 of 4 on') + row('cake', 'Birthdays', '3 of 5') + row('card', 'Subscriptions', '', true) + row('globe', 'Site reminders', '', true) + '</div>' +
-      '<div class="menu-group"><div class="section-label">Settings</div>' + row('moon', 'Quiet hours', '10 PM–7 AM') + row('bell', 'Notifications', { smart: 'Smart', system: 'System', both: 'Both' }[S.notif]) + row('palette', 'Themes', 'Light') + row('database', 'Data &amp; backup', 'This computer') + row('star', 'Rate Dewcue ⭐', '', false, 'rate') + '</div>' +
+      '<div class="menu-group"><div class="section-label">Settings</div>' + row('moon', 'Quiet hours', '10 PM–7 AM') + row('bell', 'Notifications', { smart: 'Smart', system: 'System', both: 'Both' }[S.notif]) + '<div class="mrow" data-act="fu-toggle" role="switch" aria-checked="' + !S.fuOff + '"><span class="ichip" style="--c:var(--c-email)">' + ic('mail') + '</span>Email follow-up offers<span class="v"><span class="switch' + (S.fuOff ? '' : ' on') + '" id="fuSwitch"></span></span></div>' + row('palette', 'Themes', 'Light') + row('database', 'Data &amp; backup', 'This computer') + row('star', 'Rate Dewcue ⭐', '', false, 'rate') + '</div>' +
       '<div class="upsell"><img src="' + mascot('milestone') + '" alt="" width="44" height="44"><div style="flex:1"><b>Upgrade to Premium</b><p>14-day free trial · no card needed</p></div><button class="btn btn-primary btn-sm" data-act="upgrade">Upgrade</button></div></div></div>';
   }
   function upgradeScreen() {
@@ -384,6 +384,7 @@
       var r = S.reminders.filter(function (x) { return x.id === q.id; })[0]; if (!r) return null;
       var T = TYPES[r.type] || TYPES.task;
       var sub = r.repeat ? r.repeat.label : (r.snoozed ? 'Snoozed reminder' : 'One-time reminder');
+      if (r.followup) { var f = r.followup; return { type: 'email', eyebrow: 'Email follow-up', when: 'now', title: 'No reply from ' + esc(f.name) + '?', sub: esc(f.subject) + ' · sent ' + (f.demo ? '3 days ago' : ago(f.sentAt).replace(' ago', '') + ' ago'), img: mascot('email'), followup: true, r: r }; }
       var titles = { water: 'Time for a glass of water' };
       return { type: r.type, eyebrow: T.label, when: 'now', title: r.type === 'water' && /^drink( a glass of)? water$/i.test(r.title) ? titles.water : r.title, sub: sub, img: mascot(T.mascot), done: T.done, actions: true, r: r };
     }
@@ -407,7 +408,7 @@
     var menu = ui.menu === q.key ? snoozeMenu() : '';
     var resched = ui.resched === q.key ? reschedHtml(c.r) : '';
     var moreChip = isTop && !ui.expanded && total > 1 ? '<button class="more-chip" data-act="expand">' + ic('layers') + '+' + (total - 1) + ' more</button>' : '';
-    var actions = c.actions ? '<div class="actions"><button class="cue-btn is-primary" data-act="c-done">' + ic('check') + c.done + '</button><button class="cue-btn' + (ui.menu === q.key ? ' is-open' : '') + '" data-act="c-snooze">Snooze' + ic('chevron-down') + '</button><button class="cue-btn' + (ui.resched === q.key ? ' is-open' : '') + '" data-act="c-resched">' + ic('calendar') + 'Reschedule</button></div>'
+    var actions = c.followup ? '<div class="actions"><button class="cue-btn is-primary" data-act="c-done">' + ic('check') + 'Replied</button><button class="cue-btn" data-act="c-open">' + ic('mail') + 'Open</button><button class="cue-btn' + (ui.menu === q.key ? ' is-open' : '') + '" data-act="c-snooze">Remind again' + ic('chevron-down') + '</button></div>' : c.actions ? '<div class="actions"><button class="cue-btn is-primary" data-act="c-done">' + ic('check') + c.done + '</button><button class="cue-btn' + (ui.menu === q.key ? ' is-open' : '') + '" data-act="c-snooze">Snooze' + ic('chevron-down') + '</button><button class="cue-btn' + (ui.resched === q.key ? ' is-open' : '') + '" data-act="c-resched">' + ic('calendar') + 'Reschedule</button></div>'
       : '<div class="actions"><button class="cue-btn is-primary" data-act="' + (c.review ? 'c-review' : 'c-dismiss') + '">' + ic('check') + c.simple + '</button><button class="cue-btn" data-act="c-dismiss">Dismiss</button></div>';
     return '<div class="cue t-' + c.type + (isTop && lastTop !== q.key ? '' : ' no-anim') + '" data-key="' + q.key + '" role="alert">' + moreChip + menu +
       '<div class="mascot"><img src="' + c.img + '" alt=""></div><div class="content"><div class="eyebrow">' + c.eyebrow + '<span class="when">' + (c.when === 'now' ? '· now' : c.when) + '</span></div><div class="title">' + c.title + '</div>' + (c.sub ? '<div class="sub">' + c.sub + '</div>' : '') + '</div>' +
@@ -601,6 +602,7 @@
         updateTimer(); break;
       case 't-reset': timer.running = false; timer.acc = 0; updateTimer(); break;
       case 'upgrade': S.screen = 'upgrade'; render(); break;
+      case 'fu-toggle': S.fuOff = !S.fuOff; S.fuX = 0; save(); render(); gtoast(S.fuOff ? 'Email follow-up offers off' : 'Email follow-up offers on'); break;
       case 'rate': showRating(true); closePopup(); break;
       case 'checkout': gtoast('Demo only · checkout (Lemon Squeezy) is not connected'); break;
     }
@@ -624,6 +626,7 @@
       case 'rs-save': var v = card.querySelector('#rsIn').value; reschedule(key, v ? new Date(v).getTime() : NaN); break;
       case 'c-review': removeCard(key); S.screen = 'today'; S.tab = findQ(key) && findQ(key).kind === 'away' ? 'overdue' : 'today'; save(); if (!ui.open && !S.panel) openPopup(); else render(); break;
       case 'c-dismiss': removeCard(key); break;
+      case 'c-open': showSite('mail'); gtoast('Opens the thread in your mail tab'); break;
     }
   });
   document.addEventListener('mousedown', function (e) { if ((ui.menu) && !e.target.closest('.menu') && !e.target.closest('[data-act="c-snooze"]')) { ui.menu = null; renderCards(); } });
@@ -643,13 +646,85 @@
     }
     if (k === 'away') pushCard({ kind: 'away' });
     if (k === 'morning') pushCard({ kind: 'morning' });
+    if (k === 'email') { showSite('mail'); resetCompose(); }
+    if (k === 'reply') simulateReply();
     if (k === 'rate') showRating(true, 'You’re on a 7-day streak.');
     if (k === 'reset') {
       pending.forEach(clearTimeout); try { localStorage.removeItem(KEY); } catch (er) { /* ignore */ }
       var wasPanel = S.panel; S = seed(); ui.input = ''; ui.search = ''; ui.searchOn = false; ui.bucket = null; ui.expanded = false; ui.menu = ui.resched = null; ui.selNotif = 'smart';
       timer.running = false; timer.acc = 0; timer.mode = 'pomo'; timer.pomoPhase = 'focus'; timer.session = 1;
-      if (wasPanel) setPanel(false); closePopup(); save(); renderCards(); updatePip(); $('#extHint').hidden = false; gtoast('Demo reset');
+      if (wasPanel) setPanel(false); closePopup(); save(); renderCards(); updatePip(); $('#extHint').hidden = false; showSite('notes'); resetCompose(); fu.state = null; gtoast('Demo reset');
     }
+  });
+
+  /* ---------------- email follow-up (generic webmail mock) ---------------- */
+  var fu = { days: '3', menu: false, timer: null, state: null };
+  var FU_OPTS = [['demo', '10 sec (demo)'], ['1', '1 day'], ['2', '2 days'], ['3', '3 days'], ['7', '7 days']];
+  function fuLabel(k) { return k === 'demo' ? '10 sec' : k + (k === '1' ? ' day' : ' days'); }
+  function showSite(which) {
+    document.querySelectorAll('.btab[data-site]').forEach(function (b) { b.classList.toggle('is-active', b.dataset.site === which); });
+    $('#mail').hidden = which !== 'mail';
+    $('#omni').textContent = which === 'mail' ? 'mail.example.com/inbox' : 'notes.example.com/q4-roadmap';
+  }
+  function resetCompose() { $('#composeWin').hidden = false; $('#sentRow').hidden = true; $('#fuChip').innerHTML = ''; clearTimeout(fu.timer); }
+  function fuArm(ms) { clearTimeout(fu.timer); fu.timer = setTimeout(function () { if (fu.menu) { fuArm(3000); return; } fuFade(); }, ms); }
+  function fuFade() { var c = $('#fuChip'); c.classList.add('fade'); setTimeout(function () { c.innerHTML = ''; c.classList.remove('fade', 'saved'); fu.state = null; }, 320); }
+  function renderChip() {
+    var c = $('#fuChip'), logo = '<span class="fu-logo"><img src="' + mascot('email') + '" alt=""></span>';
+    c.classList.remove('fade', 'saved');
+    if (fu.state === 'offer') {
+      c.innerHTML = logo + 'Follow up in <button class="fu-days" data-fu="days" aria-haspopup="menu">' + fuLabel(fu.days) + ic('chevron-down') + '</button>?' +
+        '<button class="fu-btn ok" data-fu="yes" title="Remind me to follow up">' + ic('check') + '</button><button class="fu-btn" data-fu="no" title="No thanks">' + ic('x') + '</button>' +
+        (fu.menu ? '<div class="menu" role="menu">' + FU_OPTS.map(function (o) { return '<button class="menu-item" style="width:100%" data-fudays="' + o[0] + '">' + ic('clock') + o[1] + (fu.days === o[0] ? '<span class="hint">' + ic('check') + '</span>' : '') + '</button>'; }).join('') + '</div>' : '');
+    } else if (fu.state === 'saved') {
+      c.classList.add('saved'); c.innerHTML = logo + ic('check') + 'Saved · follow up ' + fu.when;
+    } else if (fu.state === 'ask') {
+      c.innerHTML = logo + '<span class="fu-q">Stop offering follow-ups?</span><button class="mini y" data-fu="stop">Yes</button><button class="mini" data-fu="keep">Keep</button>';
+    } else c.innerHTML = '';
+  }
+  function sendMail() {
+    var to = $('#cwTo').value.trim(), sub = $('#cwSub').value.trim() || '(no subject)';
+    $('#composeWin').hidden = true; $('#sentRow').hidden = false;
+    // anti-annoyance: only offer for mail to a person (not newsletters / no-reply), and only when enabled
+    var person = /@/.test(to) && !/(no-?reply|newsletter|notifications?|mailer|donotreply)@/i.test(to);
+    fu.mail = { to: to, subject: sub, name: (to.split('@')[0].split(/[._-]/)[0] || 'them').replace(/^./, function (x) { return x.toUpperCase(); }) };
+    fu.menu = false;
+    if (S.fuOff || !person) { fu.state = null; renderChip(); return; }
+    fu.state = 'offer'; renderChip(); fuArm(6000);
+  }
+  function fuYes() {
+    var n = Date.now(), demo = fu.days === 'demo', due = demo ? n + 10 * SEC : at(addDays(sod(n), +fu.days), 9);
+    S.reminders.push({ id: uid(), title: 'Follow up: ' + fu.mail.subject + ' (' + fu.mail.name + ')', type: 'email', due: due, repeat: null, done: false, fired: false, followup: { name: fu.mail.name, to: fu.mail.to, subject: fu.mail.subject, sentAt: n, demo: demo } });
+    S.fuX = 0; save(); if (ui.open || S.panel) updateList();
+    fu.when = demo ? 'in 10 sec' : DAYS[new Date(due).getDay()].slice(0, 3).replace(/^./, function (x) { return x.toUpperCase(); });
+    fu.state = 'saved'; fu.menu = false; renderChip(); fuArm(2200);
+  }
+  function fuNo() {
+    S.fuX = (S.fuX || 0) + 1; save(); fu.menu = false;
+    if (S.fuX >= 3 && !S.fuAsked) { S.fuAsked = true; save(); fu.state = 'ask'; renderChip(); fuArm(8000); return; }
+    fuFade();
+  }
+  function simulateReply() {
+    var pend = S.reminders.filter(function (r) { return r.followup && !r.done; });
+    if (!pend.length) { gtoast('No follow-up pending. Send the email and tap ✓ first.'); return; }
+    pend.forEach(function (r) { r.done = true; r.doneAt = Date.now(); r.replied = true; S.queue = S.queue.filter(function (q) { return q.id !== r.id; }); });
+    save(); renderCards(); if (ui.open || S.panel) updateList();
+    gtoast(pend[0].followup.name + ' replied — follow-up cleared');
+  }
+  $('#cwSend').addEventListener('click', sendMail);
+  $('#cwClose').addEventListener('click', function () { $('#composeWin').hidden = true; });
+  $('#undoSend').addEventListener('click', resetCompose);
+  $('#viewMsg').addEventListener('click', function () { gtoast('Demo mailbox · message view not included'); });
+  document.querySelectorAll('.btab[data-site]').forEach(function (b) { b.addEventListener('click', function () { showSite(b.dataset.site); if (b.dataset.site === 'mail' && $('#sentRow').hidden) $('#composeWin').hidden = false; }); });
+  $('#fuChip').addEventListener('click', function (e) {
+    var t = e.target.closest('[data-fu],[data-fudays]'); if (!t) return;
+    if (t.dataset.fudays) { fu.days = t.dataset.fudays; fu.menu = false; renderChip(); fuArm(6000); return; }
+    var k = t.dataset.fu;
+    if (k === 'days') { fu.menu = !fu.menu; renderChip(); fuArm(6000); }
+    if (k === 'yes') fuYes();
+    if (k === 'no') fuNo();
+    if (k === 'stop') { S.fuOff = true; S.fuX = 0; save(); fuFade(); gtoast('Follow-up offers off · turn back on in More → Settings'); }
+    if (k === 'keep') { S.fuX = 0; save(); fuFade(); }
   });
 
   /* ---------------- boot ---------------- */

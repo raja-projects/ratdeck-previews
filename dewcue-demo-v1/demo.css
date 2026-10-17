@@ -175,7 +175,7 @@ button.chip:active { transform: scale(.97); }
 .dp-head { width: 100%; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; font-size: 12.5px; font-weight: 600; color: #fff; }
 .dp-head .chev { margin-left: auto; transition: transform .2s; }
 .demo-panel.is-collapsed .chev { transform: rotate(180deg); }
-.dp-body { padding: 0 8px 10px; display: flex; flex-direction: column; gap: 2px; max-height: 300px; transition: max-height .22s ease, padding .22s; }
+.dp-body { padding: 0 8px 10px; display: flex; flex-direction: column; gap: 2px; max-height: 380px; transition: max-height .22s ease, padding .22s; }
 .demo-panel.is-collapsed .dp-body { max-height: 0; padding-bottom: 0; overflow: hidden; }
 .dp-btn { display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 8px; border-radius: 9px; font-size: 12.5px; color: #E2E8F0; text-align: left; transition: background .15s; }
 .dp-btn:hover { background: rgba(255,255,255,.08); }
@@ -194,3 +194,51 @@ button.chip:active { transform: scale(.97); }
 
 /* cards sit top-right; while the popup is open they shift left of it (see placeCards in app.js) */
 .cards.beside-popup { right: var(--beside, 440px); }
+
+/* Generic webmail mock (neutral, unbranded) */
+button.btab { font: inherit; font-size: 12px; color: var(--ink-2); border: 0; cursor: pointer; background: transparent; transition: background .15s; }
+button.btab:not(.is-active):hover { background: rgba(255,255,255,.55); }
+.mail { position: absolute; inset: 0; background: #fff; display: grid; grid-template-columns: 200px 1fr; animation: screenIn .2s ease; }
+.mail[hidden] { display: none; }
+.mail-side { border-right: 1px solid #EEF0F3; padding: 16px 12px; background: #FAFBFC; }
+.mail-logo { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink-2); margin: 0 6px 16px; }
+.mail-logo span { width: 22px; height: 22px; border-radius: 6px; background: #CBD5E1; }
+.mail-new { height: 38px; padding: 0 18px; border-radius: 12px; background: #E8ECF2; font-weight: 600; font-size: 13px; color: var(--ink-2); margin-bottom: 12px; }
+.mf { height: 32px; border-radius: 0 16px 16px 0; padding: 0 12px; display: flex; align-items: center; font-size: 13px; color: var(--ink-2); }
+.mf.is-on { background: #E8ECF2; font-weight: 600; } .mf b { margin-left: auto; font-size: 11.5px; }
+.mail-list { padding: 8px 0; }
+.mrow-m { display: grid; grid-template-columns: 150px 1fr 70px; gap: 14px; height: 42px; align-items: center; padding: 0 22px; border-bottom: 1px solid #F2F4F7; font-size: 13px; color: var(--ink-2); }
+.mrow-m span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--ink-3); } .mrow-m i { font-style: normal; font-size: 12px; color: var(--ink-4); text-align: right; }
+.compose-win { position: absolute; right: 24px; bottom: 0; width: 460px; background: #fff; border-radius: 12px 12px 0 0; box-shadow: 0 10px 40px -6px rgba(15,23,42,.28), 0 0 0 1px rgba(15,23,42,.06); display: flex; flex-direction: column; animation: chipIn .2s ease; }
+.compose-win[hidden] { display: none; }
+.cw-head { height: 38px; display: flex; align-items: center; padding: 0 8px 0 14px; background: #F1F3F6; border-radius: 12px 12px 0 0; font-size: 13px; font-weight: 600; color: var(--ink-2); }
+.cw-x { width: 26px; height: 26px; border-radius: 6px; font-size: 18px; color: var(--ink-3); } .cw-x:hover { background: #E5E8ED; }
+.cw-f { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #F0F2F5; padding: 0 14px; height: 38px; font-size: 13px; }
+.cw-f span { color: var(--ink-4); width: 50px; } .cw-f input { flex: 1; border: 0; outline: 0; font: inherit; color: var(--ink); }
+.compose-win textarea { border: 0; outline: 0; resize: none; font: inherit; font-size: 13px; line-height: 1.5; color: var(--ink); padding: 12px 14px; height: 170px; }
+.cw-foot { padding: 10px 14px 14px; } .cw-send { height: 36px; padding: 0 22px; border-radius: 18px; background: #334155; color: #fff; font-weight: 600; font-size: 13px; transition: background .15s; } .cw-send:hover { background: #1E293B; }
+.sent-row { position: absolute; left: 50%; transform: translateX(-50%); bottom: 24px; display: flex; align-items: center; gap: 10px; }
+.sent-row[hidden] { display: none; }
+.sent-bar { height: 44px; display: flex; align-items: center; gap: 16px; padding: 0 16px; border-radius: 8px; background: #1F2937; color: #F8FAFC; font-size: 13px; animation: chipIn .2s ease; box-shadow: var(--shadow-pop); }
+.sent-bar button { color: #C4B5FD; font-weight: 600; font-size: 13px; }
+/* Dewcue follow-up chip */
+.fu-chip { height: 36px; display: inline-flex; align-items: center; gap: 6px; padding: 0 4px 0 5px; border-radius: 999px; background: #fff; box-shadow: 0 1px 2px rgba(15,23,42,.06), 0 8px 24px -6px rgba(15,23,42,.22); border: 1px solid rgba(15,23,42,.06); font-size: 12.5px; color: var(--ink-2); position: relative; transition: opacity .3s, transform .3s; animation: fuIn .24s cubic-bezier(.2,.8,.2,1) both; white-space: nowrap; }
+.fu-chip:empty { display: none; }
+.fu-chip.fade { opacity: 0; transform: translateY(4px); pointer-events: none; }
+@keyframes fuIn { from { opacity: 0; transform: translateX(-8px) scale(.96); } to { opacity: 1; transform: none; } }
+.fu-chip .fu-logo { width: 26px; height: 26px; border-radius: 50%; background: color-mix(in srgb, var(--c-email) 12%, white); display: grid; place-items: center; }
+.fu-chip .fu-logo img { width: 20px; height: 20px; }
+.fu-days { height: 26px; padding: 0 8px; border-radius: 8px; background: var(--violet-50); color: var(--violet-700); font-weight: 600; font-size: 12.5px; display: inline-flex; align-items: center; gap: 3px; }
+.fu-days .i { width: 12px; height: 12px; }
+.fu-btn { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; color: var(--ink-3); transition: background .15s, color .15s; }
+.fu-btn .i { width: 14px; height: 14px; } .fu-btn:hover { background: var(--surface-3); color: var(--ink); }
+.fu-btn.ok { color: var(--violet); } .fu-btn.ok:hover { background: var(--violet-50); }
+.fu-chip .menu { bottom: calc(100% + 6px); left: 30px; width: 180px; animation: chipIn .15s ease both; }
+.fu-chip.saved { padding-right: 12px; color: var(--ink); font-weight: 500; }
+.fu-chip.saved .i { color: var(--c-done); }
+.fu-q { font-weight: 500; color: var(--ink); padding-left: 2px; }
+.fu-chip .mini { height: 26px; padding: 0 10px; border-radius: 13px; font-size: 12px; font-weight: 600; }
+.fu-chip .mini.y { background: var(--violet-50); color: var(--violet-700); } .fu-chip .mini:hover { background: var(--surface-3); }
+.switch { width: 34px; height: 20px; border-radius: 10px; background: #CBD2DC; position: relative; transition: background .15s; flex: none; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: var(--shadow-1); transition: transform .18s; }
+.switch.on { background: var(--violet); } .switch.on::after { transform: translateX(14px); }
