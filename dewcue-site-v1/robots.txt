@@ -1,4 +1,4 @@
-# When this folder is served from a subdirectory, this file is informational only.
-# Crawlers read robots.txt from the host root.
-# This public website preview has noindex directives on its HTML pages.
-# Noindex is not an access control.
+User-agent: *
+Allow: /
+
+Sitemap: https://dewcue.com/sitemap.xml

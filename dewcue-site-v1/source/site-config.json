@@ -1,12 +1,13 @@
 {
   "name": "DewCue",
   "siteUrl": "https://dewcue.com",
-  "indexable": false,
+  "indexable": true,
   "storeUrl": null,
   "sourceUrl": "https://dewcue.com/",
   "sourceReviewed": "2026-10-18",
   "supportEmail": "hello@dewcue.com",
-  "preview": true,
+  "preview": false,
   "defaultCurrency": "USD",
-  "basePath": ""
+  "basePath": "",
+  "storeComingSoon": true
 }

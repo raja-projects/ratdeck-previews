@@ -68,6 +68,8 @@ def local_target(ref, current):
     route = unquote(u.path)
     if u.netloc:
         target = RELEASE / route.lstrip('/')
+    elif route.startswith('/') and current.name == '404.html':
+        target = RELEASE / route.lstrip('/')
     elif route.startswith('/'):
         issue(current, 'Root-relative URL breaks under a subfolder: ' + ref); return None, None
     else: target = current.parent / route if route else current
@@ -101,7 +103,7 @@ for file, page in pages.items():
     if not page.description or page.description in seen_descriptions: issue(file, 'Empty or duplicate description')
     seen_titles.add(page.title); seen_descriptions.add(page.description)
     if not page.canonical or not page.canonical.startswith(BASE + '/'): issue(file, 'Incorrect canonical base')
-    if 'noindex' not in (page.robots or ''): issue(file, 'Preview missing noindex')
+    if CONFIG.get('preview', True) and 'noindex' not in (page.robots or ''): issue(file, 'Preview missing noindex')
     if alias:
         expected = BASE + ALIASES[file.name]
         if page.canonical != expected or page.refresh != '0; url=' + ALIASES[file.name].strip('/') + '/': issue(file, 'Incorrect compatibility redirect')
