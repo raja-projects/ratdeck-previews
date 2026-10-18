@@ -1,19 +1,18 @@
 # DewCue GitHub Pages source
 
-This folder contains the repeatable source for the DewCue website at:
-https://raja-projects.github.io/ratdeck-previews/dewcue-site-v1/
+This folder contains the repeatable source for the DewCue website (preview on GitHub Pages; production at https://dewcue.com).
 
 From the `dewcue-site-v1` folder, run:
 
 ```sh
 python source/build.py
 python source/verify.py
-node --check assets/site.js
+node --check assets/site.js assets/pricing.js
 ```
 
 Python 3 with only its standard library is needed to build and verify. Node is needed only for the optional JavaScript syntax check. Static assets are kept in the sibling `assets/` folder. Edit reviewed copy in `content.json`, templates in `build.py`, styles in `../assets/site.css`, and browser interactions in `../assets/site.js`. Public settings live in `site-config.json`. Do not put credentials in this folder.
 
-`basePath` must match the path portion of `siteUrl`. Internal HTML URLs are mounted once during rendering; metadata, JSON-LD and sitemaps use the complete site URL. USD is the default currency; INR remains selectable.
+Internal HTML URLs are written as document-relative paths, so the same files work in the GitHub Pages preview subfolder and at the root of dewcue.com. `siteUrl` (https://dewcue.com) is used only for canonical URLs, social metadata, JSON-LD and the sitemap. Prices show USD first; `assets/pricing.js` switches to INR for India (saved choice, then https://api.dewcue.com/v1/geo with a 1.5 s timeout, then the Asia/Kolkata timezone) and shows one currency at a time. The Chrome Web Store link is set in one place: `storeUrl` in `site-config.json`.
 
 The three `.txt` files in `source-reference/` contain the original published legal HTML snapshots used by the generator. Their text extension prevents duplicate standalone HTML pages. Their policy text is preserved; internal links are updated to the new routes.
 

@@ -1,4 +1,4 @@
-"""Validate the mounted GitHub Pages release using only the Python standard library."""
+"""Validate the portable release (relative URLs) using only the Python standard library."""
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
@@ -8,7 +8,7 @@ SOURCE = Path(__file__).resolve().parent
 RELEASE = SOURCE.parent
 CONFIG = json.loads((SOURCE / 'site-config.json').read_text())
 BASE = CONFIG['siteUrl'].rstrip('/')
-MOUNT = CONFIG['basePath'].rstrip('/')
+MOUNT = ''
 ORIGIN = urlsplit(BASE)
 ALIASES = {f'{slug}.html': f'/{slug}/' for slug in ['privacy', 'terms', 'refund', 'contact']}
 errors = []
@@ -66,11 +66,10 @@ def local_target(ref, current):
         if (u.scheme, u.netloc) != (ORIGIN.scheme, ORIGIN.netloc): return None, None
     elif u.scheme: return None, None
     route = unquote(u.path)
-    if route.startswith('/'):
-        if route != MOUNT and not route.startswith(MOUNT + '/'):
-            issue(current, 'URL escapes mount: ' + ref); return None, None
-        route = route[len(MOUNT):].lstrip('/')
-        target = RELEASE / route
+    if u.netloc:
+        target = RELEASE / route.lstrip('/')
+    elif route.startswith('/'):
+        issue(current, 'Root-relative URL breaks under a subfolder: ' + ref); return None, None
     else: target = current.parent / route if route else current
     target = target.resolve()
     if not target.is_relative_to(RELEASE): issue(current, 'URL escapes release: ' + ref); return None, None
@@ -103,10 +102,9 @@ for file, page in pages.items():
     seen_titles.add(page.title); seen_descriptions.add(page.description)
     if not page.canonical or not page.canonical.startswith(BASE + '/'): issue(file, 'Incorrect canonical base')
     if 'noindex' not in (page.robots or ''): issue(file, 'Preview missing noindex')
-    if page.body_mount != MOUNT: issue(file, 'Incorrect body base path')
     if alias:
         expected = BASE + ALIASES[file.name]
-        if page.canonical != expected or page.refresh != '0; url=' + expected: issue(file, 'Incorrect compatibility redirect')
+        if page.canonical != expected or page.refresh != '0; url=' + ALIASES[file.name].strip('/') + '/': issue(file, 'Incorrect compatibility redirect')
     else:
         if not page.schemas: issue(file, 'Missing JSON-LD')
         if page.meta.get('og:url') != page.canonical: issue(file, 'OG URL differs from canonical')
@@ -136,9 +134,9 @@ for url in urls:
 
 content = json.loads((SOURCE / 'content.json').read_text())
 answers = pages[RELEASE / 'answers/index.html'].answers
-if len(answers) != 49 or set(answers) != {q['id'] for q in content['faqs']}: issue('answers/index.html', 'Incorrect answer coverage')
+if len(answers) != len(content['faqs']) or set(answers) != {q['id'] for q in content['faqs']}: issue('answers/index.html', 'Incorrect answer coverage')
 for relative in ['index.html', 'pricing/index.html']:
-    if pages[RELEASE / relative].currency != 'USD': issue(relative, 'USD is not selected by default')
+    if 'data-price="premium">$4.99<' not in (RELEASE / relative).read_text(): issue(relative, 'USD is not shown by default')
 for fragment in ['faq', 'how', 'questions', 'how-it-works']:
     if fragment not in pages[RELEASE / 'index.html'].ids: issue('index.html', 'Missing current or legacy anchor: ' + fragment)
 for file in (RELEASE / 'assets').glob('*.css'):
@@ -146,8 +144,18 @@ for file in (RELEASE / 'assets').glob('*.css'):
         if not value.startswith(('data:', 'http:', 'https:', '//')) and not (file.parent / value).exists():
             issue(file, 'Missing CSS asset: ' + value)
 js = (RELEASE / 'assets/site.js').read_text()
-if "window.location.href = (document.body.dataset.basePath || '') + '/contact/';" not in js:
-    issue('assets/site.js', 'Missing mounted contact fallback')
+if 'contact/' not in js:
+    issue('assets/site.js', 'Missing contact fallback')
+for name in ['Tanishkha', 'Rajamurugan', '33BMVPA2143N2ZV', '7306812819', '629704', 'Swamythoppu']:
+    for file, _ in pages.items():
+        rel = file.relative_to(RELEASE).as_posix()
+        text = file.read_text()
+        if rel in ('terms/index.html', 'privacy/index.html'):
+            if name not in text: issue(file, 'Business detail missing: ' + name)
+        elif name in text: issue(file, 'Business detail outside Terms/Privacy: ' + name)
+for file in pages:
+    if re.search(r'\bR[a]ja\b', file.read_text()): issue(file, 'Private name found')
+    if re.search(r'(?i)lemon ?squeezy|stripe|paddle', file.read_text()): issue(file, 'Non-Razorpay payment provider mentioned')
 if 'chatgpt.site' in js or 'chatgpt.site' in (RELEASE / 'sitemap.xml').read_text(): issue('release', 'Private URL found')
 if (RELEASE / '_headers').exists(): issue('_headers', 'Unsupported GitHub header file must be excluded')
 if len(pages) != 30 or len(urls) != 25: issue('release', 'Expected 26 canonical pages + 4 redirects and 25 sitemap URLs')

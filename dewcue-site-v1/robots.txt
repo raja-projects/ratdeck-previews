@@ -1,4 +1,4 @@
-# This file is inside a GitHub Pages subdirectory and is informational only.
-# Crawlers use https://raja-projects.github.io/robots.txt for this host.
+# When this folder is served from a subdirectory, this file is informational only.
+# Crawlers read robots.txt from the host root.
 # This public website preview has noindex directives on its HTML pages.
 # Noindex is not an access control.

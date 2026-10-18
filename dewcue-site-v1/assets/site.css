@@ -957,3 +957,8 @@ em.display { font: inherit; color: var(--purple); }
     scroll-behavior: auto !important;
   }
 }
+
+/* Currency switch link on pricing (one currency at a time). */
+.currency-switch { border: 0; padding: 10px 0; background: none; font: inherit; font-size: 14px; line-height: 22px; font-weight: 600; color: var(--purple); cursor: pointer; text-align: left; }
+.currency-switch .icon { width: 16px; height: 16px; }
+.small-feature h3 .plan-badge { display: inline-block; margin-left: 6px; vertical-align: 2px; }

@@ -4,7 +4,7 @@
       "id": "what-is-dewcue",
       "category": "Getting started",
       "question": "What is DewCue?",
-      "answer": "DewCue is a Chrome extension for reminders, email follow-ups, timers, and optional wellbeing nudges. It brings your Today, Upcoming, and Overdue lists into your browser, with a side panel for the same reminders while you work.",
+      "answer": "DewCue is a Chrome extension for reminders, email follow-ups, page sticky notes, timers, and optional wellbeing nudges. Reminder cards appear right on the page you’re using, a slim ribbon keeps your next reminder or timer in view, and the side panel shows your Today, Upcoming, and Overdue lists while you work.",
       "relatedHref": "/guides/first-reminder/",
       "relatedLabel": "Set your first reminder"
     },
@@ -12,7 +12,7 @@
       "id": "account-required",
       "category": "Getting started",
       "question": "Do I need an account to create reminders?",
-      "answer": "No. You can create reminders without creating a DewCue account. Premium activation is separate: it uses the email address you enter, your license status, and an installation ID for the computer you activate.",
+      "answer": "No. You can create reminders without creating a DewCue account. Premium activation is separate: the licence server stores only the email address you enter and your licence key.",
       "relatedHref": "/guides/first-reminder/",
       "relatedLabel": "Read the getting-started guide"
     },
@@ -28,9 +28,17 @@
       "id": "natural-language-reminders",
       "category": "Getting started",
       "question": "Can I type a reminder in everyday English?",
-      "answer": "Yes. DewCue accepts natural-language reminders such as “call mom tomorrow at 6” and “rent on the 5th.” Use a clear task, date, and time, then check the saved schedule so it matches what you meant.",
+      "answer": "Yes. Type it the way you’d say it, such as “pay rent on the 5th” or “water every hour 9 to 6 weekdays,” or tap one of the suggestion chips. Check the saved schedule so it matches what you meant.",
       "relatedHref": "/guides/first-reminder/",
       "relatedLabel": "Write a clear reminder"
+    },
+    {
+      "id": "languages-and-shortcuts",
+      "category": "Getting started",
+      "question": "Which languages and shortcuts does DewCue support?",
+      "answer": "DewCue is available in English, Hindi, and Tamil, with a 12- or 24-hour clock. Open it from the toolbar, the side panel, the right-click menu, or with the Alt+Shift+D keyboard shortcut.",
+      "relatedHref": "/guides/chrome-side-panel/",
+      "relatedLabel": "Use the side panel"
     },
     {
       "id": "web-page-reminder",
@@ -47,6 +55,14 @@
       "answer": "Yes. Select the text you want to keep and use DewCue’s toolbar or right-click capture action. DewCue saves the selected text with the page title and address because you requested the capture. Check that the saved text contains enough context to understand the task later.",
       "relatedHref": "/guides/reminders-from-web-pages/",
       "relatedLabel": "Use selected text in a reminder"
+    },
+    {
+      "id": "page-sticky-notes",
+      "category": "Browsing & capture",
+      "question": "Can I leave a sticky note on a web page?",
+      "answer": "Yes. Pin a note to any page and it reappears when you return to that page. Tap once to turn the note into a reminder. Free includes 10 sticky notes; Premium makes them unlimited. Sticky notes use the optional all-sites permission you turn on yourself.",
+      "relatedHref": "/guides/reminders-from-web-pages/",
+      "relatedLabel": "Make reminders from web pages"
     },
     {
       "id": "captured-page-offline-copy",
@@ -76,7 +92,7 @@
       "id": "notification-options",
       "category": "Reminders",
       "question": "Where will my reminders appear?",
-      "answer": "You can choose on-page reminder cards or system notifications. On-page cards need permission when you enable that option. For system notifications, also check whether your operating system allows Chrome to display alerts.",
+      "answer": "By default, a reminder card appears at the top right of the page you’re on, and it stays until you act. You can choose system notifications instead, or both. On-page cards use an optional permission for all sites that you turn on yourself. A test-notification button in settings, with a short fix guide, helps you check that alerts reach you.",
       "relatedHref": "/guides/browser-notifications/",
       "relatedLabel": "Choose and check your alerts"
     },
@@ -84,9 +100,33 @@
       "id": "done-snooze-remind-again",
       "category": "Reminders",
       "question": "What can I do when a reminder appears?",
-      "answer": "Mark it done when the task is finished, snooze it when you need more time, or use remind again when it still needs your attention. Choose the action that reflects the task's actual status to keep your list useful.",
+      "answer": "Each card offers Done, Snooze, Reschedule, and Open page, plus Join when the reminder has a meeting link. Mark it done when the task is finished, snooze it with one of your own snooze presets when you need more time, or reschedule it for a better moment. Choose the action that reflects the task's actual status to keep your list useful.",
       "relatedHref": "/guides/first-reminder/",
       "relatedLabel": "Build a simple reminder routine"
+    },
+    {
+      "id": "on-page-ribbon",
+      "category": "Reminders",
+      "question": "What is the ribbon at the edge of the page?",
+      "answer": "It’s DewCue’s slim on-page ribbon, with the hummingbird. It shows a running timer or your next reminder at a glance. Drag it wherever it suits you, or hide it on any site where you’d rather not see it.",
+      "relatedHref": "/features/",
+      "relatedLabel": "Explore all features"
+    },
+    {
+      "id": "while-you-were-away",
+      "category": "Reminders",
+      "question": "What happens to reminders I miss?",
+      "answer": "When you come back after time away, a “While you were away” summary shows the reminders you missed, so you can mark them done, snooze them, or reschedule them in one place.",
+      "relatedHref": "/guides/browser-notifications/",
+      "relatedLabel": "Check your reminder setup"
+    },
+    {
+      "id": "cant-miss-mode",
+      "category": "Reminders",
+      "question": "What is “Can’t miss” mode?",
+      "answer": "“Can’t miss” mode is a Premium option for reminders that really matter: the soft chime repeats until you mark the reminder done. You can still set chime volume and quiet hours.",
+      "relatedHref": "/pricing/",
+      "relatedLabel": "Compare Free and Premium"
     },
     {
       "id": "repeating-reminders",
@@ -100,7 +140,7 @@
       "id": "today-upcoming-overdue",
       "category": "Reminders",
       "question": "How are my reminders organized?",
-      "answer": "DewCue separates reminders into Today, Upcoming, and Overdue. Today helps you see what needs attention now, Upcoming shows what is ahead, and Overdue helps you revisit unfinished reminders. The side panel shows the same reminder list.",
+      "answer": "DewCue separates reminders into Today, Upcoming, and Overdue. Today helps you see what needs attention now, Upcoming shows what is ahead, and Overdue helps you revisit unfinished reminders. You can also search, add notes to a reminder, and pause a reminder or a whole bucket. A toolbar badge shows the count, and the side panel shows the same list.",
       "relatedHref": "/use-cases/work/",
       "relatedLabel": "See a simple work routine"
     },
@@ -115,8 +155,8 @@
     {
       "id": "browser-closed-notifications",
       "category": "Reminders",
-      "question": "Will reminders arrive when Chrome is closed or my computer is asleep?",
-      "answer": "Do not rely on an alert in those conditions. DewCue does not guarantee that every alarm will fire when Chrome, the computer, or the network is off. Test your actual setup, keep a separate backup for time-critical tasks, and review Today and Overdue when you return.",
+      "question": "Will reminders arrive when Chrome is idle, closed, or my computer is asleep?",
+      "answer": "Reminder cards still appear after Chrome has been idle, and a “While you were away” summary shows anything you missed when you come back. DewCue can’t promise an alert while Chrome is closed, the computer is asleep, or the network is off. Test your actual setup, keep a separate backup for time-critical tasks, and review Today and Overdue when you return.",
       "relatedHref": "/guides/browser-notifications/",
       "relatedLabel": "Test your notification setup"
     },
@@ -124,15 +164,15 @@
       "id": "capture-email-follow-up",
       "category": "Email follow-ups",
       "question": "How do email follow-ups work in DewCue?",
-      "answer": "You choose an email to capture and set a time to return to it. DewCue can save its subject, sender name, and visible link after you start the capture. At the scheduled time, the reminder prompts you to open the conversation and check what needs to happen next.",
+      "answer": "Turn on email follow-ups for your webmail and DewCue adds tiny “Reply?”, “Follow up?”, and “Due 3 PM” tags to your inbox list, using only what’s visible on the page. You can also pick an email and set a time to return to it. At the scheduled time, the reminder prompts you to open the conversation and decide what happens next.",
       "relatedHref": "/guides/email-follow-ups/",
       "relatedLabel": "Create a useful email follow-up"
     },
     {
       "id": "supported-webmail",
       "category": "Email follow-ups",
-      "question": "Can I use DewCue with Gmail or Outlook?",
-      "answer": "DewCue’s privacy policy documents on-screen email capture for Gmail, Outlook on the web, and Yahoo Mail. You start capture yourself, and site permission is required. DewCue does not ask you to sign in to your email account or give it mailbox access. Capture on other webmail services has not been verified.",
+      "question": "Which email services work with DewCue?",
+      "answer": "Yes. Email follow-ups work on webmail in Chrome, including Gmail, Outlook, Yahoo Mail, Zoho Mail, and Hostinger webmail. You turn them on yourself, and DewCue only reads what’s visible on the webmail pages you open. It never asks you to sign in to your email account or gives itself access to your mailbox.",
       "relatedHref": "/guides/email-follow-ups/",
       "relatedLabel": "Understand the email workflow"
     },
@@ -140,7 +180,7 @@
       "id": "detect-email-replies",
       "category": "Email follow-ups",
       "question": "Does DewCue automatically detect whether someone has replied?",
-      "answer": "No. A scheduled follow-up asks you to check the conversation yourself. DewCue does not monitor your mailbox or automatically determine reply status. The Premium no-reply follow-up workflow helps you return to the email and decide whether another follow-up is needed.",
+      "answer": "No. DewCue does not monitor your mailbox or connect to your email account. The small “Reply?” and “Follow up?” tags in your inbox list are gentle prompts based on what’s visible on the page. You open the conversation, check for a reply, and decide whether another follow-up is needed.",
       "relatedHref": "/guides/email-follow-ups/",
       "relatedLabel": "Follow up without mailbox monitoring"
     },
@@ -156,7 +196,7 @@
       "id": "available-timers",
       "category": "Focus & wellbeing",
       "question": "Which timers are included?",
-      "answer": "DewCue includes a stopwatch, a countdown timer, and a Pomodoro option with a 25-minute focus session and a 5-minute break. Standard timers are included in Free. Premium adds custom timer lengths.",
+      "answer": "DewCue includes a stopwatch, a countdown with any time you choose, and a Pomodoro timer. A card lets you know when time’s up, and the on-page ribbon can show a running timer while you work. All timers are included in Free.",
       "relatedHref": "/guides/focus-and-breaks/",
       "relatedLabel": "Plan a focus session"
     },
@@ -172,7 +212,7 @@
       "id": "quiet-hours-and-mute",
       "category": "Focus & wellbeing",
       "question": "Can I quiet the wellbeing nudges during meetings or after work?",
-      "answer": "Yes. Wellbeing nudges have quiet hours and a mute option so you can reduce interruptions during meetings or after work. Quiet-hour settings can sync through Chrome; the wellbeing nudge settings themselves stay on the computer you use.",
+      "answer": "Yes. Set quiet hours for meetings or after work, and turn the soft chimes on or off or change their volume. Quiet-hour settings can sync through Chrome; the wellbeing nudge settings themselves stay on the computer you use.",
       "relatedHref": "/guides/focus-and-breaks/",
       "relatedLabel": "Choose when nudges are useful"
     },
@@ -196,7 +236,7 @@
       "id": "download-dewcue-backup",
       "category": "Backup & devices",
       "question": "Can I download a backup of my DewCue data?",
-      "answer": "DewCue’s privacy policy describes a downloadable backup file that belongs to you and is not uploaded by DewCue. The published information does not specify the file format or exactly which records it includes. Confirm its contents before treating it as a complete copy of your data.",
+      "answer": "Yes. DewCue makes an automatic backup every day, and you can download a backup file whenever you like or export your reminders to CSV. The backup file belongs to you and is not uploaded by DewCue.",
       "relatedHref": "/guides/backup-and-changing-computers/",
       "relatedLabel": "Understand backups and local data"
     },
@@ -228,7 +268,7 @@
       "id": "premium-purchase-restore-reminders",
       "category": "Backup & devices",
       "question": "Does restoring my Premium licence restore my reminder data?",
-      "answer": "No. DewCue’s licence server keeps the email address, licence status, and installation ID used for Premium. It does not keep reminders, email subjects, or page content. Restoring paid access and recovering your content are separate tasks.",
+      "answer": "No. DewCue’s licence server keeps only the email address and licence key used for Premium. It does not keep reminders, email subjects, or page content. Restoring paid access and recovering your content are separate tasks; use a DewCue backup for your content.",
       "relatedHref": "/guides/activate-premium/",
       "relatedLabel": "Separate activation from data recovery"
     },
@@ -236,7 +276,7 @@
       "id": "restore-downloaded-backup",
       "category": "Backup & devices",
       "question": "Can I restore a downloaded backup on a new computer?",
-      "answer": "The available product information does not document an import or restore procedure, or whether existing data would be merged or replaced. Ask hello@dewcue.com about your extension version and backup file before relying on it for a move. Keep the original data available until the transfer has been verified.",
+      "answer": "Yes. Use import in DewCue’s backup settings to bring a downloaded backup into DewCue on the new computer. Check your reminders after the import, and keep the original computer and file available until you’re happy everything has arrived. Ask hello@dewcue.com if anything looks different.",
       "relatedHref": "/guides/backup-and-changing-computers/",
       "relatedLabel": "Prepare a verified transfer"
     },
@@ -252,7 +292,7 @@
       "id": "page-access-and-capture",
       "category": "Privacy",
       "question": "Does DewCue read or upload the pages I visit?",
-      "answer": "DewCue does not upload pages. Displaying an on-page reminder card does not read the page, and that option requests permission when enabled. A page title, URL, or highlighted text is saved only when you explicitly capture it through the toolbar or right-click action.",
+      "answer": "DewCue does not upload pages or collect browsing history. On-page cards, the ribbon, and page sticky notes use an optional permission for all sites that you turn on yourself; showing a card or the ribbon does not read the page. A page title, URL, or highlighted text is saved only when you capture it through the toolbar or right-click action, and a sticky note is kept on your computer with the page it belongs to.",
       "relatedHref": "/guides/reminders-from-web-pages/",
       "relatedLabel": "Understand deliberate page capture"
     },
@@ -260,7 +300,7 @@
       "id": "email-information-saved",
       "category": "Privacy",
       "question": "What email information does DewCue save?",
-      "answer": "On supported webmail pages, DewCue can use the visible subject, sender name, and message link after you allow it on that site. It does not read the message body or inbox list, ask for email sign-in, or send email information to a DewCue server.",
+      "answer": "Only when you turn on email follow-ups for a webmail site, DewCue reads what’s already visible on the webmail pages you open, such as the subject, sender name, and message link, to show its tags and save follow-ups. It does not ask for email sign-in, does not access your email account, and does not send email information to a DewCue server.",
       "relatedHref": "/guides/email-follow-ups/",
       "relatedLabel": "Review email capture details"
     },
@@ -284,7 +324,7 @@
       "id": "premium-license-data",
       "category": "Privacy",
       "question": "What information is stored to activate Premium?",
-      "answer": "DewCue’s license server stores the email address you enter, your license status, and an installation ID for the activated computer. It does not store reminders, email subjects, or page content. The extension checks the license about once a day. Contact hello@dewcue.com if you have a question about a license record.",
+      "answer": "DewCue’s licence server stores only the email address you enter and your licence key. It does not store reminders, email subjects, or page content. The extension checks the licence about once a day. Contact hello@dewcue.com if you have a question about a licence record.",
       "relatedHref": "/guides/activate-premium/",
       "relatedLabel": "Read the Premium activation guide"
     },
@@ -292,7 +332,7 @@
       "id": "free-plan-limits",
       "category": "Plans & billing",
       "question": "What is included in the Free plan?",
-      "answer": "Free includes five repeat reminders, three alarms, three buckets, standard timers, two wellness nudges, five birthdays, one milestone, and ten captured emails per month. The email capture allowance is monthly; the other numbers are the published Free plan limits.",
+      "answer": "Free includes reminders with on-page cards, email follow-up tags, all timers, the ribbon, buckets, backups, and light and dark themes. The published Free limits are five repeat reminders, three alarms, three buckets, ten page sticky notes, two wellness nudges, five birthdays, one milestone, ten captured emails per month, and the last 7 days of history.",
       "relatedHref": "/pricing/",
       "relatedLabel": "See the complete plan comparison"
     },
@@ -300,7 +340,7 @@
       "id": "premium-features",
       "category": "Plans & billing",
       "question": "What does Premium add?",
-      "answer": "Premium removes the published Free plan limits and adds custom timer lengths, extra themes, and the no-reply email follow-up workflow. You still check email replies yourself; Premium does not add mailbox monitoring or automatic email sending.",
+      "answer": "Premium removes the published Free plan limits and adds “Can’t miss” mode (the chime repeats until you mark it done), full history, a calendar view, a water and medicine log with gentle streaks, unlimited page sticky notes, and the Sunrise, Sea, and Ink themes. You still check email replies yourself; Premium does not add mailbox monitoring or automatic email sending.",
       "relatedHref": "/pricing/",
       "relatedLabel": "Compare Free and Premium"
     },
@@ -308,7 +348,7 @@
       "id": "premium-trial",
       "category": "Plans & billing",
       "question": "When does the 14-day Premium trial start?",
-      "answer": "The trial starts the first time you exceed a Free plan limit on that computer. It lasts 14 days and does not require a card. Free plan limits resume when the trial ends unless you upgrade.",
+      "answer": "The trial starts the first time you exceed a Free plan limit on that computer. It lasts 14 days and does not require a card. Free plan limits resume when the trial ends unless you upgrade, and the Free plan stays available.",
       "relatedHref": "/pricing/",
       "relatedLabel": "Understand the trial and plans"
     },
@@ -316,7 +356,7 @@
       "id": "premium-pricing",
       "category": "Plans & billing",
       "question": "How much does DewCue Premium cost?",
-      "answer": "The listed international prices are $4.99 per month or $39 per year. India pricing is ₹199 per month or ₹1,990 per year, plus 18% GST. International USD checkout is available only when enabled, so check the available checkout and final total before paying.",
+      "answer": "Premium is $4.99 per month or $39 per year, paid by card. In India, prices are shown in rupees: ₹199 per month or ₹1,990 per year, plus 18% GST, and you can pay with UPI. Checkout is handled by Razorpay; check the final total before paying.",
       "relatedHref": "/pricing/",
       "relatedLabel": "View monthly and yearly pricing"
     },
@@ -324,7 +364,7 @@
       "id": "lifetime-plan",
       "category": "Plans & billing",
       "question": "Is there a lifetime plan?",
-      "answer": "The launch offer lists lifetime access at $99 internationally, or ₹4,990 plus 18% GST in India, under a shared offer for the first 500 purchases. Lifetime covers the Premium features sold with it for as long as the extension is offered. Confirm availability at checkout; international USD checkout must be enabled.",
+      "answer": "Yes. Lifetime is $99, or ₹4,990 plus 18% GST in India, for the first 500 buyers. Lifetime covers the Premium features sold with it for as long as the extension is offered. Confirm availability at checkout.",
       "relatedHref": "/pricing/",
       "relatedLabel": "Review the lifetime offer"
     },
@@ -348,7 +388,7 @@
       "id": "payment-provider",
       "category": "Plans & billing",
       "question": "How are Premium payments handled?",
-      "answer": "Razorpay handles Premium checkout. Indian cards and UPI are charged in INR; international cards use USD only when that checkout is enabled. Razorpay handles card numbers and UPI IDs, and DewCue does not see them. Review your plan, tax, currency, and final amount before paying.",
+      "answer": "Razorpay handles all Premium checkout. Outside India you pay in US dollars by card; in India you pay in rupees with UPI or card. Razorpay handles card numbers and UPI IDs, and DewCue does not see them. Review your plan, tax, currency, and final amount before paying.",
       "relatedHref": "/pricing/",
       "relatedLabel": "Choose a plan"
     },
@@ -380,7 +420,7 @@
       "id": "remove-premium-without-deleting-reminders",
       "category": "Plans & billing",
       "question": "Can I remove Premium from a computer without deleting my reminders?",
-      "answer": "Yes. Removing Premium from a computer inside DewCue unbinds that computer and does not delete its reminders. This is different from uninstalling the extension, which removes the local copy of your data.",
+      "answer": "Yes. Removing Premium from a computer inside DewCue does not delete its reminders. This is different from uninstalling the extension, which removes the local copy of your data.",
       "relatedHref": "/guides/activate-premium/",
       "relatedLabel": "Understand removing Premium from a computer"
     },
@@ -388,7 +428,7 @@
       "id": "premium-on-another-computer",
       "category": "Plans & billing",
       "question": "How do I use my existing Premium purchase on another computer?",
-      "answer": "Keep your purchase email and licence details available, and check Premium activation in DewCue on the new computer. Paid access uses an installation ID for each computer you activate. Confirm the computers included with your licence before adding another one; Chrome reminder sync does not establish Premium activation.",
+      "answer": "Keep your purchase email and licence key available, and enter them in DewCue’s Premium settings on the new computer. Confirm the computers included with your licence before adding another one; Chrome reminder sync does not activate Premium on its own.",
       "relatedHref": "/guides/activate-premium/",
       "relatedLabel": "Prepare Premium for a computer change"
     }
@@ -400,7 +440,7 @@
       "title": "How to set your first reminder in DewCue",
       "description": "Turn one thing you need to remember into a clear task, a sensible time, and an alert you have checked.",
       "readTime": "3 min read",
-      "answer": "Open DewCue, describe the task in everyday English, and check its date and time. Choose an on-page card or system notification, then try a small test reminder. You do not need to create a DewCue account to begin creating reminders.",
+      "answer": "Open DewCue, describe the task in everyday English or tap a suggestion chip, and check its date and time. Choose on-page cards, system notifications, or both, then use the test-notification button. You do not need to create a DewCue account to begin creating reminders.",
       "sections": [
         {
           "heading": "Start with one clear task",
@@ -417,8 +457,8 @@
         {
           "heading": "Choose an alert that fits your work",
           "paragraphs": [
-            "An on-page card keeps the reminder in your browsing space. A system notification uses your computer's notification display. On-page cards need permission when you enable them; drawing a reminder card does not read the page.",
-            "Test the option you choose with Chrome open and your computer awake. If an alert does not appear, use the notification guide to check your setup."
+            "An on-page card appears at the top right of the page you’re on and waits until you act. A system notification uses your computer's notification display, and you can also use both. On-page cards use an optional permission for all sites when you enable them; drawing a reminder card does not read the page.",
+            "Use the test-notification button in settings to check your choice. If an alert does not appear, the built-in fix guide and the notification guide help you check your setup."
           ],
           "steps": []
         },
@@ -426,7 +466,7 @@
           "heading": "Give each reminder an honest outcome",
           "paragraphs": [
             "Use Today for the tasks in front of you, Upcoming to see what is ahead, and Overdue to revisit unfinished work. The side panel gives you access to the same reminder list while browsing.",
-            "Mark a finished task done. Snooze it when you need more time, or use remind again if it still needs attention. Keep a separate backup alarm for anything time critical until you have tested delivery in your own setup."
+            "Mark a finished task done. Snooze it when you need more time, or reschedule it if it still needs attention. If you were away, the “While you were away” summary shows what you missed. Keep a separate backup alarm for anything time critical until you have tested delivery in your own setup."
           ],
           "steps": []
         }
@@ -449,25 +489,25 @@
       "title": "How to follow up on an email without keeping it in your head",
       "description": "Save the conversation you want to revisit, choose a useful time, and check the reply yourself.",
       "readTime": "3 min read",
-      "answer": "Choose an email, start its capture in DewCue, and schedule a time to return. When the reminder arrives, open the conversation and check whether you need to reply, follow up, or mark the task done. DewCue does not monitor replies or send messages for you.",
+      "answer": "Turn on email follow-ups for your webmail, then use the small “Reply?”, “Follow up?”, and “Due 3 PM” tags in your inbox list, or pick an email and schedule a time to return. When the reminder arrives, open the conversation and decide whether you need to reply, follow up, or mark the task done. DewCue does not access your email account or send messages for you.",
       "sections": [
         {
           "heading": "Save the conversation you actually need",
           "paragraphs": [
             "Use email follow-ups for a proposal awaiting feedback, a document you requested, or a question that needs an answer. Choose a specific next step so the reminder remains useful when it appears.",
-            "Capture is manual and user initiated. DewCue can save the email subject, sender name, and visible link. It does not ask for your email sign-in or access to your mailbox."
+            "Email follow-ups work on webmail in Chrome, including Gmail, Outlook, Yahoo Mail, Zoho Mail, and Hostinger webmail. You turn them on yourself, and DewCue reads only what’s visible on the webmail pages you open, such as the subject, sender name, and link. It does not ask for your email sign-in or access to your mailbox."
           ],
           "steps": [
-            "Open the relevant conversation in your webmail.",
-            "Start the email capture in DewCue and check the saved context.",
-            "Choose when you want to return to the conversation."
+            "Turn on email follow-ups for your webmail in DewCue.",
+            "Look for the small tags in your inbox list, or open a conversation and choose a follow-up time.",
+            "Check the saved context and the time you chose."
           ]
         },
         {
           "heading": "Check the conversation before you act",
           "paragraphs": [
             "When the reminder arrives, read the current conversation. A reply may already be waiting. If the next step is complete, mark the reminder done. If you need more time, snooze it or ask to be reminded again.",
-            "The Premium no-reply follow-up workflow still depends on your review. It does not automatically detect replies, inspect unread mail, or send a follow-up email."
+            "The inbox tags are gentle prompts, not a mailbox monitor. DewCue does not inspect your account or send a follow-up email for you; you read the conversation and decide."
           ],
           "steps": []
         },
@@ -475,7 +515,7 @@
           "heading": "Keep enough context for the next check",
           "paragraphs": [
             "For client work, keep a short update in a bucket: what you requested, what you are waiting for, and the next action. Bucket notes stay local.",
-            "The privacy policy documents this capture workflow on Gmail, Outlook on the web, and Yahoo Mail. Free includes ten captured emails per month; Premium removes that Free plan limit."
+            "Free includes ten captured emails per month; Premium removes that Free plan limit."
           ],
           "steps": []
         }
@@ -497,12 +537,12 @@
       "title": "How to build a simple focus and break routine",
       "description": "Choose one task, give it a clear time window, and make room for a break that suits your day.",
       "readTime": "3 min read",
-      "answer": "Pick one task and use DewCue's stopwatch, countdown, or 25-minute focus timer to give it a clear boundary. Follow a focus session with a 5-minute break, and enable only the wellbeing nudges you find useful. Premium adds custom timer lengths.",
+      "answer": "Pick one task and use DewCue's stopwatch, a countdown with your own time, or the Pomodoro timer to give it a clear boundary. The ribbon keeps the timer in view and a card tells you when time’s up. Follow a focus session with a short break, and enable only the wellbeing nudges you find useful.",
       "sections": [
         {
           "heading": "Choose a timer for the task",
           "paragraphs": [
-            "A stopwatch is useful when you want to see how long a task takes. A countdown gives a task a defined window. The Pomodoro option provides a simple starting point: 25 minutes of focus followed by a 5-minute break.",
+            "A stopwatch is useful when you want to see how long a task takes. A countdown with your own time gives a task a defined window. The Pomodoro option provides a simple starting point: 25 minutes of focus followed by a 5-minute break. When time’s up, a card lets you know.",
             "Before starting, write down one achievable outcome. “Review the first two pages” is easier to act on than “Finish everything.”"
           ],
           "steps": [
@@ -522,7 +562,7 @@
         {
           "heading": "Adjust the routine to fit the work",
           "paragraphs": [
-            "A timer is a boundary you choose, not a score you need to beat. If the task changes, choose a more practical next session. Standard timers are included in Free, while Premium adds custom timer lengths.",
+            "A timer is a boundary you choose, not a score you need to beat. If the task changes, choose a more practical next session. All timers, including custom countdowns, are included in Free.",
             "Timer data and wellbeing nudges stay local, while quiet-hour settings can sync through Chrome. Check your setup on the computer you are using, and keep task deadlines in your reminder list so they remain easy to review."
           ],
           "steps": []
@@ -543,15 +583,15 @@
       "slug": "browser-notifications",
       "category": "Reminders",
       "title": "How to check DewCue reminders and browser notifications",
-      "description": "Understand the two alert styles and run a small test before relying on a reminder.",
+      "description": "Understand the alert styles, use the built-in test button, and run a small check before relying on a reminder.",
       "readTime": "3 min read",
-      "answer": "Choose on-page cards or system notifications, check the permission needed for that option, and create a short test with Chrome open and your computer awake. DewCue does not guarantee alerts when Chrome, the computer, or the network is off. Keep a separate backup for time-critical tasks.",
+      "answer": "Choose on-page cards, system notifications, or both, check the permission needed for that option, and use the test-notification button with Chrome open and your computer awake. Cards still appear after Chrome has been idle, but DewCue can’t promise alerts when Chrome, the computer, or the network is off. Keep a separate backup for time-critical tasks.",
       "sections": [
         {
           "heading": "Check which alert you selected",
           "paragraphs": [
-            "On-page cards appear in your browsing space. System notifications use the computer's notification display. Start by checking the option you selected in DewCue so you know where to look.",
-            "On-page cards request permission when you enable them. Displaying the card does not read the page. If you choose system notifications, check whether your operating system allows Chrome to show alerts."
+            "On-page cards appear at the top right of your page and stay until you act. System notifications use the computer's notification display. You can also choose both. Start by checking the option you selected in DewCue so you know where to look.",
+            "On-page cards use an optional permission for all sites when you enable them. Displaying the card does not read the page. If you choose system notifications, check whether your operating system allows Chrome to show alerts. The test-notification button in settings comes with a short fix guide if something doesn’t appear."
           ],
           "steps": []
         },
@@ -571,7 +611,7 @@
           "heading": "Know what a successful test tells you",
           "paragraphs": [
             "A successful test confirms the conditions you just checked. It does not establish delivery with Chrome closed, the computer asleep, or different operating-system settings. DewCue does not promise every alarm will fire when Chrome, the computer, or the network is off.",
-            "Use a separate backup alarm for time-critical commitments. When you return to the computer, review Today and Overdue for tasks that still need attention. If optional wellbeing nudges are quiet, also check their quiet hours and mute setting."
+            "Use a separate backup alarm for time-critical commitments. When you return to the computer, the “While you were away” summary shows anything you missed; also review Today and Overdue. If chimes are quiet, check the chime switch, volume, and quiet hours."
           ],
           "steps": []
         }
@@ -624,9 +664,17 @@
           "steps": []
         },
         {
+          "heading": "Leave a sticky note on the page itself",
+          "paragraphs": [
+            "Sometimes the page is the reminder. Pin a sticky note to any page and it reappears when you come back to that page. When the note becomes a task, turn it into a reminder in one tap.",
+            "Sticky notes use the optional all-sites permission you turn on yourself. Free includes 10 sticky notes, and Premium makes them unlimited."
+          ],
+          "steps": []
+        },
+        {
           "heading": "Return to the page and decide what happens next",
           "paragraphs": [
-            "When the reminder is due, review the saved context and return to the page. Mark the task done when you finish it, snooze it when you need more time, or use remind again if it still needs attention.",
+            "When the reminder is due, review the saved context and return to the page. Mark the task done when you finish it, snooze it when you need more time, or reschedule it if it still needs attention.",
             "For something important, try a small reminder first so you know how your chosen alert behaves. The browser notification guide explains how to check on-page cards and system notifications."
           ],
           "steps": []
@@ -635,6 +683,7 @@
       "relatedFaqs": [
         "web-page-reminder",
         "selected-text-reminder",
+        "page-sticky-notes",
         "captured-page-offline-copy",
         "captured-page-other-computer",
         "page-access-and-capture"
@@ -667,7 +716,7 @@
           "heading": "Use one list in a roomier view",
           "paragraphs": [
             "The side panel is another place to see your existing reminders. You do not need to copy tasks into a separate list for this view. That makes it useful when the page in front of you is part of the task you need to complete.",
-            "For example, you might keep a document open while reviewing the reminder to request feedback. The panel supplies the task context; you still choose what to do on the page."
+            "For example, you might keep a document open while reviewing the reminder to request feedback. Open the panel from the toolbar, the right-click menu, or the Alt+Shift+D shortcut. The panel supplies the task context; you still choose what to do on the page."
           ],
           "steps": []
         },
@@ -675,7 +724,7 @@
           "heading": "Review the day before adding more work",
           "paragraphs": [
             "Start with the reminders you already have. Today shows the work due now, Upcoming helps you see what is ahead, and Overdue brings unfinished reminders back to your attention.",
-            "Treat an overdue reminder as a decision to make. If the task is finished, mark it done. If you need more time, snooze it or use remind again so its status reflects what you intend to do."
+            "Treat an overdue reminder as a decision to make. If the task is finished, mark it done. If you need more time, snooze or reschedule it so its status reflects what you intend to do."
           ],
           "steps": [
             "Open the DewCue side panel beside the page you are using.",
@@ -705,7 +754,8 @@
         "reminders-beside-current-page",
         "today-upcoming-overdue",
         "done-snooze-remind-again",
-        "notification-options"
+        "notification-options",
+        "languages-and-shortcuts"
       ],
       "relatedGuides": [
         "reminders-from-web-pages",
@@ -794,7 +844,7 @@
       "title": "DewCue backups and changing computers: what moves and what stays local",
       "description": "Understand Chrome sync, locally stored information, downloaded backups, and Premium activation before changing computers or uninstalling DewCue.",
       "readTime": "4 min read",
-      "answer": "Check synced reminders and local information separately before changing computers. Reminders, quiet hours, and the notification choice use Chrome sync; many other DewCue records stay on the original computer. Keep that installation available until you have verified the information and access you need on the new one.",
+      "answer": "Check synced reminders and local information separately before changing computers. Reminders, quiet hours, and the notification choice use Chrome sync; other DewCue records stay on the original computer, so download a backup and import it on the new one. Keep the old installation available until you have verified everything.",
       "sections": [
         {
           "heading": "Identify where each part of your setup lives",
@@ -825,7 +875,7 @@
                 "Do not assume the saved page copy transfers with reminder sync."
               ],
               [
-                "Premium email address, licence status, and installation ID",
+                "Premium email address and licence key",
                 "DewCue’s licence server",
                 "This record supports paid access; it does not contain your reminders or page content."
               ]
@@ -834,10 +884,10 @@
           "steps": []
         },
         {
-          "heading": "Check the backup before relying on it",
+          "heading": "Use DewCue’s backups",
           "paragraphs": [
-            "DewCue’s privacy policy describes a downloadable backup file that belongs to you and is not uploaded by DewCue. Keep a copy somewhere you can access during the move.",
-            "The published information does not specify its exact contents, file format, restore procedure, or whether an import merges or replaces existing data. Ask support about your extension version before treating the file as a complete, tested recovery method."
+            "DewCue makes an automatic backup every day. You can also download a backup file at any time, import it on another computer, or export your reminders to CSV. The backup file belongs to you and is not uploaded by DewCue.",
+            "After importing, check your reminders and local information on the new computer before removing anything from the old one. Ask support if something looks different."
           ],
           "steps": []
         },
@@ -850,7 +900,7 @@
             "Review the reminders and local information on the original computer.",
             "Check the intended Chrome profile and sync settings on the new computer.",
             "Verify the reminders and synced settings that appear there.",
-            "Confirm the supported transfer process for any local information you need.",
+            "Download a backup on the original computer and import it on the new one.",
             "Check Premium activation separately and confirm your licence’s device allowance."
           ]
         },
@@ -927,8 +977,8 @@
         {
           "heading": "Check paid access separately on another computer",
           "paragraphs": [
-            "Premium records include the email address you enter, licence status, and an installation ID for the computer you activate. Reminder sync through Chrome does not establish that Premium is active on a second computer. Confirm the computers included with your licence before adding another one.",
-            "You can remove Premium from a computer inside DewCue. This unbinds that computer without deleting its reminders. It is different from uninstalling the extension, which removes local data."
+            "The licence server stores only the email address you enter and your licence key. Reminder sync through Chrome does not activate Premium on a second computer by itself; enter your licence key there too. Confirm the computers included with your licence before adding another one.",
+            "You can remove Premium from a computer inside DewCue. This does not delete its reminders. It is different from uninstalling the extension, which removes local data."
           ],
           "steps": []
         },
@@ -983,7 +1033,7 @@
       "benefits": [
         {
           "title": "Return to the right conversation",
-          "text": "Keep an email's subject, sender name, and visible link after you choose to capture it. Open the conversation before deciding on your next action."
+          "text": "Small “Reply?” and “Follow up?” tags in your webmail inbox show what needs a next step. Open the conversation before deciding on your next action."
         },
         {
           "title": "Keep useful project context",
@@ -991,14 +1041,14 @@
         },
         {
           "title": "Leave space for focused work",
-          "text": "Use a timer for one task at a time. Quiet or mute optional wellbeing nudges when a meeting or focus session calls for fewer interruptions."
+          "text": "Use a timer for one task at a time. When a meeting reminder has a link, Join takes you straight there. Quiet optional nudges when you need fewer interruptions."
         }
       ],
       "faqIds": [
         "today-upcoming-overdue",
         "what-are-buckets",
         "capture-email-follow-up",
-        "quiet-hours-and-mute",
+        "notification-options",
         "reminders-beside-current-page"
       ]
     },
@@ -1015,7 +1065,7 @@
         },
         {
           "title": "Give revision a boundary",
-          "text": "Choose a stopwatch, countdown, or the standard Pomodoro timer. Premium adds custom timer lengths if a different session length suits the work."
+          "text": "Choose a stopwatch, a countdown with your own time, or Pomodoro. The ribbon keeps the timer in view, and a card tells you when the session is up."
         },
         {
           "title": "Keep unfinished tasks visible",
@@ -1025,9 +1075,10 @@
       "faqIds": [
         "natural-language-reminders",
         "available-timers",
+        "on-page-ribbon",
         "done-snooze-remind-again",
         "today-upcoming-overdue",
-        "selected-text-reminder"
+        "page-sticky-notes"
       ]
     },
     {
@@ -1035,7 +1086,7 @@
       "title": "A little help with the everyday things.",
       "eyebrow": "DewCue for everyday life",
       "description": "Small personal tasks can slip between work tabs: call someone back, remember rent, or make time for a break. Put the next action into DewCue while it is on your mind. Keep the reminders that matter easy to find, without creating an account just to start.",
-      "example": "Type “call mom tomorrow at 6” or “rent on the 5th,” then check the saved schedule and choose how you want the reminder to appear.",
+      "example": "Type “pay rent on the 5th” or “water every hour 9 to 6 weekdays,” then check the saved schedule and choose how you want the reminder to appear.",
       "benefits": [
         {
           "title": "Use your own everyday words",
@@ -1047,13 +1098,14 @@
         },
         {
           "title": "Keep the nudges comfortable",
-          "text": "Choose optional water, eyes, posture, or break reminders. Use quiet hours and mute when you want less interruption, and test important alerts in your setup."
+          "text": "Choose optional water, eyes, posture, or break reminders. Premium adds a water and medicine log with gentle streaks, and “Can’t miss” mode for the ones that matter. Use quiet hours when you want less interruption."
         }
       ],
       "faqIds": [
         "account-required",
         "repeating-reminders",
         "wellness-reminders",
+        "cant-miss-mode",
         "browser-closed-notifications",
         "birthdays-and-milestones-limits"
       ]
@@ -1067,7 +1119,7 @@
       "benefits": [
         {
           "title": "Follow up with context",
-          "text": "Manually capture the email subject, sender name, and visible link. DewCue reminds you to return; you review the conversation and send any message yourself."
+          "text": "Inbox tags like “Follow up?” and “Due 3 PM” work on the webmail you use. DewCue reminds you to return; you review the conversation and send any message yourself."
         },
         {
           "title": "Keep a short client update log",
@@ -1075,15 +1127,15 @@
         },
         {
           "title": "Plan the work between replies",
-          "text": "Review Today and Upcoming, then give one task a focus window. Standard timers are included in Free, with custom timer lengths available in Premium."
+          "text": "Review Today and Upcoming, then give one task a focus window. Pin a sticky note to a client’s page so the context is waiting when you come back."
         }
       ],
       "faqIds": [
         "capture-email-follow-up",
         "detect-email-replies",
         "what-are-buckets",
-        "premium-features",
-        "missing-buckets-on-another-computer"
+        "page-sticky-notes",
+        "premium-features"
       ]
     }
   ]

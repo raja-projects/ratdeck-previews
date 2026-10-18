@@ -44,7 +44,7 @@
       dialog.showModal();
       document.body.classList.add('dialog-open');
     } else {
-      window.location.href = (document.body.dataset.basePath || '') + '/contact/';
+      window.location.href = ($('a[href$="contact/"]')?.href || 'mailto:hello@dewcue.com');
     }
   }
   $$('[data-install]').forEach(button => button.addEventListener('click', () => openDialog('#install-dialog')));
@@ -178,26 +178,7 @@
   }));
   renderDemo();
 
-  // Deterministic, explicit currency/period switches. No inferred location.
-  let billing = 'monthly'; let currency = $('[data-currency] option[selected]')?.value || 'USD';
-  const prices = {INR: {free: '₹0', monthly: '₹199', yearly: '₹1,990', lifetime: '₹4,990', savings: 'Save 17%'}, USD: {free: '$0', monthly: '$4.99', yearly: '$39', lifetime: '$99', savings: 'Save 35%'}};
-  function renderPrices() {
-    const p = prices[currency];
-    $$('[data-billing]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.billing === billing)));
-    $$('[data-currency]').forEach(select => { select.value = currency; });
-    $$('[data-price="free"]').forEach(el => { el.textContent = p.free; });
-    $$('[data-price="premium"]').forEach(el => { el.textContent = p[billing]; });
-    $$('[data-price="lifetime"]').forEach(el => { el.textContent = p.lifetime; });
-    $$('[data-premium-period]').forEach(el => { el.textContent = billing === 'monthly' ? '/ month' : '/ year'; });
-    $$('[data-premium-note]').forEach(el => { el.textContent = (currency === 'INR' ? '+ 18% GST in India. ' : 'International price. ') + (billing === 'monthly' ? 'Billed monthly.' : 'Billed yearly.'); });
-    $$('[data-lifetime-note]').forEach(el => { el.textContent = currency === 'INR' ? '+ 18% GST in India.' : 'International price. Pay once.'; });
-    $$('[data-save-label]').forEach(el => { el.textContent = p.savings; });
-    $$('[data-payment-note]').forEach(el => { el.textContent = currency === 'INR' ? 'Payments by Razorpay. The 14-day trial begins when you first exceed a free limit.' : 'International USD checkout is available when enabled. The trial starts when you first exceed a free limit.'; });
-  }
-  $$('[data-billing]').forEach(button => button.addEventListener('click', () => { billing = button.dataset.billing; renderPrices(); }));
-  $$('[data-currency]').forEach(select => select.addEventListener('change', () => { currency = select.value; renderPrices(); }));
-
-  renderPrices();
+  // Pricing (billing period and currency) lives in pricing.js.
 
   let answerCategory = 'all'; const search = $('#answer-search'); const questions = $$('[data-question]');
   function filterAnswers() {

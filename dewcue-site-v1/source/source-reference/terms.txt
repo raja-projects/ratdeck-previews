@@ -32,17 +32,17 @@
   </header>
   <main class="legal" id="main">
     <h1>Terms of Service</h1>
-    <p class="updated">Last updated 17 October 2026. These terms cover the Dewcue Chrome extension and this website.</p>
+    <p class="updated">Last updated 18 October 2026. These terms cover the Dewcue Chrome extension and this website.</p>
 
     <h2>The agreement</h2>
     <p>Dewcue is a digital product. When you install the extension or buy Premium, you agree to these terms, the <a href="privacy.html">privacy policy</a>, and the <a href="refund.html">refund and cancellation policy</a>. If you do not agree, do not install Dewcue and do not pay for Premium.</p>
 
     <h2>What you are buying</h2>
-    <p>Dewcue is software delivered instantly inside Chrome. There is nothing to ship. A purchase is a licence to use the Premium features, not a sale of the software itself. Free features stay available with the limits shown on the pricing section of the homepage.</p>
-    <p>Premium is ₹199 a month or ₹1,990 a year in India, plus 18% GST, or $4.99 a month or $39 a year internationally. Lifetime is ₹4,990 plus 18% GST, or $99, for the first 500 people. A 14-day trial starts on your computer when you first pass a free limit. The trial does not need a card.</p>
+    <p>Dewcue is software delivered instantly inside Chrome. There is nothing to ship. A purchase is a licence to use the Premium features, not a sale of the software itself. Free features stay available with the limits shown on the <a href="index.html#pricing">pricing page</a>.</p>
+    <p>Premium is $4.99 a month or $39 a year, or in India ₹199 a month or ₹1,990 a year, plus 18% GST. Lifetime is $99, or ₹4,990 plus 18% GST in India, for the first 500 buyers. A 14-day trial starts on your computer when you first pass a free limit. The trial does not need a card.</p>
 
     <h2>Payments</h2>
-    <p>Payments are processed by Razorpay. Tanishkha is the seller. Dewcue does not see your card number or UPI id. Indian cards and UPI are charged in INR. International cards are charged in USD when that checkout is turned on. Razorpay emails the payment receipt. The licence key, or a 6-digit code if you ask for one, is emailed to the address you give.</p>
+    <p>Payments are processed by Razorpay. Tanishkha is the seller. Dewcue does not see your card number or UPI id. Indian cards and UPI are charged in INR. International cards are charged in USD. Razorpay emails the payment receipt. The licence key, or a 6-digit code if you ask for one, is emailed to the address you give.</p>
     <p>You can cancel a subscription at any time. Premium continues until the end of the period you have already paid for. Refunds follow the <a href="refund.html">refund policy</a>.</p>
 
     <h2>Your reminders</h2>

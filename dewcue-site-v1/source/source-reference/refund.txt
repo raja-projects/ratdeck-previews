@@ -57,7 +57,7 @@
         <a href="refund.html">Refund</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <p class="copy">© 2026 Tanishkha. All rights reserved.</p>
+      <p class="copy">© 2026 DewCue. All rights reserved.</p>
     </div>
   </footer>
   <script src="store.js"></script>

@@ -7,7 +7,7 @@
   {
     "path": "/features/",
     "title": "DewCue Features | Reminders, Follow-ups, Timers & Buckets",
-    "description": "Explore DewCue’s Chrome reminders, email follow-ups, project buckets, focus timer, side panel and optional wellness nudges. Clear features, clear limits."
+    "description": "Explore DewCue’s Chrome reminders, on-page cards, page sticky notes, email follow-ups on any webmail, buckets, timers and side panel. Clear features, clear limits."
   },
   {
     "path": "/use-cases/",
@@ -37,7 +37,7 @@
   {
     "path": "/pricing/",
     "title": "DewCue Pricing | Free, Premium & Lifetime Plans",
-    "description": "Compare DewCue Free, Premium and Lifetime. See USD prices of $4.99/month, $39/year and $99 Lifetime, plus INR pricing, trials, plan limits and refunds."
+    "description": "Compare DewCue Free, Premium and Lifetime: $4.99/month, $39/year or $99 Lifetime for the first 500 buyers. Rupee prices with UPI in India. Free plan and 14-day trial."
   },
   {
     "path": "/answers/",
@@ -67,7 +67,7 @@
   {
     "path": "/guides/browser-notifications/",
     "title": "How to check DewCue reminders and browser notifications | DewCue",
-    "description": "Understand the two alert styles and run a small test before relying on a reminder."
+    "description": "Understand the alert styles, use the built-in test button, and run a small check before relying on a reminder."
   },
   {
     "path": "/guides/reminders-from-web-pages/",
@@ -111,8 +111,8 @@
   },
   {
     "path": "/about/",
-    "title": "About DewCue | A Gentle Reminder Extension by Tanishkha",
-    "description": "Meet DewCue, the Chrome reminder extension by Tanishkha. Learn about its reminder experience, privacy boundaries and how to contact the team."
+    "title": "About DewCue | A Gentle Reminder Extension for Chrome",
+    "description": "Meet DewCue, a gentle reminder extension for Chrome. Learn about its reminder experience, privacy boundaries and how to contact the team."
   },
   {
     "path": "/contact/",
