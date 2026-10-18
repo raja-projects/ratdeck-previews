@@ -1,0 +1,127 @@
+[
+  {
+    "path": "/",
+    "title": "DewCue | Chrome Reminders, Email Follow-ups & Focus",
+    "description": "Set Chrome reminders in everyday English. DewCue brings email follow-ups, project notes, focus timers and optional wellbeing nudges into one extension."
+  },
+  {
+    "path": "/features/",
+    "title": "DewCue Features | Reminders, Follow-ups, Timers & Buckets",
+    "description": "Explore DewCue’s Chrome reminders, email follow-ups, project buckets, focus timer, side panel and optional wellness nudges. Clear features, clear limits."
+  },
+  {
+    "path": "/use-cases/",
+    "title": "DewCue Use Cases | Work, Study & Everyday Reminders",
+    "description": "See how DewCue helps you remember work follow-ups, study deadlines, everyday routines and freelance next steps. Practical examples for the day you have."
+  },
+  {
+    "path": "/use-cases/work/",
+    "title": "DewCue At work | Practical Chrome Reminder Ideas",
+    "description": "A working day is full of small commitments: check a document, return to a message, or ask for an update. Give each one a clear reminder so you can return to the task in front of you. Use Today to choose what needs attention and Upcoming to see what is ahead."
+  },
+  {
+    "path": "/use-cases/study/",
+    "title": "DewCue While studying | Practical Chrome Reminder Ideas",
+    "description": "Turn “I should study later” into one useful next step. Set a reminder for a specific chapter, revision task, or assignment check. When you sit down, give that task a time window and decide what progress you want to make before the timer ends."
+  },
+  {
+    "path": "/use-cases/everyday-life/",
+    "title": "DewCue Everyday life | Practical Chrome Reminder Ideas",
+    "description": "Small personal tasks can slip between work tabs: call someone back, remember rent, or make time for a break. Put the next action into DewCue while it is on your mind. Keep the reminders that matter easy to find, without creating an account just to start."
+  },
+  {
+    "path": "/use-cases/freelancers/",
+    "title": "DewCue Freelance life | Practical Chrome Reminder Ideas",
+    "description": "Client work comes with decisions to chase, proposals to revisit, and small promises to keep. Give each next step a reminder, then keep the context in a client or project bucket. When you return, you can see what you were waiting for and choose a useful action."
+  },
+  {
+    "path": "/pricing/",
+    "title": "DewCue Pricing | Free, Premium & Lifetime Plans",
+    "description": "Compare DewCue Free, Premium and Lifetime. See USD prices of $4.99/month, $39/year and $99 Lifetime, plus INR pricing, trials, plan limits and refunds."
+  },
+  {
+    "path": "/answers/",
+    "title": "DewCue Help & Answers | Reminders, Backups & Premium",
+    "description": "Get clear DewCue answers about selected text, side panel reminders, birthdays, backups, changing computers, Premium activation, privacy and billing."
+  },
+  {
+    "path": "/guides/",
+    "title": "DewCue Guides | Reminders, Backups & Premium Help",
+    "description": "Practical guides for Chrome reminders, selected text, the side panel, birthdays, backups, changing computers and DewCue Premium activation."
+  },
+  {
+    "path": "/guides/first-reminder/",
+    "title": "How to set your first reminder in DewCue | DewCue",
+    "description": "Turn one thing you need to remember into a clear task, a sensible time, and an alert you have checked."
+  },
+  {
+    "path": "/guides/email-follow-ups/",
+    "title": "How to follow up on an email without keeping it in your head | DewCue",
+    "description": "Save the conversation you want to revisit, choose a useful time, and check the reply yourself."
+  },
+  {
+    "path": "/guides/focus-and-breaks/",
+    "title": "How to build a simple focus and break routine | DewCue",
+    "description": "Choose one task, give it a clear time window, and make room for a break that suits your day."
+  },
+  {
+    "path": "/guides/browser-notifications/",
+    "title": "How to check DewCue reminders and browser notifications | DewCue",
+    "description": "Understand the two alert styles and run a small test before relying on a reminder."
+  },
+  {
+    "path": "/guides/reminders-from-web-pages/",
+    "title": "How to make a reminder from a web page or selected text | DewCue",
+    "description": "Save a page link or highlighted passage with a reminder, understand what stays local, and leave enough context to act later."
+  },
+  {
+    "path": "/guides/chrome-side-panel/",
+    "title": "How to use DewCue’s Chrome side panel while you work | DewCue",
+    "description": "Keep the same reminder list beside your page, review Today and Overdue, and choose a useful next action without making a separate list."
+  },
+  {
+    "path": "/guides/birthdays-and-milestones/",
+    "title": "Birthdays and milestones in DewCue: limits and local storage | DewCue",
+    "description": "See the Free plan allowances, understand where birthday and milestone entries live, and plan useful actions around important dates."
+  },
+  {
+    "path": "/guides/backup-and-changing-computers/",
+    "title": "DewCue backups and changing computers: what moves and what stays local | DewCue",
+    "description": "Understand Chrome sync, locally stored information, downloaded backups, and Premium activation before changing computers or uninstalling DewCue."
+  },
+  {
+    "path": "/guides/activate-premium/",
+    "title": "How to activate DewCue Premium and find your licence email | DewCue",
+    "description": "Understand the emailed licence key or requested code, troubleshoot a missing activation email, and keep Premium access separate from reminder data."
+  },
+  {
+    "path": "/privacy/",
+    "title": "Privacy Policy | DewCue",
+    "description": "What DewCue saves, what can sync through Chrome, how email capture works, and what the Premium licence service stores. Read the full privacy policy."
+  },
+  {
+    "path": "/terms/",
+    "title": "Terms of Service | DewCue",
+    "description": "Read the terms for using DewCue, including Premium licences, pricing, payment, cancellation, acceptable use and browser reminder limitations."
+  },
+  {
+    "path": "/refund/",
+    "title": "Refund & Cancellation Policy | DewCue",
+    "description": "Read DewCue’s 7-day refund request window, cancellation rules, Razorpay refund process and trial details. Contact hello@dewcue.com for help."
+  },
+  {
+    "path": "/about/",
+    "title": "About DewCue | A Gentle Reminder Extension by Tanishkha",
+    "description": "Meet DewCue, the Chrome reminder extension by Tanishkha. Learn about its reminder experience, privacy boundaries and how to contact the team."
+  },
+  {
+    "path": "/contact/",
+    "title": "Contact DewCue | Product, Premium & Billing Help",
+    "description": "Contact DewCue at hello@dewcue.com for reminders, licences, payments, refunds or privacy questions. Published support response time: 1–2 business days."
+  },
+  {
+    "path": "/sitemap/",
+    "title": "DewCue Sitemap | Find Features, Guides & Answers",
+    "description": "Find every DewCue feature, plan, practical guide, use case, answer and policy in one simple sitemap."
+  }
+]
