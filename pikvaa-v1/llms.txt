@@ -1,0 +1,60 @@
+# Pikvaa
+
+> Pikvaa is a studio app for Indian photographers: client photo selection by the whole family in private PIN galleries, payment-linked online delivery, leads/quotes/bookings/crew CRM, and per-event storage packs priced in rupees. Tamil and English. Built for low-end Android phones and slow networks.
+
+Key facts (prices before 18% GST): Lite 3 GB ₹99/6 months, ₹149/12 months; Wedding 40 GB ₹999/6 months (about ₹1,179 incl. GST); 50 GB ₹1,249; 120 GB ₹2,999/6 months. Free plan available; Pro planned at ₹4,999/year + GST (being confirmed with pilot studios). Clients pay studios directly; Pikvaa records payments and releases finals when paid. No AI face search, no print store, no unlimited storage; Pikvaa does not back up originals.
+
+## Product
+
+- [Features — Photo Selection, Delivery & Studio CRM | Pikvaa](https://pikvaa.com/features/): Explore Pikvaa features: client photo selection, online gallery delivery, studio management CRM for bookings, crew and payments, and per-event storage.
+- [Wedding Photo Selection App for Photographers | Pikvaa](https://pikvaa.com/features/photo-selection/): Pikvaa's photo selection software lets the whole family pick album photos live in a private, watermarked PIN gallery. No app install. Built for India.
+- [Online Photo Delivery & Client Galleries | Pikvaa](https://pikvaa.com/features/photo-delivery/): Deliver photos to clients through private PIN galleries on WhatsApp. Pikvaa releases full-quality downloads only when payments are recorded. Priced in ₹.
+- [Photography Studio Management Software & CRM India | Pikvaa](https://pikvaa.com/features/studio-management/): Run leads, OTP-accepted quotes, bookings, crew, freelancers and payment records in one photography CRM built for Indian studios. Tamil and English.
+- [Photo Storage for Photographers, Per Event | Pikvaa](https://pikvaa.com/features/storage-protection/): Per-event photo storage for photographers in India: 3 GB to 120 GB packs, locked expiry dates, a 30-day archive and optional verified backup of finals.
+
+## Pricing
+
+- [Pikvaa Pricing — Per-Event Packs from ₹99 + GST](https://pikvaa.com/pricing/): Pikvaa pricing in rupees: Lite 3 GB ₹99, Wedding 40 GB ₹999, 120 GB ₹2,999 for 6 months, before 18% GST. GST-inclusive totals shown. Free plan available.
+
+## Compare
+
+- [Pixieset Alternative for Indian Photographers | Pikvaa](https://pikvaa.com/compare/pixieset-alternative/): Looking for a Pixieset alternative in India? Compare Pikvaa's rupee per-event pricing, family album selection and payment-linked delivery with Pixieset.
+- [Kwikpic Alternative for Photo Studios in India | Pikvaa](https://pikvaa.com/compare/kwikpic-alternative/): Comparing Kwikpic alternatives? Kwikpic focuses on AI face-search sharing; Pikvaa focuses on family album selection, payments and delivery for studios.
+- [Google Drive for Photographers vs a Client Gallery | Pikvaa](https://pikvaa.com/compare/google-drive-for-photographers/): Is Google Drive good for delivering photos to clients? Compare Drive with Pikvaa's PIN galleries, family selection, watermarks and payment-linked release.
+
+## Solutions
+
+- [App for Wedding Photographers in India | Pikvaa](https://pikvaa.com/solutions/wedding-photographers/): Pikvaa helps Indian wedding photographers run album selection with the whole family, record part-payments and deliver finals securely. From ₹999 + GST per wedding.
+- [Software for Photography Studios in India | Pikvaa](https://pikvaa.com/solutions/studios/): Studio software for Indian photography studios: leads, quotes, bookings, staff roles, freelancers, payments and client delivery. Pro planned at ₹4,999/year + GST.
+- [App for Freelance Photographers in India | Pikvaa](https://pikvaa.com/solutions/freelancers/): Pikvaa helps freelance photographers deliver client galleries professionally and join studio shoots per event, free, without seeing the studio's business data.
+
+## Locations
+
+- [Photography Studio App for Chennai Photographers | Pikvaa](https://pikvaa.com/locations/chennai/): Pikvaa for Chennai photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Coimbatore Photographers | Pikvaa](https://pikvaa.com/locations/coimbatore/): Pikvaa for Coimbatore photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Madurai Photographers | Pikvaa](https://pikvaa.com/locations/madurai/): Pikvaa for Madurai photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Tiruchirappalli Photographers | Pikvaa](https://pikvaa.com/locations/trichy/): Pikvaa for Tiruchirappalli photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Salem & Erode Photographers | Pikvaa](https://pikvaa.com/locations/salem/): Pikvaa for Salem & Erode photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Tirunelveli Photographers | Pikvaa](https://pikvaa.com/locations/tirunelveli/): Pikvaa for Tirunelveli photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Kerala Photographers | Pikvaa](https://pikvaa.com/locations/kerala/): Pikvaa for Kerala photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+- [Photography Studio App for Kochi Photographers | Pikvaa](https://pikvaa.com/locations/kochi/): Pikvaa for Kochi photographers: family album selection, PIN galleries, bookings, crew and payment-linked delivery. Tamil & English. From ₹99 + GST.
+
+## Guides
+
+- [Wedding Album Photo Selection: A Guide for Photographers](https://pikvaa.com/blog/wedding-album-photo-selection-guide/): A practical guide for Indian wedding photographers on getting families to finish album photo selection on time, without endless WhatsApp lists.
+- [Best Way for Photographers to Share Photos with Clients](https://pikvaa.com/blog/best-way-to-share-photos-with-clients/): Compare WhatsApp, Google Drive, transfer links and client galleries, and learn the best way for Indian photographers to share photos with clients.
+- [Photography Client Gallery Software: A Buyer's Guide](https://pikvaa.com/blog/photography-client-gallery-software/): What to look for in photography client gallery software in India: privacy, selection, payments, pricing in rupees, GST, language and slow-network support.
+- [Wedding Photography Studio Management Software Guide](https://pikvaa.com/blog/wedding-photography-studio-management-software/): How Indian wedding studios can manage leads, quotes, bookings, crew, payments and delivery in one place, and what to look for in studio management software.
+- [Wedding Album Apps Explained: Couples, Guests & Studios](https://pikvaa.com/blog/wedding-album-app-guide/): What a wedding album app does, how guest photo apps differ from album selection apps, and which type an Indian wedding photographer actually needs.
+- [How to Watermark and Share Wedding Photos Securely](https://pikvaa.com/blog/watermark-and-share-wedding-photos-securely/): Practical steps for photographers to watermark previews, share wedding galleries privately, control downloads and protect clients' photos in India.
+
+## Help
+
+- [Pikvaa FAQ — Photo Selection, Delivery, Pricing & GST](https://pikvaa.com/faq/): Answers to 265 questions about Pikvaa: client photo selection, PIN galleries, storage packs, GST pricing, payments, privacy and studio workflow in India.
+
+## Optional
+
+- [Pikvaa — Photographer Studio App for India | Selection & Delivery](https://pikvaa.com/)
+- [About Pikvaa — A Studio App Made in India](https://pikvaa.com/about/)
+- [Contact Pikvaa — Pilot & Questions](https://pikvaa.com/contact/)
+- [Photography Business Blog for Indian Studios | Pikvaa](https://pikvaa.com/blog/)
