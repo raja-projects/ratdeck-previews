@@ -2,11 +2,11 @@
 
 > Pikvaa is a studio app for Indian photographers: client photo selection by the whole family in private PIN galleries, payment-linked online delivery, leads/quotes/bookings/crew CRM, and per-event storage packs priced in rupees. Tamil and English. Built for low-end Android phones and slow networks.
 
-Key facts (prices before 18% GST): Lite 3 GB ₹99/6 months, ₹149/12 months; Wedding 40 GB ₹999/6 months (about ₹1,179 incl. GST); 50 GB ₹1,249; 120 GB ₹2,999/6 months. Free plan available; Pro planned at ₹4,999/year + GST (being confirmed with pilot studios). Clients pay studios directly; Pikvaa records payments and releases finals when paid. No AI face search, no print store, no unlimited storage; Pikvaa does not back up originals.
+Key facts (prices before 18% GST): Lite 3 GB ₹99/6 months, ₹149/12 months; Wedding 40 GB ₹999/6 months (about ₹1,179 incl. GST); 50 GB ₹1,249; 120 GB ₹2,999/6 months. Free plan available; Pro priced at ₹4,999/year + GST (being confirmed with photography studios). Clients pay studios directly; Pikvaa records payments and releases finals when paid. No AI face search, no print store, no unlimited storage; Pikvaa does not back up originals.
 
 ## Product
 
-- [Features — Photo Selection, Delivery & Studio CRM | Pikvaa](https://pikvaa.com/features/): Explore Pikvaa features: client photo selection, online gallery delivery, studio management CRM for bookings, crew and payments, and per-event storage.
+- [Features - Photo Selection, Delivery & Studio CRM | Pikvaa](https://pikvaa.com/features/): Explore Pikvaa features: client photo selection, online gallery delivery, studio management CRM for bookings, crew and payments, and per-event storage.
 - [Wedding Photo Selection App for Photographers | Pikvaa](https://pikvaa.com/features/photo-selection/): Pikvaa's photo selection software lets the whole family pick album photos live in a private, watermarked PIN gallery. No app install. Built for India.
 - [Online Photo Delivery & Client Galleries | Pikvaa](https://pikvaa.com/features/photo-delivery/): Deliver photos to clients through private PIN galleries on WhatsApp. Pikvaa releases full-quality downloads only when payments are recorded. Priced in ₹.
 - [Photography Studio Management Software & CRM India | Pikvaa](https://pikvaa.com/features/studio-management/): Run leads, OTP-accepted quotes, bookings, crew, freelancers and payment records in one photography CRM built for Indian studios. Tamil and English.
@@ -14,7 +14,7 @@ Key facts (prices before 18% GST): Lite 3 GB ₹99/6 months, ₹149/12 months; W
 
 ## Pricing
 
-- [Pikvaa Pricing — Per-Event Packs from ₹99 + GST](https://pikvaa.com/pricing/): Pikvaa pricing in rupees: Lite 3 GB ₹99, Wedding 40 GB ₹999, 120 GB ₹2,999 for 6 months, before 18% GST. GST-inclusive totals shown. Free plan available.
+- [Pikvaa Pricing - Per-Event Packs from ₹99 + GST](https://pikvaa.com/pricing/): Pikvaa pricing in rupees: Lite 3 GB ₹99, Wedding 40 GB ₹999, 120 GB ₹2,999 for 6 months, before 18% GST. GST-inclusive totals shown. Free plan available.
 
 ## Compare
 
@@ -25,7 +25,7 @@ Key facts (prices before 18% GST): Lite 3 GB ₹99/6 months, ₹149/12 months; W
 ## Solutions
 
 - [App for Wedding Photographers in India | Pikvaa](https://pikvaa.com/solutions/wedding-photographers/): Pikvaa helps Indian wedding photographers run album selection with the whole family, record part-payments and deliver finals securely. From ₹999 + GST per wedding.
-- [Software for Photography Studios in India | Pikvaa](https://pikvaa.com/solutions/studios/): Studio software for Indian photography studios: leads, quotes, bookings, staff roles, freelancers, payments and client delivery. Pro planned at ₹4,999/year + GST.
+- [Software for Photography Studios in India | Pikvaa](https://pikvaa.com/solutions/studios/): Studio software for Indian photography studios: leads, quotes, bookings, staff roles, freelancers, payments and client delivery. Pro priced at ₹4,999/year + GST.
 - [App for Freelance Photographers in India | Pikvaa](https://pikvaa.com/solutions/freelancers/): Pikvaa helps freelance photographers deliver client galleries professionally and join studio shoots per event, free, without seeing the studio's business data.
 
 ## Locations
@@ -50,11 +50,11 @@ Key facts (prices before 18% GST): Lite 3 GB ₹99/6 months, ₹149/12 months; W
 
 ## Help
 
-- [Pikvaa FAQ — Photo Selection, Delivery, Pricing & GST](https://pikvaa.com/faq/): Answers to 265 questions about Pikvaa: client photo selection, PIN galleries, storage packs, GST pricing, payments, privacy and studio workflow in India.
+- [Pikvaa FAQ - Photo Selection, Delivery, Pricing & GST](https://pikvaa.com/faq/): Answers to 265 questions about Pikvaa: client photo selection, PIN galleries, storage packs, GST pricing, payments, privacy and studio workflow in India.
 
 ## Optional
 
-- [Pikvaa — Photographer Studio App for India | Selection & Delivery](https://pikvaa.com/)
-- [About Pikvaa — A Studio App Made in India](https://pikvaa.com/about/)
-- [Contact Pikvaa — Pilot & Questions](https://pikvaa.com/contact/)
+- [Pikvaa - Photographer Studio App for India | Selection & Delivery](https://pikvaa.com/)
+- [About Pikvaa - A Studio App Made in India](https://pikvaa.com/about/)
+- [Contact Pikvaa - product & Questions](https://pikvaa.com/contact/)
 - [Photography Business Blog for Indian Studios | Pikvaa](https://pikvaa.com/blog/)
