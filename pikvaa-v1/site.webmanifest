@@ -11,9 +11,16 @@
       "src": "/ratdeck-previews/pikvaa-v1/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/ratdeck-previews/pikvaa-v1/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "theme_color": "#032251",
-  "background_color": "#032251",
-  "display": "standalone"
+  "theme_color": "#121E3F",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/ratdeck-previews/pikvaa-v1/"
 }
