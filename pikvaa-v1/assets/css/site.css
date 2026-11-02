@@ -97,3 +97,10 @@ form.f{display:grid;gap:14px;max-width:620px}form.f label{font-size:.88rem;font-
 .hero-in.has-mock,.story{grid-template-columns:1fr;gap:40px}.story.flip .story-copy{order:0}.c3,.c4,.plans{grid-template-columns:1fr 1fr}.flow{grid-template-columns:repeat(4,1fr)}.foot-top{grid-template-columns:1fr 1fr}}
 @media (max-width:620px){body{font-size:16px}.hero{padding:64px 0 72px}.sec{padding:64px 0}.c3,.c2,.c4,.plans{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.foot-top{grid-template-columns:1fr}.dates{grid-template-columns:1fr 1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
+.reel-sec{position:relative;overflow:hidden;background:radial-gradient(900px 420px at 50% 0%,rgba(109,75,246,.35),transparent 70%),var(--navy2);color:#fff;padding:96px 0 40px}
+.reel-sec .sec-head p{color:#c3cde0}.reel-stage{position:relative;height:min(62vw,560px);min-height:340px}
+.reel-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:none;touch-action:pan-y;cursor:grab}.reel-stage canvas:active{cursor:grabbing}
+.reel-on .reel-stage canvas{display:block}.reel-on .reel-fallback{display:none}
+.reel-fallback{display:flex;gap:16px;overflow-x:auto;padding:20px 24px;scroll-snap-type:x mandatory;list-style:none;margin:0}
+.reel-fallback li{flex:0 0 min(70vw,300px);aspect-ratio:4/3;border-radius:16px;scroll-snap-align:center;display:flex;align-items:flex-end;padding:16px;font-weight:600}
+.reel-hint{text-align:center;color:#8fa0c4;font-size:.85rem;margin:8px 0 0}
